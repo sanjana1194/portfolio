@@ -27,8 +27,13 @@
         animation: gradient-x 15s ease infinite;
       }
       html { scroll-behavior: smooth; }
-      .section-bg { background: linear-gradient(to right, #f0f4f8, #d9e2ec); }
-      .dark .section-bg { background: linear-gradient(to right, #1e293b, #0f172a); color: #f8fafc; }
+      .section-bg {
+        background: linear-gradient(to right, #e0f7fa, #e1f5fe);
+      }
+      .dark .section-bg {
+        background: linear-gradient(to right, #1e293b, #0f172a);
+        color: #f8fafc;
+      }
     </style>
   </head>
   <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans text-center transition-colors duration-500">
@@ -60,9 +65,101 @@
       </div>
     </section>
 
-    <!-- Remaining Sections (no changes needed) -->
-    <!-- About, Skills, Projects, Education, Certifications, Experience, Activities, Contact, Footer stay unchanged -->
+    <!-- About Section -->
+    <section id="about" class="py-10 px-6 section-bg">
+      <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+      <p class="max-w-3xl mx-auto text-lg">
+        Passionate Web Developer and Frontend Enthusiast with a strong foundation in HTML, CSS, JavaScript, ReactJS, and Python. My goal is to leverage my skills and expertise to contribute meaningfully to forward-thinking organizations.
+      </p>
+    </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="py-10 px-6 section-bg">
+      <h2 class="text-3xl font-semibold mb-4">Skills</h2>
+      <ul class="max-w-xl mx-auto text-left text-lg space-y-2">
+        <li>➡️ HTML, CSS, JavaScript, ReactJS</li>
+        <li>➡️ Python, Java, C</li>
+        <li>➡️ MongoDB, SQL</li>
+        <li>➡️ Git, GitHub</li>
+      </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-10 px-6 section-bg">
+      <h2 class="text-3xl font-semibold mb-6">Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Travel With Us" class="w-full h-60 object-cover" />
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Travel With Us</h3>
+            <p class="mb-4">A trip-planning platform built with HTML, CSS, MongoDB, ReactJS, and JavaScript to streamline itinerary creation and provide real-time budget-based suggestions.</p>
+            <a href="https://github.com/sanjana1194/travel-with-us" class="text-blue-600 hover:underline">View Project</a>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+          <img src="https://images.unsplash.com/photo-1581090700227-1e8d127f9f76" alt="Password Generator" class="w-full h-60 object-cover" />
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Automatic Password Generator</h3>
+            <p class="mb-4">A secure password generation tool using Python and Tkinter. Designed with a clean interface and strong algorithm to help users create robust passwords.</p>
+            <a href="https://github.com/sanjana1194/automatic-password-generator" class="text-blue-600 hover:underline">View Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-10 px-6 section-bg">
+      <h2 class="text-3xl font-semibold mb-4">Education</h2>
+      <ul class="text-lg space-y-2 max-w-xl mx-auto text-left">
+        <li><strong>VVIT, CSE</strong> — CGPA: 8.2 (Till June 2025)</li>
+        <li><strong>Sri Chaitanya Junior College</strong> — Percentage: 90.3%</li>
+        <li><strong>Sri Chaitanya Techno School</strong> — GPA: 10.0</li>
+      </ul>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-10 px-6 section-bg">
+      <h2 class="text-3xl font-semibold mb-4">Certifications</h2>
+      <ul class="text-lg list-disc list-inside max-w-xl mx-auto text-left">
+        <li>Salesforce Developer Virtual Internship – AICTE (Jan 2025)</li>
+        <li>Cybersecurity Internship – Vodafone Idea (VOIS)</li>
+        <li>Data Analytics Internship – VOIS</li>
+        <li>Python PCEP Certification – Cisco</li>
+      </ul>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-10 px-6 section-bg">
+      <h2 class="text-3xl font-semibold mb-4">Experience</h2>
+      <p class="max-w-2xl mx-auto text-lg">
+        <strong>Thinkpond Software – Design Internship (Nov 2024 – Jan 2025)</strong><br />
+        Completed a 12-week internship focused on UX design and applied real-time design thinking principles.
+      </p>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-10 px-6 section-bg">
+      <h2 class="text-3xl font-semibold mb-4">Extra-Curricular Activities</h2>
+      <ul class="text-lg list-disc list-inside max-w-xl mx-auto text-left">
+        <li>Member of Pledge a Smile Foundation</li>
+        <li>Active member of National Service Scheme (NSS)</li>
+        <li>Engaged in several team-based and social initiatives</li>
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-10 px-6 section-bg">
+      <h2 class="text-3xl font-semibold mb-4">Contact Me</h2>
+      <p class="text-lg mb-2">Feel free to reach out for collaborations or questions.</p>
+      <p class="text-lg">📧 <a href="mailto:gdssanjana@gmail.com" class="text-blue-600 hover:underline">gdssanjana@gmail.com</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 bg-white dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">
+      © 2025 Sanjana Gandepalli — All rights reserved.
+    </footer>
+
+    <!-- Theme Toggle Script -->
     <script>
       const toggleBtn = document.getElementById('theme-toggle');
       toggleBtn.addEventListener('click', () => {
