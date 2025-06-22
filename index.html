@@ -15,6 +15,9 @@
     <!-- Typed.js for Hero Text -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
+    <!-- tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.0/tsparticles.bundle.min.js"></script>
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="Portfolio of Dorathi Sai Sanjana Gandepalli - Frontend Web Developer and Designer" />
     <meta name="keywords" content="Frontend Developer, Web Developer, ReactJS, Sanjana Gandepalli, HTML CSS JavaScript Python" />
@@ -44,104 +47,57 @@
     </style>
   </head>
   <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans text-center transition-colors duration-500">
-    <!-- Navbar -->
-    <header class="sticky top-0 bg-gray-900 dark:bg-gray-800 text-white flex justify-between items-center px-8 py-4 z-50">
-      <nav class="space-x-6 font-medium mx-auto">
-        <a href="#about" class="hover:text-green-400">About</a>
-        <a href="#skills" class="hover:text-green-400">Skills</a>
-        <a href="#projects" class="hover:text-green-400">Projects</a>
-        <a href="#education" class="hover:text-green-400">Education</a>
-        <a href="#certifications" class="hover:text-green-400">Certifications</a>
-        <a href="#experience" class="hover:text-green-400">Experience</a>
-        <a href="#activities" class="hover:text-green-400">Activities</a>
-        <a href="#contact" class="hover:text-green-400">Contact</a>
-      </nav>
-      <div class="flex items-center gap-4">
-        <button id="theme-toggle" class="bg-green-600 hover:bg-green-700 px-3 py-2 rounded text-sm">Theme</button>
-        <a href="resume.pdf" download class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">Download CV</a>
-      </div>
-    </header>
+    <div id="tsparticles" class="fixed inset-0 z-0"></div>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center text-center text-white animated-gradient">
-      <div class="absolute inset-0 bg-black/40"></div>
-      <div class="relative z-10 space-y-4">
-        <h1 class="text-5xl font-bold">Hello, I’m <span class="text-green-300">Sanjana</span></h1>
-        <p class="text-xl">Frontend Developer & Designer</p>
-        <a href="#projects" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded">View My Work</a>
-      </div>
-    </section>
+    <!-- Start Full Page Content -->
+    <main class="relative z-10">
+      <!-- Include All Sections Here -->
+      <!-- Navbar -->
+<header class="sticky top-0 bg-gray-900 dark:bg-gray-800 text-white flex justify-between items-center px-8 py-4 z-50">
+  <nav class="space-x-6 font-medium mx-auto">
+    <a href="#about" class="hover:text-green-400">About</a>
+    <a href="#skills" class="hover:text-green-400">Skills</a>
+    <a href="#projects" class="hover:text-green-400">Projects</a>
+    <a href="#education" class="hover:text-green-400">Education</a>
+    <a href="#certifications" class="hover:text-green-400">Certifications</a>
+    <a href="#experience" class="hover:text-green-400">Experience</a>
+    <a href="#activities" class="hover:text-green-400">Activities</a>
+    <a href="#contact" class="hover:text-green-400">Contact</a>
+  </nav>
+  <div class="flex items-center gap-4">
+    <button id="theme-toggle" class="bg-green-600 hover:bg-green-700 px-3 py-2 rounded text-sm">Theme</button>
+    <a href="resume.pdf" download class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">Download CV</a>
+  </div>
+</header>
 
-    <!-- About Section -->
-    <section id="about" class="scroll-mt-20 py-24 px-6 section-bg">
-      <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <p class="max-w-3xl mx-auto text-lg">
-        Passionate Web Developer and Frontend Enthusiast with a strong foundation in HTML, CSS, JavaScript, ReactJS, and Python. My goal is to leverage my skills and expertise to contribute meaningfully to forward-thinking organizations.
-      </p>
-    </section>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center text-center text-white animated-gradient">
+  <div class="absolute inset-0 bg-black/40"></div>
+  <div class="relative z-10 space-y-4">
+    <h1 class="text-5xl font-bold">Hello, I’m <span class="text-green-300">Sanjana</span></h1>
+    <p class="text-xl"><span id="typed-text"></span></p>
+    <a href="#projects" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded">View My Work</a>
+  </div>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="scroll-mt-20 py-24 px-6 section-bg">
-      <!-- unchanged content -->
+<!-- About Section -->
+<section id="about" class="scroll-mt-20 py-24 px-6 section-bg">
+  <h2 class="text-3xl font-bold mb-6">About Me</h2>
+  <p class="max-w-3xl mx-auto text-lg">
+    Passionate Web Developer and Frontend Enthusiast with a strong foundation in HTML, CSS, JavaScript, ReactJS, and Python. My goal is to leverage my skills and expertise to contribute meaningfully to forward-thinking organizations.
+  </p>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="scroll-mt-20 py-24 px-6 section-bg">
   <h2 class="text-3xl font-semibold mb-10">Skills and Tech Stack</h2>
   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
-    <!-- [Your skill icons here — unchanged] -->
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="h-12 mb-2" />
-      <span>HTML</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="h-12 mb-2" />
-      <span>CSS</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="h-12 mb-2" />
-      <span>JavaScript</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="h-12 mb-2" />
-      <span>React</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg" alt="Tailwind" class="h-12 mb-2" />
-      <span>Tailwind</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="h-12 mb-2" />
-      <span>Python</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="h-12 mb-2" />
-      <span>Java</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="h-12 mb-2" />
-      <span>C</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="h-12 mb-2" />
-      <span>MongoDB</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="h-12 mb-2" />
-      <span>MySQL</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="h-12 mb-2" />
-      <span>Git</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="h-12 mb-2" />
-      <span>GitHub</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="h-12 mb-2" />
-      <span>Figma</span>
-    </div>
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="h-12 mb-2" />
-      <span>VS Code</span>
-    </div>
+    <!-- Skills Icons (HTML, CSS, JS...) -->
+    <div class="flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="h-12 mb-2" /><span>HTML</span></div>
+    <div class="flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="h-12 mb-2" /><span>CSS</span></div>
+    <div class="flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="h-12 mb-2" /><span>JavaScript</span></div>
+    <div class="flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="h-12 mb-2" /><span>React</span></div>
+    <div class="flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="h-12 mb-2" /><span>Python</span></div>
   </div>
 </section>
 
@@ -149,97 +105,59 @@
 <section id="projects" class="scroll-mt-20 py-24 px-6 section-bg text-center">
   <h2 class="text-3xl font-bold mb-10">Projects</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-    <!-- Project 1 -->
     <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-md text-left">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Travel With Us" class="rounded mb-4 w-full h-48 object-cover" />
-      <h3 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Travel With Us</h3>
-      <p class="text-gray-600 dark:text-gray-300 mb-4">A trip-planning platform built with HTML, CSS, MongoDB, ReactJS, and JavaScript to streamline itinerary creation and provide real-time budget-based suggestions.</p>
-      <a href="https://drive.google.com/file/d/1gDv1fqwlKStxYiqjOhAYuay5TrOqZR3b/view" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">View Deployment</a>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="rounded mb-4 w-full h-48 object-cover" />
+      <h3 class="text-2xl font-semibold mb-2">Travel With Us</h3>
+      <p>A trip-planning platform with HTML, CSS, MongoDB, ReactJS, JavaScript.</p>
+      <a href="https://drive.google.com/file/d/1gDv1fqwlKStxYiqjOhAYuay5TrOqZR3b/view" class="inline-block bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">View Deployment</a>
     </div>
-
-    <!-- Project 2 -->
     <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-md text-left">
-      <img src="https://source.unsplash.com/featured/?cybersecurity,password" alt="Password Generator" class="rounded mb-4 w-full h-48 object-cover" />
-      <h3 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Automatic Password Generator</h3>
-      <p class="text-gray-600 dark:text-gray-300">A secure password generation tool using Python and Tkinter. Designed with a clean interface and strong algorithm to help users create robust passwords.</p>
+      <img src="https://source.unsplash.com/featured/?cybersecurity,password" class="rounded mb-4 w-full h-48 object-cover" />
+      <h3 class="text-2xl font-semibold mb-2">Automatic Password Generator</h3>
+      <p>Secure password generation tool using Python and Tkinter.</p>
     </div>
   </div>
 </section>
 
 <!-- Education Section -->
-<section id="education" class="scroll-mt-20 py-24 px-6 section-bg text-center">
-  <!-- [Unchanged Education cards] -->
+<section id="education" class="scroll-mt-20 py-24 px-6 section-bg">
   <h2 class="text-3xl font-bold mb-10">Education</h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
     <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="College" class="h-12 mx-auto mb-4" />
-      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Vasireddy Venkatadri Institute Of Technology, Guntur</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-300">B.Tech - Computer Science Engineering</p>
-      <p class="font-semibold mt-2 text-gray-800 dark:text-gray-200">8.2 CGPA</p>
+      <h3 class="text-xl font-semibold">VVIT, Guntur</h3>
+      <p>B.Tech - CSE | 8.2 CGPA</p>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="College" class="h-12 mx-auto mb-4" />
-      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Sri Chaitanya Junior College, Vishakapatnam</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-300">Intermediate - MPC</p>
-      <p class="font-semibold mt-2 text-gray-800 dark:text-gray-200">90.3%</p>
+      <h3 class="text-xl font-semibold">Sri Chaitanya Junior College</h3>
+      <p>Intermediate - MPC | 90.3%</p>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="School" class="h-12 mx-auto mb-4" />
-      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Sri Chaitanya Techno School, Narsipatnam</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-300">10th</p>
-      <p class="font-semibold mt-2 text-gray-800 dark:text-gray-200">10 GPA</p>
+      <h3 class="text-xl font-semibold">Sri Chaitanya Techno School</h3>
+      <p>10th | 10 GPA</p>
     </div>
   </div>
 </section>
 
 <!-- Certifications Section -->
 <section id="certifications" class="scroll-mt-20 py-24 px-6 section-bg">
-  <!-- [Unchanged, except all buttons use bg-green-600] -->
-  <!-- Replace all `bg-gray-200` buttons with: -->
-  <!-- class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm" -->
   <h2 class="text-3xl font-bold mb-10">Certifications</h2>
-      <div class="max-w-3xl mx-auto space-y-6">
-        <div class="flex justify-between items-center border border-gray-300 rounded-lg px-4 py-3 bg-white dark:bg-gray-800">
-          <p class="text-lg font-semibold text-gray-900 dark:text-white">Salesforce Developer Virtual Internship</p>
-          <a href="https://drive.google.com/file/d/1r8Sjzy6rieD6hsCwhbniCNVhOPp83owm/view?usp=sharing" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white px-4 py-2 rounded text-sm">View Certificate</a>
-        </div>
-        <div class="flex justify-between items-center border border-gray-300 rounded-lg px-4 py-3 bg-white dark:bg-gray-800">
-          <p class="text-lg font-semibold text-gray-900 dark:text-white">Cybersecurity Internship - Vodafone(VOIS)</p>
-          <a href="https://drive.google.com/file/d/1GDbxEAXvUfZK9X0p_23L9oB8tynbHYP6/view?usp=sharing" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white px-4 py-2 rounded text-sm">View Certificate</a>
-        </div>
-        <div class="flex justify-between items-center border border-gray-300 rounded-lg px-4 py-3 bg-white dark:bg-gray-800">
-          <p class="text-lg font-semibold text-gray-900 dark:text-white">Python PCEP Certification</p>
-          <a href="https://drive.google.com/file/d/1m0fd-2kDmALZXzQzcCe7e006MedpOapZ/view?usp=sharing" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white px-4 py-2 rounded text-sm">View Certificate</a>
-        </div>
-        <div class="flex justify-between items-center border border-gray-300 rounded-lg px-4 py-3 bg-white dark:bg-gray-800">
-          <p class="text-lg font-semibold text-gray-900 dark:text-white">Data Analytics - Vodafone(VOIS)</p>
-          <a href="https://drive.google.com/file/d/1k1VqNBtw1L5QhIE7b19pLtx1L35hniuk/view?usp=sharing" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white px-4 py-2 rounded text-sm">View Certificate</a>
-        </div>
-      </div>
+  <div class="max-w-3xl mx-auto space-y-6">
+    <div class="flex justify-between items-center border rounded-lg px-4 py-3 bg-white dark:bg-gray-800">
+      <p>Salesforce Developer Virtual Internship</p>
+      <a href="https://drive.google.com/file/d/1r8Sjzy6rieD6hsCwhbniCNVhOPp83owm/view" class="bg-green-600 text-white px-4 py-2 rounded text-sm">View</a>
+    </div>
+  </div>
 </section>
 
 <!-- Experience Section -->
 <section id="experience" class="scroll-mt-20 py-24 px-6 section-bg">
   <h2 class="text-3xl font-bold mb-10">Experience</h2>
   <div class="max-w-3xl mx-auto text-left space-y-6">
-    <div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg p-6 shadow-md">
-      <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-        Thinkpond Software – Design Internship 
-        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(Nov 2024 – Jan 2025)</span>
-      </h3>
-      <!-- Centered View Certificate Button -->
-      <div class="flex justify-center mb-4">
-        <a href="https://drive.google.com/file/d/1JNQC-7sAfUnTZE8hQJPZJ4UuUiss9TcS/view?usp=sharing" 
-           target="_blank"
-           class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded">
-           View Certificate
-        </a>
-      </div>
-      <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-        <li>Completed a 12-week internship with a focus on UX design and real-time application of design thinking principles.</li>
-        <li>Performed web scraping and automated data collection from structured and unstructured sources.</li>
-        <li>Cleaned and organized large datasets to prepare them for analytics and SEO optimization.</li>
-        <li>Utilized SEO tools and techniques to analyze and enhance web page performance and visibility.</li>
+    <div class="bg-white dark:bg-gray-800 border rounded-lg p-6 shadow-md">
+      <h3 class="text-xl font-semibold mb-2">Thinkpond Software – Design Intern</h3>
+      <ul class="list-disc list-inside">
+        <li>12-week internship focused on UX design and SEO optimization.</li>
+        <li>Web scraping and data automation.</li>
       </ul>
     </div>
   </div>
@@ -248,64 +166,100 @@
 <!-- Activities Section -->
 <section id="activities" class="scroll-mt-20 py-24 px-6 section-bg">
   <h2 class="text-3xl font-semibold mb-4">Extra-Curricular Activities</h2>
-  <ul class="text-lg list-disc list-inside max-w-xl mx-auto text-left">
+  <ul class="list-disc list-inside max-w-xl mx-auto text-left">
     <li>Member of Pledge a Smile Foundation</li>
-    <li>Active member of National Service Scheme (NSS)</li>
-    <li>Engaged in several team-based and social initiatives</li>
+    <li>Active NSS Volunteer</li>
+    <li>Engaged in social initiatives</li>
   </ul>
 </section>
 
 <!-- Contact Section -->
 <section id="contact" class="scroll-mt-20 py-24 px-6 section-bg flex flex-col lg:flex-row items-center justify-center gap-10">
   <div class="w-full max-w-md">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0zf2UvmllbgZquXjVWZCl10VbCwvIXhX4CZJfzaJUnOWWoiXu" alt="Developer Contact Illustration" class="w-full h-auto rounded-lg shadow-md" />
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0zf2UvmllbgZquXjVWZCl10VbCwvIXhX4CZJfzaJUnOWWoiXu" alt="Contact Illustration" class="w-full h-auto rounded-lg shadow-md" />
   </div>
   <div class="w-full max-w-xl">
     <h2 class="text-4xl font-bold text-purple-700 dark:text-purple-400 mb-4">Send me a message!</h2>
-    <p class="mb-6 text-lg text-gray-700 dark:text-gray-300">Got a question or proposal, or just want to say hello? Go ahead.</p>
     <form class="space-y-4">
-      <input type="text" placeholder="Name" class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
-      <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
-      <textarea rows="4" placeholder="Message" class="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"></textarea>
-      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded">Submit</button>
+      <input type="text" placeholder="Name" class="w-full px-4 py-3 rounded border" />
+      <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded border" />
+      <textarea rows="4" placeholder="Message" class="w-full px-4 py-3 rounded border"></textarea>
+      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded">Submit</button>
     </form>
   </div>
 </section>
+    </main>
 
-<!-- Footer -->
-<footer class="text-center py-6 bg-white dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">
-  © 2025 Sanjana Gandepalli — All rights reserved.
-</footer>
+    <!-- Footer -->
+    <footer class="text-center py-6 bg-white dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">
+      © 2025 Sanjana Gandepalli — All rights reserved.
+    </footer>
 
-<!-- Theme Toggle Script -->
-<script>
-  // Typed Text
-  new Typed('#typed-text', {
-    strings: ['Frontend Developer', 'Designer', 'ReactJS Enthusiast'],
-    typeSpeed: 50,
-    backSpeed: 30,
-    backDelay: 1500,
-    loop: true
-  });
+    <!-- Scripts -->
+    <script>
+      // Typed Text
+      document.addEventListener('DOMContentLoaded', function () {
+        new Typed('#typed-text', {
+          strings: ['Frontend Developer', 'Designer', 'ReactJS Enthusiast'],
+          typeSpeed: 50,
+          backSpeed: 30,
+          backDelay: 1500,
+          loop: true
+        });
 
-  // Scroll Animations with GSAP
-  document.querySelectorAll('section').forEach(section => {
-    gsap.from(section, {
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 85%',
-      },
-      opacity: 0,
-      y: 60,
-      duration: 0.8,
-      ease: 'power2.out'
-    });
-  });
-  
-  // Theme toggle
-  document.getElementById('theme-toggle').addEventListener('click', () => {
-    document.documentElement.classList.toggle('dark');
-  });
-</script>
-</body>
+        // GSAP Scroll Animations
+        document.querySelectorAll('section').forEach(section => {
+          gsap.from(section, {
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 85%'
+            },
+            opacity: 0,
+            y: 60,
+            duration: 0.8,
+            ease: 'power2.out'
+          });
+        });
+
+        // tsParticles Initialization
+        tsParticles.load("tsparticles", {
+          background: { color: { value: "transparent" } },
+          fpsLimit: 60,
+          particles: {
+            number: { value: 60, density: { enable: true, area: 800 } },
+            color: { value: "#3b82f6" },
+            links: {
+              enable: true,
+              distance: 150,
+              color: "#3b82f6",
+              opacity: 0.4,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 2,
+              direction: "none",
+              outModes: { default: "bounce" }
+            },
+            opacity: { value: 0.5 },
+            shape: { type: "circle" },
+            size: { value: { min: 1, max: 4 } }
+          },
+          interactivity: {
+            events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+            modes: { repulse: { distance: 100, duration: 0.4 } }
+          },
+          detectRetina: true
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+          themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
