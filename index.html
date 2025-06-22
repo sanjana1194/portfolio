@@ -19,8 +19,21 @@
     <!-- Favicon -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" />
 
-    <!-- Smooth Scroll -->
+    <!-- Animated Gradient Background -->
     <style>
+      @keyframes gradient-x {
+        0%, 100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+      .animated-gradient {
+        background: linear-gradient(270deg, #06b6d4, #3b82f6, #9333ea, #06b6d4);
+        background-size: 600% 600%;
+        animation: gradient-x 15s ease infinite;
+      }
       html {
         scroll-behavior: smooth;
       }
@@ -28,28 +41,27 @@
   </head>
   <body class="bg-gray-100 text-gray-900 font-sans">
     <!-- Navbar -->
-    <header class="bg-white shadow-md p-4 text-center sticky top-0 z-50">
+    <header class="sticky top-0 bg-gray-900 text-white flex justify-between items-center px-8 py-4 z-50">
       <nav class="space-x-6 font-medium">
-        <a href="#about" class="text-blue-600 hover:underline">About</a>
-        <a href="#skills" class="text-blue-600 hover:underline">Skills</a>
-        <a href="#projects" class="text-blue-600 hover:underline">Projects</a>
-        <a href="#education" class="text-blue-600 hover:underline">Education</a>
-        <a href="#certifications" class="text-blue-600 hover:underline">Certifications</a>
-        <a href="#experience" class="text-blue-600 hover:underline">Experience</a>
-        <a href="#activities" class="text-blue-600 hover:underline">Activities</a>
-        <a href="#contact" class="text-blue-600 hover:underline">Contact</a>
+        <a href="#about" class="hover:text-green-400">About</a>
+        <a href="#skills" class="hover:text-green-400">Skills</a>
+        <a href="#projects" class="hover:text-green-400">Projects</a>
+        <a href="#education" class="hover:text-green-400">Education</a>
+        <a href="#certifications" class="hover:text-green-400">Certifications</a>
+        <a href="#experience" class="hover:text-green-400">Experience</a>
+        <a href="#activities" class="hover:text-green-400">Activities</a>
+        <a href="#contact" class="hover:text-green-400">Contact</a>
       </nav>
+      <a href="resume.pdf" download class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded">Download CV</a>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-white py-20 text-center">
-      <h1 class="text-4xl font-bold">Dorathi Sai Sanjana Gandepalli</h1>
-      <p class="mt-2 text-lg">Web Developer | Frontend Enthusiast</p>
-      <p class="mt-1">📧 gdssanjana@gmail.com | 📱 +91 8639149692</p>
-      <div class="mt-4 space-x-4">
-        <a href="https://github.com/sanjana1194" class="text-blue-600 hover:underline">GitHub</a>
-        <a href="https://linkedin.com/in/gandepalli-dorathi-sai-sanjana-661916251" class="text-blue-600 hover:underline">LinkedIn</a>
-        <a href="resume.pdf" download class="text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700">Download Resume</a>
+    <!-- Hero Section with Animated Background -->
+    <section class="relative h-screen flex items-center justify-center text-center text-white animated-gradient">
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="relative z-10 space-y-4">
+        <h1 class="text-5xl font-bold">Hello, I’m Sanjana</h1>
+        <p class="text-xl">Frontend Developer & Designer</p>
+        <a href="#projects" class="mt-4 inline-block bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 rounded">View My Work</a>
       </div>
     </section>
 
@@ -75,19 +87,19 @@
     <!-- Projects -->
     <section id="projects" class="py-10 px-6">
       <h2 class="text-2xl font-semibold">Projects</h2>
-      <div class="mt-4">
-        <h3 class="text-xl font-bold">Travel With Us</h3>
-        <p>
-          A trip-planning platform built with HTML, CSS, MongoDB, ReactJS, and JavaScript to streamline itinerary creation and provide real-time budget-based suggestions.
-        </p>
-        <a href="https://github.com/sanjana1194/travel-with-us" class="text-blue-500 hover:underline">View Project</a>
-      </div>
-      <div class="mt-4">
-        <h3 class="text-xl font-bold">Automatic Password Generator</h3>
-        <p>
-          A secure password generation tool using Python and Tkinter. Designed with a clean interface and strong algorithm to help users create robust passwords.
-        </p>
-        <a href="https://github.com/sanjana1194/automatic-password-generator" class="text-blue-500 hover:underline">View Project</a>
+      <div class="grid md:grid-cols-2 gap-8 mt-6">
+        <div class="relative group overflow-hidden rounded-lg shadow-lg">
+          <img src="project1.jpg" alt="Travel With Us" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <a href="https://github.com/sanjana1194/travel-with-us" class="bg-green-500 text-white px-4 py-2 rounded">View GitHub</a>
+          </div>
+        </div>
+        <div class="relative group overflow-hidden rounded-lg shadow-lg">
+          <img src="project2.jpg" alt="Password Generator" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <a href="https://github.com/sanjana1194/automatic-password-generator" class="bg-green-500 text-white px-4 py-2 rounded">View GitHub</a>
+          </div>
+        </div>
       </div>
     </section>
 
