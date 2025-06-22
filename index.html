@@ -4,33 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sanjana Gandepalli | Web Developer</title>
+
+    <!-- Tailwind CSS CDN -->
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Dorathi Sai Sanjana Gandepalli - Frontend Web Developer and Designer" />
+    <meta name="keywords" content="Frontend Developer, Web Developer, ReactJS, Sanjana Gandepalli, HTML CSS JavaScript Python" />
+    <meta name="author" content="Dorathi Sai Sanjana Gandepalli" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" />
+
+    <!-- Smooth Scroll -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
   <body class="bg-gray-100 text-gray-900 font-sans">
+    <!-- Navbar -->
+    <header class="bg-white shadow-md p-4 text-center sticky top-0 z-50">
+      <nav class="space-x-6 font-medium">
+        <a href="#about" class="text-blue-600 hover:underline">About</a>
+        <a href="#skills" class="text-blue-600 hover:underline">Skills</a>
+        <a href="#projects" class="text-blue-600 hover:underline">Projects</a>
+        <a href="#education" class="text-blue-600 hover:underline">Education</a>
+        <a href="#certifications" class="text-blue-600 hover:underline">Certifications</a>
+        <a href="#experience" class="text-blue-600 hover:underline">Experience</a>
+        <a href="#activities" class="text-blue-600 hover:underline">Activities</a>
+        <a href="#contact" class="text-blue-600 hover:underline">Contact</a>
+      </nav>
+    </header>
+
     <!-- Hero Section -->
     <section class="bg-white py-20 text-center">
       <h1 class="text-4xl font-bold">Dorathi Sai Sanjana Gandepalli</h1>
       <p class="mt-2 text-lg">Web Developer | Frontend Enthusiast</p>
       <p class="mt-1">📧 gdssanjana@gmail.com | 📱 +91 8639149692</p>
-      <div class="mt-4">
-        <a
-          href="https://github.com/sanjana1194"
-          class="text-blue-600 hover:underline"
-          >GitHub</a
-        > |
-        <a
-          href="https://linkedin.com/in/gandepalli-dorathi-sai-sanjana-661916251"
-          class="text-blue-600 hover:underline"
-          >LinkedIn</a
-        >
+      <div class="mt-4 space-x-4">
+        <a href="https://github.com/sanjana1194" class="text-blue-600 hover:underline">GitHub</a>
+        <a href="https://linkedin.com/in/gandepalli-dorathi-sai-sanjana-661916251" class="text-blue-600 hover:underline">LinkedIn</a>
+        <a href="resume.pdf" download class="text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700">Download Resume</a>
       </div>
     </section>
 
     <!-- About Section -->
-    <section class="py-10 px-6">
+    <section id="about" class="py-10 px-6">
       <h2 class="text-2xl font-semibold">About Me</h2>
       <p class="mt-2 max-w-2xl">
         Passionate Web Developer and Frontend Enthusiast with a strong foundation in HTML, CSS, JavaScript, ReactJS, and Python. My goal is to leverage my skills and expertise to contribute meaningfully to forward-thinking organizations.
@@ -38,7 +62,7 @@
     </section>
 
     <!-- Skills -->
-    <section class="py-10 px-6 bg-gray-50">
+    <section id="skills" class="py-10 px-6 bg-gray-50">
       <h2 class="text-2xl font-semibold">Skills</h2>
       <ul class="list-disc list-inside mt-2">
         <li>HTML, CSS, JavaScript, ReactJS</li>
@@ -49,24 +73,26 @@
     </section>
 
     <!-- Projects -->
-    <section class="py-10 px-6">
+    <section id="projects" class="py-10 px-6">
       <h2 class="text-2xl font-semibold">Projects</h2>
       <div class="mt-4">
         <h3 class="text-xl font-bold">Travel With Us</h3>
         <p>
           A trip-planning platform built with HTML, CSS, MongoDB, ReactJS, and JavaScript to streamline itinerary creation and provide real-time budget-based suggestions.
         </p>
+        <a href="https://github.com/sanjana1194/travel-with-us" class="text-blue-500 hover:underline">View Project</a>
       </div>
       <div class="mt-4">
         <h3 class="text-xl font-bold">Automatic Password Generator</h3>
         <p>
           A secure password generation tool using Python and Tkinter. Designed with a clean interface and strong algorithm to help users create robust passwords.
         </p>
+        <a href="https://github.com/sanjana1194/automatic-password-generator" class="text-blue-500 hover:underline">View Project</a>
       </div>
     </section>
 
     <!-- Education -->
-    <section class="py-10 px-6 bg-gray-50">
+    <section id="education" class="py-10 px-6 bg-gray-50">
       <h2 class="text-2xl font-semibold">Education</h2>
       <ul class="mt-2">
         <li><strong>VVIT, CSE</strong> — CGPA: 8.2 (Till June 2025)</li>
@@ -76,7 +102,7 @@
     </section>
 
     <!-- Certifications -->
-    <section class="py-10 px-6">
+    <section id="certifications" class="py-10 px-6">
       <h2 class="text-2xl font-semibold">Certifications</h2>
       <ul class="list-disc list-inside mt-2">
         <li>Salesforce Developer Virtual Internship – AICTE (Jan 2025)</li>
@@ -87,7 +113,7 @@
     </section>
 
     <!-- Experience -->
-    <section class="py-10 px-6 bg-gray-50">
+    <section id="experience" class="py-10 px-6 bg-gray-50">
       <h2 class="text-2xl font-semibold">Experience</h2>
       <p class="mt-2">
         <strong>Thinkpond Software – Design Internship (Nov 2024 – Jan 2025)</strong><br />
@@ -95,14 +121,21 @@
       </p>
     </section>
 
-    <!-- Extra Activities -->
-    <section class="py-10 px-6">
+    <!-- Extra-Curricular Activities -->
+    <section id="activities" class="py-10 px-6">
       <h2 class="text-2xl font-semibold">Extra-Curricular Activities</h2>
       <ul class="list-disc list-inside mt-2">
         <li>Member of Pledge a Smile Foundation</li>
         <li>Active member of National Service Scheme (NSS)</li>
         <li>Engaged in several team-based and social initiatives</li>
       </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-10 px-6 bg-gray-50">
+      <h2 class="text-2xl font-semibold">Contact Me</h2>
+      <p class="mt-2">Feel free to reach out for collaborations or questions.</p>
+      <p class="mt-1">📧 <a href="mailto:gdssanjana@gmail.com" class="text-blue-600 hover:underline">gdssanjana@gmail.com</a></p>
     </section>
 
     <!-- Footer -->
