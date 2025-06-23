@@ -1,55 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" class="transition-colors duration-500">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sanjana Gandepalli | Web Developer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjana Gandepalli | Web Developer</title>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yS4V1c4Es7vqNhlZb7d8fEZvO+zURbM58RhXUNqz7IijDIfCKbW2tOgm4mS9AftnAcOeQ1zFgdiuJm9Xa95Vsw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome CDN (Corrected for visibility) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-MW3WOdA+HDM2pDRv6cl5EG8KUm+30pEz3D9gL9kE0uAMuNS+9lKJZ4n9Vx59yb7K2GR2p+U9/JklwQJlW5t4ow=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Typed.js for Hero Text -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-    <!-- Typed.js for Hero Text -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.0/tsparticles.bundle.min.js"></script>
 
-    <!-- tsParticles -->
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.0/tsparticles.bundle.min.js"></script>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Dorathi Sai Sanjana Gandepalli - Frontend Web Developer and Designer" />
+  <meta name="keywords" content="Frontend Developer, Web Developer, ReactJS, Sanjana Gandepalli, HTML CSS JavaScript Python" />
+  <meta name="author" content="Dorathi Sai Sanjana Gandepalli" />
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Portfolio of Dorathi Sai Sanjana Gandepalli - Frontend Web Developer and Designer" />
-    <meta name="keywords" content="Frontend Developer, Web Developer, ReactJS, Sanjana Gandepalli, HTML CSS JavaScript Python" />
-    <meta name="author" content="Dorathi Sai Sanjana Gandepalli" />
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" />
+  <!-- Custom Styles -->
+  <style>
+    @keyframes gradient-x {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
 
-    <style>
-      @keyframes gradient-x {
-        0%, 100% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-      }
-      .animated-gradient {
-        background: linear-gradient(270deg, #06b6d4, #3b82f6, #9333ea, #06b6d4);
-        background-size: 600% 600%;
-        animation: gradient-x 15s ease infinite;
-      }
-      html { scroll-behavior: smooth; }
-      .section-bg {
-        background: linear-gradient(to right, #e0f7fa, #e1f5fe);
-      }
-      .dark .section-bg {
-        background: linear-gradient(to right, #1e293b, #0f172a);
-        color: #f8fafc;
-      }
-    </style>
-  </head>
+    .animated-gradient {
+      background: linear-gradient(270deg, #06b6d4, #3b82f6, #9333ea, #06b6d4);
+      background-size: 600% 600%;
+      animation: gradient-x 15s ease infinite;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .section-bg {
+      background: linear-gradient(to right, #e0f7fa, #e1f5fe);
+    }
+
+    .dark .section-bg {
+      background: linear-gradient(to right, #1e293b, #0f172a);
+      color: #f8fafc;
+    }
+  </style>
+</head>
   <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans text-center transition-colors duration-500">
     <div id="tsparticles" class="fixed inset-0 z-0"></div>
 
