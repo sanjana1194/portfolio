@@ -84,34 +84,34 @@
 
 <!-- Hero Section -->
 <!-- Hero Section -->
-<section class="relative h-screen flex items-center justify-center text-center text-white animated-gradient px-4">
+<section class="relative h-screen flex items-center justify-center text-center text-white animated-gradient">
+  <!-- Background overlay -->
   <div class="absolute inset-0 bg-black/40"></div>
-
-  <!-- Bottom-left Social Buttons -->
-  <div class="absolute bottom-8 left-6 flex flex-col gap-4 z-10">
-    <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"
-       class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-full shadow-md transform hover:scale-110 transition duration-300 ease-in-out text-sm">
-      LinkedIn
-    </a>
-    <a href="https://github.com/your-github-username" target="_blank"
-       class="bg-gray-800 hover:bg-black text-white font-semibold px-4 py-2 rounded-full shadow-md transform hover:scale-110 transition duration-300 ease-in-out text-sm">
-      GitHub
-    </a>
-  </div>
 
   <!-- Hero Content -->
   <div class="relative z-10 space-y-4">
     <h1 class="text-5xl font-bold">Hello, I’m <span class="text-green-300">Sanjana</span></h1>
     <p class="text-xl"><span id="typed-text"></span></p>
-    <p class="italic text-lg text-gray-300 max-w-xl mx-auto">
+    <p class="italic text-lg text-gray-300 max-w-xl">
       "I have been learning and developing my skills in web development for the past few months"
     </p>
-    <a href="#projects" class="mt-6 inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded">
+    <a href="#projects" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded">
       View My Work
     </a>
   </div>
 </section>
 
+<!-- Fixed Social Buttons (Right Edge Centered) -->
+<div class="fixed top-1/2 right-0 transform -translate-y-1/2 z-50 flex flex-col gap-4 pr-2">
+  <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"
+     class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-l-full shadow-md transform hover:scale-110 transition duration-300 ease-in-out text-sm flex items-center">
+    <i class="fab fa-linkedin mr-2"></i> LinkedIn
+  </a>
+  <a href="https://github.com/your-github-username" target="_blank"
+     class="bg-gray-800 hover:bg-black text-white font-semibold px-4 py-2 rounded-l-full shadow-md transform hover:scale-110 transition duration-300 ease-in-out text-sm flex items-center">
+    <i class="fab fa-github mr-2"></i> GitHub
+  </a>
+</div>
 
 <!-- About Section -->
 <section id="about" class="scroll-mt-20 py-24 px-6 section-bg relative overflow-hidden">
