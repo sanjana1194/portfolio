@@ -5,19 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sanjana Gandepalli | Web Developer</title>
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-
-  <!-- Font Awesome CDN (working version with icons support) -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  integrity="sha512-papm20W9U+K8O3HPE9tqMOLGHAXJw6HJhxuFf+egLFzXFlYX4BP9uVlv6PfOi5MfPU6vdIGFQ9ucsySpg57L3g=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-
+  <!-- Font Awesome (Fixed & Working) -->
+  <script src="https://kit.fontawesome.com/8c15a9fa6f.js" crossorigin="anonymous"></script>
 
   <!-- GSAP & ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -29,7 +21,7 @@
   <!-- tsParticles -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.0/tsparticles.bundle.min.js"></script>
 
-  <!-- SEO Meta Tags -->
+  <!-- Meta Tags -->
   <meta name="description" content="Portfolio of Dorathi Sai Sanjana Gandepalli - Frontend Web Developer and Designer" />
   <meta name="keywords" content="Frontend Developer, Web Developer, ReactJS, Sanjana Gandepalli, HTML CSS JavaScript Python" />
   <meta name="author" content="Dorathi Sai Sanjana Gandepalli" />
@@ -37,27 +29,27 @@
   <!-- Favicon -->
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" />
 
-  <!-- Custom Styles -->
+  <!-- Custom CSS -->
   <style>
     @keyframes gradient-x {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
     }
-
     .animated-gradient {
       background: linear-gradient(270deg, #06b6d4, #3b82f6, #9333ea, #06b6d4);
       background-size: 600% 600%;
       animation: gradient-x 15s ease infinite;
     }
-
     html {
       scroll-behavior: smooth;
     }
-
     .section-bg {
       background: linear-gradient(to right, #e0f7fa, #e1f5fe);
     }
-
     .dark .section-bg {
       background: linear-gradient(to right, #1e293b, #0f172a);
       color: #f8fafc;
