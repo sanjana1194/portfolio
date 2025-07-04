@@ -33,41 +33,29 @@
     <!-- Favicon -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" />
 
-    <!-- Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
+      @keyframes gradient-x {
+        0%, 100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+      .animated-gradient {
+        background: linear-gradient(270deg, #06b6d4, #3b82f6, #9333ea, #06b6d4);
+        background-size: 600% 600%;
+        animation: gradient-x 15s ease infinite;
+      }
       html {
         scroll-behavior: smooth;
-        font-family: 'Inter', sans-serif;
-      }
-      .glass {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(12px);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-      }
-      .neon-text {
-        color: #0ff;
-        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
-      }
-      .neon-btn {
-        box-shadow: 0 0 5px #14f195, 0 0 10px #14f195, 0 0 20px #14f195;
-      }
-      .typed-cursor {
-        color: #22c55e;
       }
       .section-bg {
         background: linear-gradient(to right, #e0f7fa, #e1f5fe);
       }
       .dark .section-bg {
-        background: linear-gradient(to right, #0f172a, #1e293b);
+        background: linear-gradient(to right, #1e293b, #0f172a);
         color: #f8fafc;
-      }
-      .hover-glow:hover {
-        box-shadow: 0 0 10px #9333ea, 0 0 20px #9333ea;
-        transform: scale(1.05);
-        transition: 0.3s ease;
       }
     </style>
   </head>
@@ -335,7 +323,8 @@
 </section>
     </main>
 
-    <footer class="text-center py-6 bg-white dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">
+    <!-- Footer -->
+     <footer class="text-center py-6 bg-white dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">
       © 2025 Sanjana Gandepalli — All rights reserved.
     </footer>
 
@@ -368,11 +357,11 @@
           fpsLimit: 60,
           particles: {
             number: { value: 60, density: { enable: true, area: 800 } },
-            color: { value: "#9333ea" },
+            color: { value: "#3b82f6" },
             links: {
               enable: true,
               distance: 150,
-              color: "#9333ea",
+              color: "#3b82f6",
               opacity: 0.4,
               width: 1
             },
