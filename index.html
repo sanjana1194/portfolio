@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,96 +16,450 @@
     referrerpolicy="no-referrer"
   />
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
   <!-- AOS Animate on Scroll -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-    /* Montserrat font for body */
+    html {
+      color-scheme: dark;
+    }
     body {
       font-family: 'Montserrat', sans-serif;
-      perspective: 1000px;
-      overflow-x: hidden;
-      background: #f9fafb;
-      position: relative;
+      background: #16141a;
+      color: #e2ddea;
+      line-height: 1.6;
       min-height: 100vh;
+      scroll-behavior: smooth;
+      position: relative;
+      overflow-x: hidden;
     }
-
-    /* 3D rotating cube container */
+    a {
+      color: #bb86fc;
+      transition: color 0.3s;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    a:hover,
+    a:focus {
+      color: #ffd6ff;
+      outline: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 0 4rem 0;
+      position: relative;
+      z-index: 1;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: #1a1623e6;
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 100;
+      box-shadow: 0 2px 16px 0 #22153d88;
+    }
+    nav .logo {
+      font-weight: 700;
+      font-size: 2rem;
+      color: #bb86fc;
+      letter-spacing: 2px;
+      user-select: none;
+      letter-spacing: 3px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+    nav ul li a {
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #e0bbff;
+      padding: 0.2rem 0;
+      position: relative;
+    }
+    nav ul li a::after {
+      content: "";
+      display: block;
+      height: 2.5px;
+      width: 0%;
+      background: #bb86fc;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      border-radius: 2px;
+    }
+    nav ul li a:hover::after,
+    nav ul li a:focus::after {
+      width: 100%;
+    }
+    header.hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 82vh;
+      text-align: center;
+      color: #ffe5fa;
+      position: relative;
+    }
+    header.hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      background: linear-gradient(90deg, #bb86fc, #ffd6ff, #9153e2, #bb86fc);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientText 6s ease-in-out infinite;
+      user-select: none;
+      letter-spacing: 2.5px;
+      text-shadow: 0 3px 16px #26073d55;
+    }
+    @keyframes gradientText {
+      0%,100% {background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+    }
+    header.hero p {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 1.7rem;
+      color: #ccbaf0;
+      max-width: 520px;
+    }
+    header.hero .highlight {
+      color: #e0bbff;
+      font-weight: 700;
+    }
+    header.hero .cta {
+      padding: 0.78rem 2.7rem;
+      border-radius: 32px;
+      background: #bb86fc;
+      color: #1a1623;
+      border: none;
+      font-weight: 700;
+      font-size: 1.08rem;
+      cursor: pointer;
+      box-shadow: 0 0 12px #bb86fc44;
+      transition: background 0.25s, color 0.2s;
+      margin-top: 1.7rem;
+      margin-bottom: 1.1rem;
+    }
+    header.hero .cta:hover,
+    header.hero .cta:focus {
+      background: #9555e4;
+      color: #fff;
+      outline: none;
+    }
+    h2.section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.9rem;
+      color: #e0bbff;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-top: 4rem;
+      user-select: none;
+      text-shadow: 0 2px 12px #26073d33;
+    }
+    /* About */
+    #about p,
+    #about strong {
+      font-size: 1.08rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto 1rem auto;
+      color: #cbb2eb;
+    }
+    #about strong {
+      color: #ffd6ff;
+    }
+    /* Skills Section */
+    #skills {
+      max-width: 740px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.1rem;
+      margin-top: 2rem;
+    }
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #bb86fc;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: default;
+      user-select: none;
+      transition: color 0.25s, transform 0.25s;
+    }
+    .skill-item i {
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
+      transition: transform 0.25s, color 0.25s;
+      color: #bb86fc;
+      text-shadow: 0 2px 10px #bb86fc22;
+    }
+    .skill-item:hover,
+    .skill-item:focus {
+      color: #ffd6ff;
+      transform: scale(1.13);
+      outline: none;
+    }
+    .skill-item:hover i,
+    .skill-item:focus i {
+      color: #ffd6ff;
+      transform: scale(1.23);
+    }
+    /* Projects Section */
+    #projects .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 2.2rem;
+      margin-top: 2rem;
+    }
+    .project-card {
+      background: #201d26cc;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 #7f6bbf24;
+      padding: 1.6rem 1.2rem 1.2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+      border: 1.5px solid #2e223c60;
+      position: relative;
+      z-index: 1;
+      min-height: 230px;
+    }
+    .project-card:hover,
+    .project-card:focus-within {
+      transform: translateY(-7px) scale(1.025);
+      box-shadow: 0 14px 32px 0 #bb86fc99;
+      outline: none;
+    }
+    .project-card h3 {
+      color: #bb86fc;
+      margin-bottom: 0.53rem;
+      font-weight: 700;
+    }
+    .project-card p {
+      color: #d8c0ef;
+      flex-grow: 1;
+      line-height: 1.56;
+      margin-bottom: 0.6rem;
+    }
+    .project-card a {
+      font-weight: 600;
+      color: #ffd6ff;
+      transition: color 0.22s;
+    }
+    .project-card a:hover,
+    .project-card a:focus {
+      color: #bb86fc;
+      outline: none;
+    }
+    /* Experience Section */
+    #experience .timeline {
+      position: relative;
+      padding-left: 2.1rem;
+      margin-top: 2rem;
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #experience .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background: #bb86fcdd;
+      border-radius: 3px;
+    }
+    .timeline-event {
+      position: relative;
+      margin-bottom: 2.4rem;
+      padding-left: 2.1rem;
+    }
+    .timeline-event::before {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: 11px;
+      height: 13px;
+      width: 13px;
+      border-radius: 50%;
+      background: #bb86fc;
+      box-shadow: 0 0 5px #d8c0ef77;
+      border: 3px solid #22122f;
+    }
+    .timeline-event h4 {
+      font-weight: 700;
+      color: #ffd6ff;
+      margin-bottom: 0.18rem;
+    }
+    .timeline-event span.date, 
+    .timeline-event time {
+      font-size: 0.98rem;
+      color: #b88dfc;
+      font-style: italic;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .timeline-event ul {
+      list-style-type: disc;
+      margin-left: 1.3rem;
+      color: #d6baf5;
+      font-size: 1.04rem;
+      line-height: 1.55;
+    }
+    /* Certifications Section */
+    #certifications {
+      max-width: 740px;
+      margin: 0 auto 4rem auto;
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    #certifications a {
+      color: #bb86fc;
+      font-weight: 600;
+      display: inline-block;
+      padding: 0.5rem 1.4rem;
+      border-radius: 28px;
+      background: #261e38bb;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 1px 12px #bb86fc22;
+      font-size: 1.06rem;
+      margin-right: 1rem;
+    }
+    #certifications a:hover,
+    #certifications a:focus {
+      background: #412f59cc;
+      color: #ffd6ff;
+      outline: none;
+    }
+    /* Extra-Curricular Section */
+    #extracurricular ul {
+      max-width: 720px;
+      margin: 0 auto;
+      padding-left: 1.2rem;
+      list-style-type: square;
+      color: #d1bdf9;
+      font-size: 1.08rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+    /* Footer */
+    footer {
+      background: #22122f;
+      color: #a794c4;
+      text-align: center;
+      padding: 1.3rem 0 1.7rem 0;
+      font-size: 1rm;
+      border-top: 1px solid #402d5490;
+      letter-spacing: 2px;
+    }
+    /* Responsive */
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      header.hero h1 {
+        font-size: 2.1rem;
+      }
+      .container, #skills {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      #skills {
+        gap: 1.1rem;
+      }
+      .skill-item i {
+        font-size: 2.18rem;
+      }
+    }
+    /* 3D Cube bg animation as before, adapted for dark mode */
     #cube-container {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 300px;
-      height: 300px;
+      position:fixed;
+      top: 50%; left: 50%;
+      width:380px; height:380px;
       transform-style: preserve-3d;
       transform-origin: center;
-      transform: translate(-50%, -50%) rotateX(-25deg) rotateY(25deg);
-      animation: rotateCube 20s linear infinite;
+      transform:translate(-50%,-50%) rotateX(-25deg) rotateY(25deg);
+      animation: rotateCube 19s linear infinite;
       z-index: 0;
       pointer-events: none;
-      opacity: 0.15;
+      opacity: 0.14;
       user-select: none;
+      filter:saturate(1.2) blur(1px);
     }
-
-    /* Cube */
     #cube {
-      position: relative;
-      width: 300px;
-      height: 300px;
+      position:relative; width:380px; height:380px;
       transform-style: preserve-3d;
-      animation: rotateCubeInner 40s linear infinite reverse;
-      filter: drop-shadow(0 0 10px rgba(144, 85, 162, 0.25));
-      border-radius: 20px;
+      animation: rotateCubeInner 38s linear infinite reverse;
+      filter:drop-shadow(0 0 17px #bb86fc44);
+      border-radius: 18px;
     }
-
-    /* Each face */
     .face {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: linear-gradient(135deg, #a78bfa, #c4b5fd);
-      border: 2px solid rgba(167, 139, 250, 0.5);
-      box-shadow:
-        inset 0 0 30px rgba(255, 255, 255, 0.3),
-        0 4px 15px rgba(167, 139, 250, 0.4);
-      border-radius: 20px;
-      backdrop-filter: blur(6px);
+      position:absolute; width:380px; height:380px;
+      background:linear-gradient(135deg,#351a54,#b388ec,#7235b7,#351a54);
+      opacity:0.5;
+      border: 2px solid rgba(187,134,252,0.2);
+      box-shadow:0 4px 22px #7f6bbf28, 0 0px 45px #bb86fc11;
+      border-radius:18px;
+      backdrop-filter:blur(3px);
     }
-
-    .face1 { transform: rotateY(0deg) translateZ(150px); }
-    .face2 { transform: rotateY(90deg) translateZ(150px); }
-    .face3 { transform: rotateY(180deg) translateZ(150px); }
-    .face4 { transform: rotateY(-90deg) translateZ(150px); }
-    .face5 { transform: rotateX(90deg) translateZ(150px); }
-    .face6 { transform: rotateX(-90deg) translateZ(150px); }
-
-    /* Animations */
+    .face1 {transform: rotateY(0deg) translateZ(190px);}
+    .face2 {transform: rotateY(90deg) translateZ(190px);}
+    .face3 {transform: rotateY(180deg) translateZ(190px);}
+    .face4 {transform: rotateY(-90deg) translateZ(190px);}
+    .face5 {transform: rotateX(90deg) translateZ(190px);}
+    .face6 {transform: rotateX(-90deg) translateZ(190px);}
     @keyframes rotateCube {
-      from { transform: translate(-50%, -50%) rotateX(-25deg) rotateY(0deg); }
-      to { transform: translate(-50%, -50%) rotateX(-25deg) rotateY(360deg); }
+      from {transform:translate(-50%,-50%) rotateX(-23deg) rotateY(0deg);}
+      to {transform:translate(-50%,-50%) rotateX(-23deg) rotateY(360deg);}
     }
     @keyframes rotateCubeInner {
-      from { transform: rotateX(0deg) rotateY(0deg); }
-      to { transform: rotateX(360deg) rotateY(360deg); }
+      from {transform:rotateX(0deg) rotateY(0deg);}
+      to {transform:rotateX(360deg) rotateY(360deg);}
     }
-
-    /* Overlay to dim cube behind content */
     #cube-overlay {
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(249,250,251,0.75), rgba(249,250,251,0.90));
-      z-index: 0;
-      pointer-events: none;
+      position:fixed;inset:0;
+      background:linear-gradient(180deg,#16141a85 0% ,#1b1422e0 60%);
+      z-index:0;
+      pointer-events:none;
     }
   </style>
 </head>
-<body class="relative">
-
-  <!-- 3D Cube Background Animation -->
-  <div id="cube-container" aria-hidden="true" aria-label="3D animated background decorative cube">
+<body>
+  <!-- 3D Cube Background -->
+  <div id="cube-container" aria-hidden="true">
     <div id="cube">
       <div class="face face1"></div>
       <div class="face face2"></div>
@@ -117,95 +471,147 @@
   </div>
   <div id="cube-overlay"></div>
 
-  <nav role="navigation" aria-label="Primary Navigation" class="sticky top-0 bg-white bg-opacity-90 backdrop-blur shadow-md z-50">
-    <div class="container mx-auto flex justify-between items-center px-6 py-4 relative z-10">
-      <div tabindex="0" class="font-bold text-2xl text-purple-700 tracking-widest select-none">SANJANA</div>
-      <ul class="flex gap-10 uppercase font-semibold text-gray-600">
-        <li><a href="#about" class="hover:text-purple-600 focus:text-purple-600 transition">About</a></li>
-        <li><a href="#skills" class="hover:text-purple-600 focus:text-purple-600 transition">Skills</a></li>
-        <li><a href="#projects" class="hover:text-purple-600 focus:text-purple-600 transition">Projects</a></li>
-        <li><a href="#experience" class="hover:text-purple-600 focus:text-purple-600 transition">Experience</a></li>
-        <li><a href="#certifications" class="hover:text-purple-600 focus:text-purple-600 transition">Certifications</a></li>
-        <li><a href="#extracurricular" class="hover:text-purple-600 focus:text-purple-600 transition">Extra-Curricular</a></li>
-        <li><a href="#contact" class="hover:text-purple-600 focus:text-purple-600 transition">Contact</a></li>
-      </ul>
-    </div>
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="logo" tabindex="0">SANJANA</div>
+    <ul>
+      <li><a href="#about" tabindex="0">About</a></li>
+      <li><a href="#skills" tabindex="0">Skills</a></li>
+      <li><a href="#projects" tabindex="0">Projects</a></li>
+      <li><a href="#experience" tabindex="0">Experience</a></li>
+      <li><a href="#certifications" tabindex="0">Certifications</a></li>
+      <li><a href="#extracurricular" tabindex="0">Extra-Curricular</a></li>
+      <li><a href="#contact" tabindex="0">Contact</a></li>
+    </ul>
   </nav>
 
-  <header class="hero min-h-[80vh] flex flex-col justify-center items-center text-center p-6 relative z-10" role="banner" aria-label="Introduction">
-    <h1
-      class="text-5xl md:text-6xl font-extrabold tracking-widest bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent animate-gradient-move select-none"
-    >
-      Hello, I’m <span>Sanjana</span>
-    </h1>
-    <p class="mt-4 max-w-xl text-lg md:text-xl text-gray-600">
+  <header class="hero" role="banner" aria-label="Introduction">
+    <h1 data-aos="fade-down">Hello, I’m <span class="highlight">Sanjana</span></h1>
+    <p data-aos="fade-up" data-aos-delay="200">
       Passionate about crafting responsive, user-focused websites and applications with a modern touch.
     </p>
-    <button
-      onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})"
-      aria-label="View my work section"
-      class="mt-8 px-8 py-3 rounded-full bg-purple-600 text-white font-semibold shadow-lg hover:bg-purple-700 focus:bg-purple-700 focus:ring-4 focus:ring-purple-300 transition"
-    >
-      View My Work
-    </button>
+    <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" aria-label="View my work section">View My Work</button>
   </header>
 
-  <main class="relative z-10">
-
-    <!-- Your content sections here (About, Skills, Projects, etc.) with the same structure as before -->
-
-    <section id="about" class="container mx-auto px-6 max-w-4xl" aria-label="About Me" data-aos="fade-up">
-      <h2 class="section-title text-3xl font-bold text-purple-700 uppercase tracking-widest text-center mb-10 select-none">About Me</h2>
-      <p class="text-gray-700 text-lg leading-relaxed mb-4">
-        I am a passionate Frontend Web Developer with a knack for creating visually compelling and user-friendly web experiences. With a strong foundation in <strong class="text-purple-700">HTML, CSS, JavaScript, ReactJS</strong>, and <strong class="text-purple-700">Python</strong>, I love transforming ideas into interactive digital realities.
+  <main>
+    <section id="about" class="container" aria-label="About Me" data-aos="fade-up">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        I am a passionate <strong>Frontend Web Developer</strong> who thrives on crafting visually stunning and highly usable web experiences. With a strong foundation in <strong>HTML, CSS, JavaScript, ReactJS</strong>, and <strong>Python</strong>, I love transforming ideas into interactive digital realities.
       </p>
-      <p class="text-gray-600 text-lg leading-relaxed">
-        I strive to contribute to forward-thinking teams where innovation meets usability. My goal is to build intuitive interfaces that empower users and enhance their journey through design and functionality.
+      <p>
+        I bring innovation and attention to usability to every project. My focus is on building intuitive interfaces that empower users and elevate the product journey through seamless design and thoughtful functionality.
       </p>
     </section>
-
-    <section id="skills" class="container mx-auto px-6 max-w-4xl mt-20" aria-label="Skills and Tech Stack" data-aos="fade-up">
-      <h2 class="section-title text-3xl font-bold text-purple-700 uppercase tracking-widest text-center mb-10 select-none">Skills &amp; Tech Stack</h2>
-      <div
-        role="list"
-        aria-label="Skill icons"
-        class="flex flex-wrap justify-center gap-12 text-purple-500"
-      >
-        <div role="listitem" tabindex="0" class="skill-item flex flex-col items-center cursor-default focus:outline-none hover:text-purple-700 transition-transform transform hover:scale-110">
-          <i class="fab fa-html5 text-6xl mb-2" aria-hidden="true" title="HTML5"></i>
-          <span class="text-lg font-semibold">HTML</span>
+    <section id="skills" class="container" aria-label="Skills and Tech Stack" data-aos="fade-up">
+      <h2 class="section-title">Skills &amp; Tech Stack</h2>
+      <div id="skills" aria-label="Skill icons" role="list">
+        <div class="skill-item" role="listitem" tabindex="0" aria-label="HTML skill">
+          <i class="fab fa-html5" aria-hidden="true" title="HTML5"></i>
+          HTML
         </div>
-
-        <div role="listitem" tabindex="0" class="skill-item flex flex-col items-center cursor-default focus:outline-none hover:text-purple-700 transition-transform transform hover:scale-110">
-          <i class="fab fa-css3-alt text-6xl mb-2" aria-hidden="true" title="CSS3"></i>
-          <span class="text-lg font-semibold">CSS</span>
+        <div class="skill-item" role="listitem" tabindex="0" aria-label="CSS skill">
+          <i class="fab fa-css3-alt" aria-hidden="true" title="CSS3"></i>
+          CSS
         </div>
-
-        <div role="listitem" tabindex="0" class="skill-item flex flex-col items-center cursor-default focus:outline-none hover:text-purple-700 transition-transform transform hover:scale-110">
-          <i class="fab fa-js-square text-6xl mb-2" aria-hidden="true" title="JavaScript"></i>
-          <span class="text-lg font-semibold">JavaScript</span>
+        <div class="skill-item" role="listitem" tabindex="0" aria-label="JavaScript skill">
+          <i class="fab fa-js-square" aria-hidden="true" title="JavaScript"></i>
+          JavaScript
         </div>
-
-        <div role="listitem" tabindex="0" class="skill-item flex flex-col items-center cursor-default focus:outline-none hover:text-purple-700 transition-transform transform hover:scale-110">
-          <i class="fab fa-react text-6xl mb-2" aria-hidden="true" title="ReactJS"></i>
-          <span class="text-lg font-semibold">ReactJS</span>
+        <div class="skill-item" role="listitem" tabindex="0" aria-label="ReactJS skill">
+          <i class="fab fa-react" aria-hidden="true" title="ReactJS"></i>
+          ReactJS
         </div>
-
-        <div role="listitem" tabindex="0" class="skill-item flex flex-col items-center cursor-default focus:outline-none hover:text-purple-700 transition-transform transform hover:scale-110">
-          <i class="fab fa-python text-6xl mb-2" aria-hidden="true" title="Python"></i>
-          <span class="text-lg font-semibold">Python</span>
+        <div class="skill-item" role="listitem" tabindex="0" aria-label="Python skill">
+          <i class="fab fa-python" aria-hidden="true" title="Python"></i>
+          Python
         </div>
       </div>
     </section>
-
-    <!-- Add other sections here as previously crafted -->
-
+    <section id="projects" class="container" aria-label="Projects" data-aos="fade-up">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-grid">
+        <article class="project-card" tabindex="0" aria-labelledby="proj1-title">
+          <h3 id="proj1-title">Travel With Us</h3>
+          <p>
+            Dynamic trip-planning web app built with HTML, CSS, JavaScript, ReactJS &amp; MongoDB.<br/>
+            Enables users to input preferences and budgets for tailored itineraries and recommendations.<br/>
+            Features Google Maps API integration and a responsive UI for a seamless cross-device experience.
+          </p>
+          <a href="#" aria-label="More about Travel With Us project">Learn More</a>
+        </article>
+        <article class="project-card" tabindex="0" aria-labelledby="proj2-title">
+          <h3 id="proj2-title">High-Fidelity Emotional Voice Conversion</h3>
+          <p>
+            Developed a deep learning model (Seq2Seq &amp; CycleGAN, ESD dataset) that converts neutral voices to emotionally expressive speech while preserving speaker identity/content.<br/>
+            Focused on exceptional speech synthesis clarity and real-time performance.
+          </p>
+          <a href="#" aria-label="More about Emotional Voice Conversion project">Learn More</a>
+        </article>
+      </div>
+    </section>
+    <section id="experience" class="container" aria-label="Experience and Education" data-aos="fade-up">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-event" tabindex="0">
+          <h4>Thinkpond Software – Design Internship</h4>
+          <span class="date">Nov 2024 – Jan 2025</span>
+          <ul>
+            <li>Completed a 12-week internship focused on UX design and real-world application of design thinking.</li>
+            <li>Conducted web scraping and automated collection of data from both structured and unstructured sources.</li>
+            <li>Cleaned/organized large datasets for analytics and SEO optimization.</li>
+            <li>Applied SEO tools to improve web page performance and visibility.</li>
+          </ul>
+        </div>
+      </div>
+      <h2 class="section-title" style="margin-top:4rem;">Education</h2>
+      <div class="timeline" aria-label="Education timeline">
+        <div class="timeline-event" tabindex="0">
+          <h4>Vasireddy Venkatadri Institute Of Technology, Guntur</h4>
+          <span class="date">B.Tech - Computer Science Engineering, CGPA: 8.2</span>
+        </div>
+        <div class="timeline-event" tabindex="0">
+          <h4>Sri Chaitanya Junior College, Vishakapatnam</h4>
+          <span class="date">Intermediate - MPC, 90.3%</span>
+        </div>
+        <div class="timeline-event" tabindex="0">
+          <h4>Sri Chaitanya Techno School, Narsipatnam</h4>
+          <span class="date">10th, 10 GPA</span>
+        </div>
+      </div>
+    </section>
+    <section id="certifications" class="container" aria-label="Certifications and Achievements" data-aos="fade-up">
+      <h2 class="section-title">Certifications</h2>
+      <a href="#" target="_blank" rel="noopener" aria-label="View Salesforce Developer Virtual Internship Certificate">Salesforce Developer Virtual Internship</a>
+      <a href="#" target="_blank" rel="noopener" aria-label="View Cybersecurity Internship Certificate from Vodafone(VOIS)">Cybersecurity Internship - Vodafone(VOIS)</a>
+      <a href="#" target="_blank" rel="noopener" aria-label="View Python PCEP Certification">Python PCEP Certification</a>
+      <a href="#" target="_blank" rel="noopener" aria-label="View Data Analytics Certificate from Vodafone(VOIS)">Data Analytics - Vodafone(VOIS)</a>
+    </section>
+    <section id="extracurricular" class="container" aria-label="Extra-curricular activities" data-aos="fade-up">
+      <h2 class="section-title">Extra-Curricular Activities</h2>
+      <ul>
+        <li><strong>Pledge a Smile Foundation:</strong> Organized awareness events and donation drives for underprivileged communities.</li>
+        <li><strong>National Service Scheme (NSS):</strong> Took part in plantation drives, blood donation camps, and rural education awareness campaigns.</li>
+        <li><strong>Team-Based Social Projects:</strong> Champion for women's hygiene, digital literacy, and school supply drives.</li>
+        <li><strong>Event Organization & Hosting:</strong> Managed and hosted tech fests, cultural events, and webinars, sharpening leadership and collaboration skills.</li>
+      </ul>
+    </section>
+    <section id="contact" class="container" aria-label="Contact Information" data-aos="fade-up">
+      <h2 class="section-title">Contact</h2>
+      <p style="text-align:center; font-size:1.13rem;">
+        Feel free to reach out via email or connect on my social links below!
+      </p>
+      <p style="text-align:center;">
+        <a href="mailto:sanjana@example.com" aria-label="Send Email to Sanjana" style="color:#ffd6ff; font-weight:700;">sanjana@example.com</a>
+      </p>
+      <p style="text-align:center; font-size:1.7rem; margin-top:1.2rem; letter-spacing: 10px;">
+        <a href="https://github.com/sanjana" target="_blank" rel="noopener" aria-label="GitHub Profile" style="margin: 0 1rem; color:#bb86fc;">🐙</a>
+        <a href="https://linkedin.com/in/sanjana" target="_blank" rel="noopener" aria-label="LinkedIn Profile" style="margin: 0 1rem; color:#bb86fc;">🔗</a>
+      </p>
+    </section>
   </main>
-
-  <footer role="contentinfo" class="bg-purple-100 text-purple-500 text-center py-6 select-none border-t border-purple-200 relative z-10">
+  <footer role="contentinfo">
     <p>&copy; 2025 Sanjana. All rights reserved.</p>
   </footer>
-
   <!-- AOS Animate on Scroll JS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
