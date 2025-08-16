@@ -8,6 +8,15 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 
+  <!-- FontAwesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papbM7u+hvLC6qv8BZvy7lA8E4Rt63Onny9vG5JdOWpl32mVH0Dj9mFlFwzF77RqeHsqlkwz5Fw5g4o47P9IUg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <!-- AOS Animate on Scroll -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
@@ -20,22 +29,21 @@
     }
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #0f2027;  /* fallback for old browsers */
-      background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
-      color: #e0e6f0;
+      background: #f5f6f7;  /* subtle light background */
+      color: #444950; /* soft dark text */
       line-height: 1.6;
       min-height: 100vh;
       scroll-behavior: smooth;
     }
     a {
-      color: #00ffcc;
+      color: #6c757d;
       transition: color 0.3s ease;
       text-decoration: none;
       cursor: pointer;
     }
     a:hover,
     a:focus {
-      color: #ff00cc;
+      color: #9055a2; /* subtle mauve */
       outline: none;
     }
     img {
@@ -56,19 +64,19 @@
     nav {
       position: sticky;
       top: 0;
-      background: rgba(15, 32, 39, 0.85);
+      background: #ffffffcc;
       backdrop-filter: saturate(180%) blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     nav .logo {
       font-weight: 700;
       font-size: 1.8rem;
-      color: #ff00cc;
+      color: #9055a2;
       letter-spacing: 2px;
       user-select: none;
     }
@@ -84,13 +92,14 @@
       letter-spacing: 1px;
       padding: 0.25rem 0;
       position: relative;
+      color: #5a5f66;
     }
     nav ul li a::after {
       content: "";
       display: block;
       height: 3px;
       width: 0%;
-      background: #ff00cc;
+      background: #9055a2;
       transition: width 0.3s ease;
       position: absolute;
       bottom: -6px;
@@ -111,56 +120,45 @@
       min-height: 80vh;
       text-align: center;
       padding: 0 1rem;
-      color: #ffffff;
+      color: #3e3f42;
     }
     header.hero h1 {
       font-size: 3.5rem;
       font-weight: 700;
       letter-spacing: 3px;
       margin-bottom: 0.3rem;
-      background: linear-gradient(45deg, #ff00cc, #00fff7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientText 5s ease infinite;
       user-select: none;
-    }
-    @keyframes gradientText {
-      0%, 100% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
+      color: #70577c; /* soft muted purple */
     }
     header.hero p {
       font-size: 1.3rem;
       font-weight: 400;
       margin-bottom: 2rem;
-      color: #d0f0ffcc;
+      color: #6c757d;
       max-width: 480px;
     }
     header.hero .highlight {
-      color: #ff00cc;
+      color: #9055a2;
       font-weight: 700;
     }
     header.hero .cta {
       padding: 0.75rem 2rem;
       border-radius: 30px;
-      background: #ff00cc;
+      background: #9055a2;
       color: white;
       border: none;
       font-weight: 700;
       font-size: 1.1rem;
       cursor: pointer;
-      box-shadow: 0 0 15px #ff00ccaa;
+      box-shadow: 0 0 10px #9055a2aa;
       transition: background 0.3s ease, box-shadow 0.3s ease;
     }
     header.hero .cta:hover,
     header.hero .cta:focus {
-      background: #00fff7;
-      box-shadow: 0 0 25px #00fff799;
+      background: #6f4a82;
+      box-shadow: 0 0 20px #6f4a82cc;
       outline: none;
-      color: #111;
+      color: #e1d7e7;
     }
 
     /* Section headings */
@@ -168,7 +166,7 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      color: #ff00cc;
+      color: #7e698a;
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 3px;
@@ -183,39 +181,48 @@
       line-height: 1.8;
       max-width: 700px;
       margin: 0 auto 1rem auto;
-      color: #ccd6f6;
+      color: #565656;
     }
     #about strong {
-      color: #ff00cc;
+      color: #70577c;
     }
 
     /* Skills Section */
     #skills {
       max-width: 700px;
       margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
     }
-    .skill-bar {
-      margin-bottom: 1.2rem;
-    }
-    .skill-bar span {
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #8c7aa9;
       font-weight: 600;
-      color: #ff00cc;
-      letter-spacing: 1px;
+      font-size: 1rem;
+      cursor: default;
+      user-select: none;
+      transition: color 0.3s ease;
     }
-    .bar-bg {
-      background: #222e3d;
-      border-radius: 12px;
-      overflow: hidden;
-      height: 16px;
-      margin-top: 0.3rem;
-      box-shadow: inset 0 2px 5px #111;
+    .skill-item i {
+      font-size: 3rem;
+      margin-bottom: 0.35rem;
+      transition: transform 0.3s ease;
+      color: #a398b3;
     }
-    .bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #ff00cc, #00fff7);
-      border-radius: 12px 0 0 12px;
-      width: 0;
-      transition: width 1.8s cubic-bezier(.4,0,.2,1);
+    .skill-item:hover,
+    .skill-item:focus {
+      color: #70577c;
+      outline: none;
+    }
+    .skill-item:hover i,
+    .skill-item:focus i {
+      transform: scale(1.2);
+      color: #70577c;
     }
 
     /* Projects Section */
@@ -226,41 +233,40 @@
       margin-top: 2rem;
     }
     .project-card {
-      background: rgba(15, 15, 25, 0.85);
+      background: #fff;
       border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(255, 0, 204, 0.3);
+      box-shadow: 0 4px 12px rgba(112, 87, 124, 0.15);
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
       transition: transform 0.3s ease;
       cursor: pointer;
-      backdrop-filter: blur(12px);
     }
     .project-card:hover,
     .project-card:focus-within {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(255, 0, 204, 0.6);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(112, 87, 124, 0.3);
       outline: none;
     }
     .project-card h3 {
-      color: #ff00cc;
+      color: #70577c;
       margin-bottom: 0.5rem;
       font-weight: 700;
     }
     .project-card p {
-      color: #cdd6f4dd;
+      color: #5a5a5a;
       flex-grow: 1;
       line-height: 1.5;
       margin-bottom: 1rem;
     }
     .project-card a {
       font-weight: 600;
-      color: #00fff7;
+      color: #8c7aa9;
       transition: color 0.3s ease;
     }
     .project-card a:hover,
     .project-card a:focus {
-      color: #ff00cc;
+      color: #70577c;
       outline: none;
     }
 
@@ -280,7 +286,7 @@
       top: 0;
       height: 100%;
       width: 3px;
-      background: linear-gradient(180deg, #ff00cc, #00fff7);
+      background: #bda0cb;
       border-radius: 3px;
     }
     .timeline-event {
@@ -296,18 +302,18 @@
       height: 14px;
       width: 14px;
       border-radius: 50%;
-      background: #ff00cc;
-      box-shadow: 0 0 8px #ff00ccaa;
-      border: 3px solid #0f2027;
+      background: #70577c;
+      box-shadow: 0 0 6px #b296caaa;
+      border: 3px solid #f5f6f7;
     }
     .timeline-event h4 {
       font-weight: 700;
-      color: #00fff7;
+      color: #7e698a;
       margin-bottom: 0.25rem;
     }
     .timeline-event span.date {
       font-size: 0.9rem;
-      color: #a0e9f8;
+      color: #a49fb9;
       font-style: italic;
       display: block;
       margin-bottom: 0.5rem;
@@ -315,7 +321,7 @@
     .timeline-event ul {
       list-style-type: disc;
       margin-left: 1.5rem;
-      color: #cdd6f4cc;
+      color: #6d6a7a;
       font-size: 1rem;
       line-height: 1.5;
     }
@@ -330,18 +336,19 @@
       gap: 1rem;
     }
     #certifications a {
-      color: #00fff7;
+      color: #8c7aa9;
       font-weight: 600;
       display: inline-block;
       padding: 0.5rem 1rem;
       border-radius: 30px;
-      background: rgba(255, 0, 204, 0.2);
+      background: #f3f1f6;
       transition: background 0.3s ease, color 0.3s ease;
+      box-shadow: 0 1px 5px rgba(112, 87, 124, 0.1);
     }
     #certifications a:hover,
     #certifications a:focus {
-      background: #ff00cc;
-      color: white;
+      background: #d6c4e7;
+      color: #70577c;
       outline: none;
     }
 
@@ -351,7 +358,7 @@
       margin: 0 auto;
       padding-left: 1.25rem;
       list-style-type: square;
-      color: #cdd6f4ee;
+      color: #6d6a7a;
       font-size: 1rem;
       line-height: 1.6;
       margin-top: 1rem;
@@ -359,12 +366,13 @@
 
     /* Footer */
     footer {
-      background: #111825;
-      color: #555b6e;
+      background: #f3f1f6;
+      color: #a49fb9;
       text-align: center;
       padding: 1.5rem 0 2rem 0;
       font-size: 0.9rem;
       user-select: none;
+      border-top: 1px solid #ddd6f2;
     }
 
     /* Responsive */
@@ -382,8 +390,13 @@
       .project-card {
         padding: 1rem;
       }
+      #skills {
+        gap: 1.3rem;
+      }
+      .skill-item i {
+        font-size: 2.5rem;
+      }
     }
-
   </style>
 </head>
 <body>
@@ -423,29 +436,31 @@
     <section id="skills" class="container" aria-label="Skills and Tech Stack" data-aos="fade-up">
       <h2 class="section-title">Skills &amp; Tech Stack</h2>
 
-      <div class="skill-bar" aria-label="HTML skill level: 90%">
-        <span>HTML</span>
-        <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
-      </div>
+      <div id="skills" aria-label="Skill icons" role="list">
+        <div class="skill-item" role="listitem" tabindex="0" aria-label="HTML skill">
+          <i class="fab fa-html5" aria-hidden="true" title="HTML5"></i>
+          HTML
+        </div>
 
-      <div class="skill-bar" aria-label="CSS skill level: 90%">
-        <span>CSS</span>
-        <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
-      </div>
+        <div class="skill-item" role="listitem" tabindex="0" aria-label="CSS skill">
+          <i class="fab fa-css3-alt" aria-hidden="true" title="CSS3"></i>
+          CSS
+        </div>
 
-      <div class="skill-bar" aria-label="JavaScript skill level: 85%">
-        <span>JavaScript</span>
-        <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
-      </div>
+        <div class="skill-item" role="listitem" tabindex="0" aria-label="JavaScript skill">
+          <i class="fab fa-js-square" aria-hidden="true" title="JavaScript"></i>
+          JavaScript
+        </div>
 
-      <div class="skill-bar" aria-label="ReactJS skill level: 85%">
-        <span>ReactJS</span>
-        <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
-      </div>
+        <div class="skill-item" role="listitem" tabindex="0" aria-label="ReactJS skill">
+          <i class="fab fa-react" aria-hidden="true" title="ReactJS"></i>
+          ReactJS
+        </div>
 
-      <div class="skill-bar" aria-label="Python skill level: 75%">
-        <span>Python</span>
-        <div class="bar-bg"><div class="bar-fill" style="width: 75%;"></div></div>
+        <div class="skill-item" role="listitem" tabindex="0" aria-label="Python skill">
+          <i class="fab fa-python" aria-hidden="true" title="Python"></i>
+          Python
+        </div>
       </div>
     </section>
 
@@ -531,11 +546,11 @@
         Feel free to reach out to me via email or connect on social media!
       </p>
       <p style="text-align:center;">
-        <a href="mailto:sanjana@example.com" aria-label="Send Email to Sanjana" style="color:#ff00cc; font-weight:700;">sanjana@example.com</a>
+        <a href="mailto:sanjana@example.com" aria-label="Send Email to Sanjana" style="color:#70577c; font-weight:700;">sanjana@example.com</a>
       </p>
       <p style="text-align:center; font-size:1.5rem; margin-top:1rem; letter-spacing: 10px;">
-        <a href="https://github.com/sanjana" target="_blank" rel="noopener" aria-label="GitHub Profile" style="margin: 0 1rem;">🐙</a>
-        <a href="https://linkedin.com/in/sanjana" target="_blank" rel="noopener" aria-label="LinkedIn Profile" style="margin: 0 1rem;">🔗</a>
+        <a href="https://github.com/sanjana" target="_blank" rel="noopener" aria-label="GitHub Profile" style="margin: 0 1rem; color:#70577c;">🐙</a>
+        <a href="https://linkedin.com/in/sanjana" target="_blank" rel="noopener" aria-label="LinkedIn Profile" style="margin: 0 1rem; color:#70577c;">🔗</a>
       </p>
     </section>
   </main>
@@ -551,18 +566,6 @@
       duration: 900,
       once: true,
       easing: 'ease-in-out',
-    });
-
-    // Animate skill bars after AOS triggers
-    window.addEventListener('load', () => {
-      const bars = document.querySelectorAll('.bar-fill');
-      bars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-          bar.style.width = width;
-        }, 300);
-      });
     });
   </script>
 </body>
