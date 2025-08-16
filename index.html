@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,6 +27,8 @@
     /* Use Montserrat font with Tailwind */
     body {
       font-family: 'Montserrat', sans-serif;
+      position: relative;
+      overflow-x: hidden;
     }
 
     /* Custom Tailwind keyframes and animation for gradient text */
@@ -50,12 +52,75 @@
       outline: 2px solid #a78bfa; /* Tailwind violet-400 */
       outline-offset: 2px;
     }
+
+    /* Background animation container */
+    #background-wrap {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      overflow: hidden;
+      background: #f9fafb; /* fallback to light */
+    }
+
+    /* Floating circles animation */
+    .bubble {
+      position: absolute;
+      bottom: -150px;
+      background: rgba(144, 85, 162, 0.15);
+      border-radius: 50%;
+      opacity: 0.7;
+      animation-name: floatUp;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    /* Different sizes */
+    .bubble.small { width: 40px; height: 40px; }
+    .bubble.medium { width: 70px; height: 70px; }
+    .bubble.large { width: 100px; height: 100px; }
+
+    /* Animations with different durations */
+    .bubble.d1 { animation-duration: 15s; }
+    .bubble.d2 { animation-duration: 20s; }
+    .bubble.d3 { animation-duration: 25s; }
+    .bubble.d4 { animation-duration: 18s; }
+    .bubble.d5 { animation-duration: 23s; }
+
+    /* Float animation */
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.7;
+      }
+      50% {
+        transform: translateY(-70vh) translateX(50px) scale(1.1);
+        opacity: 0.4;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(0) scale(1);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-700 scroll-smooth">
+<body class="bg-gray-50 text-gray-700 relative">
+
+  <!-- Background bubbles -->
+  <div id="background-wrap" aria-hidden="true">
+    <div class="bubble small d1" style="left:10vw; animation-delay: 0s;"></div>
+    <div class="bubble medium d3" style="left:30vw; animation-delay: 3s;"></div>
+    <div class="bubble small d2" style="left:50vw; animation-delay: 6s;"></div>
+    <div class="bubble large d4" style="left:70vw; animation-delay: 9s;"></div>
+    <div class="bubble medium d5" style="left:85vw; animation-delay: 12s;"></div>
+    <div class="bubble small d1" style="left:90vw; animation-delay: 15s;"></div>
+  </div>
 
   <nav role="navigation" aria-label="Primary Navigation" class="sticky top-0 bg-white bg-opacity-90 backdrop-blur shadow-md z-50">
-    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4 relative z-10">
       <div tabindex="0" class="font-bold text-2xl text-purple-700 tracking-widest select-none">SANJANA</div>
       <ul class="flex gap-10 uppercase font-semibold text-gray-600">
         <li><a href="#about" class="hover:text-purple-600 focus:text-purple-600 transition">About</a></li>
@@ -69,7 +134,7 @@
     </div>
   </nav>
 
-  <header class="hero min-h-[80vh] flex flex-col justify-center items-center text-center p-6" role="banner" aria-label="Introduction">
+  <header class="hero min-h-[80vh] flex flex-col justify-center items-center text-center p-6 relative z-10" role="banner" aria-label="Introduction">
     <h1
       data-aos="fade-down"
       class="text-5xl md:text-6xl font-extrabold tracking-widest bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent animate-gradient-move select-none"
@@ -90,7 +155,7 @@
     </button>
   </header>
 
-  <main>
+  <main class="relative z-10">
     <section id="about" class="container mx-auto px-6 max-w-4xl" aria-label="About Me" data-aos="fade-up">
       <h2 class="section-title text-3xl font-bold text-purple-700 uppercase tracking-widest text-center mb-10 select-none">About Me</h2>
       <p class="text-gray-700 text-lg leading-relaxed mb-4">
@@ -233,7 +298,7 @@
     </section>
   </main>
 
-  <footer role="contentinfo" class="bg-purple-100 text-purple-500 text-center py-6 select-none border-t border-purple-200">
+  <footer role="contentinfo" class="bg-purple-100 text-purple-500 text-center py-6 select-none border-t border-purple-200 relative z-10">
     <p>&copy; 2025 Sanjana. All rights reserved.</p>
   </footer>
 
