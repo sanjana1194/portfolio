@@ -17,486 +17,159 @@
     referrerpolicy="no-referrer"
   />
 
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <!-- AOS Animate on Scroll -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-    /* Reset and base */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* Use Montserrat font with Tailwind */
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #f5f6f7;  /* subtle light background */
-      color: #444950; /* soft dark text */
-      line-height: 1.6;
-      min-height: 100vh;
-      scroll-behavior: smooth;
-    }
-    a {
-      color: #6c757d;
-      transition: color 0.3s ease;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    a:hover,
-    a:focus {
-      color: #9055a2; /* subtle mauve */
-      outline: none;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
     }
 
-    /* Container */
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 2rem 0 4rem 0;
-    }
-
-    /* Navigation */
-    nav {
-      position: sticky;
-      top: 0;
-      background: #ffffffcc;
-      backdrop-filter: saturate(180%) blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    nav .logo {
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: #9055a2;
-      letter-spacing: 2px;
-      user-select: none;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-    nav ul li a {
-      font-weight: 600;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 0.25rem 0;
-      position: relative;
-      color: #5a5f66;
-    }
-    nav ul li a::after {
-      content: "";
-      display: block;
-      height: 3px;
-      width: 0%;
-      background: #9055a2;
-      transition: width 0.3s ease;
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      border-radius: 2px;
-    }
-    nav ul li a:hover::after,
-    nav ul li a:focus::after {
-      width: 100%;
-    }
-
-    /* Hero Section */
-    header.hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 80vh;
-      text-align: center;
-      padding: 0 1rem;
-      color: #3e3f42;
-    }
-    header.hero h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      margin-bottom: 0.3rem;
-      user-select: none;
-      color: #70577c; /* soft muted purple */
-    }
-    header.hero p {
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 2rem;
-      color: #6c757d;
-      max-width: 480px;
-    }
-    header.hero .highlight {
-      color: #9055a2;
-      font-weight: 700;
-    }
-    header.hero .cta {
-      padding: 0.75rem 2rem;
-      border-radius: 30px;
-      background: #9055a2;
-      color: white;
-      border: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-      cursor: pointer;
-      box-shadow: 0 0 10px #9055a2aa;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-    header.hero .cta:hover,
-    header.hero .cta:focus {
-      background: #6f4a82;
-      box-shadow: 0 0 20px #6f4a82cc;
-      outline: none;
-      color: #e1d7e7;
-    }
-
-    /* Section headings */
-    h2.section-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #7e698a;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-top: 4rem;
-      user-select: none;
-    }
-
-    /* About Section */
-    #about p,
-    #about strong {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      max-width: 700px;
-      margin: 0 auto 1rem auto;
-      color: #565656;
-    }
-    #about strong {
-      color: #70577c;
-    }
-
-    /* Skills Section */
-    #skills {
-      max-width: 700px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .skill-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: #8c7aa9;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: default;
-      user-select: none;
-      transition: color 0.3s ease;
-    }
-    .skill-item i {
-      font-size: 3rem;
-      margin-bottom: 0.35rem;
-      transition: transform 0.3s ease;
-      color: #a398b3;
-    }
-    .skill-item:hover,
-    .skill-item:focus {
-      color: #70577c;
-      outline: none;
-    }
-    .skill-item:hover i,
-    .skill-item:focus i {
-      transform: scale(1.2);
-      color: #70577c;
-    }
-
-    /* Projects Section */
-    #projects .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .project-card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(112, 87, 124, 0.15);
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .project-card:hover,
-    .project-card:focus-within {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 24px rgba(112, 87, 124, 0.3);
-      outline: none;
-    }
-    .project-card h3 {
-      color: #70577c;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-    .project-card p {
-      color: #5a5a5a;
-      flex-grow: 1;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-    .project-card a {
-      font-weight: 600;
-      color: #8c7aa9;
-      transition: color 0.3s ease;
-    }
-    .project-card a:hover,
-    .project-card a:focus {
-      color: #70577c;
-      outline: none;
-    }
-
-    /* Experience Section */
-    #experience .timeline {
-      position: relative;
-      padding-left: 2rem;
-      margin-top: 2rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #experience .timeline::before {
-      content: '';
-      position: absolute;
-      left: 15px;
-      top: 0;
-      height: 100%;
-      width: 3px;
-      background: #bda0cb;
-      border-radius: 3px;
-    }
-    .timeline-event {
-      position: relative;
-      margin-bottom: 2rem;
-      padding-left: 2rem;
-    }
-    .timeline-event::before {
-      content: '';
-      position: absolute;
-      left: 6px;
-      top: 8px;
-      height: 14px;
-      width: 14px;
-      border-radius: 50%;
-      background: #70577c;
-      box-shadow: 0 0 6px #b296caaa;
-      border: 3px solid #f5f6f7;
-    }
-    .timeline-event h4 {
-      font-weight: 700;
-      color: #7e698a;
-      margin-bottom: 0.25rem;
-    }
-    .timeline-event span.date {
-      font-size: 0.9rem;
-      color: #a49fb9;
-      font-style: italic;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-    .timeline-event ul {
-      list-style-type: disc;
-      margin-left: 1.5rem;
-      color: #6d6a7a;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    /* Certifications Section */
-    #certifications {
-      max-width: 700px;
-      margin: 0 auto 4rem auto;
-      padding-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    #certifications a {
-      color: #8c7aa9;
-      font-weight: 600;
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      background: #f3f1f6;
-      transition: background 0.3s ease, color 0.3s ease;
-      box-shadow: 0 1px 5px rgba(112, 87, 124, 0.1);
-    }
-    #certifications a:hover,
-    #certifications a:focus {
-      background: #d6c4e7;
-      color: #70577c;
-      outline: none;
-    }
-
-    /* Extra-Curricular Section */
-    #extracurricular ul {
-      max-width: 700px;
-      margin: 0 auto;
-      padding-left: 1.25rem;
-      list-style-type: square;
-      color: #6d6a7a;
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-top: 1rem;
-    }
-
-    /* Footer */
-    footer {
-      background: #f3f1f6;
-      color: #a49fb9;
-      text-align: center;
-      padding: 1.5rem 0 2rem 0;
-      font-size: 0.9rem;
-      user-select: none;
-      border-top: 1px solid #ddd6f2;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav ul {
-        gap: 1rem;
-        font-size: 0.95rem;
+    /* Custom Tailwind keyframes and animation for gradient text */
+    @layer utilities {
+      @keyframes gradient-move {
+        0%, 100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
       }
-      header.hero h1 {
-        font-size: 2.6rem;
+      .animate-gradient-move {
+        background-size: 200% 200%;
+        animation: gradient-move 4s ease infinite;
       }
-      header.hero p {
-        font-size: 1rem;
-      }
-      .project-card {
-        padding: 1rem;
-      }
-      #skills {
-        gap: 1.3rem;
-      }
-      .skill-item i {
-        font-size: 2.5rem;
-      }
+    }
+
+    /* Focus outline for accessibility */
+    :focus-visible {
+      outline: 2px solid #a78bfa; /* Tailwind violet-400 */
+      outline-offset: 2px;
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-700 scroll-smooth">
 
-  <nav role="navigation" aria-label="Primary Navigation">
-    <div class="logo" tabindex="0">SANJANA</div>
-    <ul>
-      <li><a href="#about" tabindex="0">About</a></li>
-      <li><a href="#skills" tabindex="0">Skills</a></li>
-      <li><a href="#projects" tabindex="0">Projects</a></li>
-      <li><a href="#experience" tabindex="0">Experience</a></li>
-      <li><a href="#certifications" tabindex="0">Certifications</a></li>
-      <li><a href="#extracurricular" tabindex="0">Extra-Curricular</a></li>
-      <li><a href="#contact" tabindex="0">Contact</a></li>
-    </ul>
+  <nav role="navigation" aria-label="Primary Navigation" class="sticky top-0 bg-white bg-opacity-90 backdrop-blur shadow-md z-50">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+      <div tabindex="0" class="font-bold text-2xl text-purple-700 tracking-widest select-none">SANJANA</div>
+      <ul class="flex gap-10 uppercase font-semibold text-gray-600">
+        <li><a href="#about" class="hover:text-purple-600 focus:text-purple-600 transition">About</a></li>
+        <li><a href="#skills" class="hover:text-purple-600 focus:text-purple-600 transition">Skills</a></li>
+        <li><a href="#projects" class="hover:text-purple-600 focus:text-purple-600 transition">Projects</a></li>
+        <li><a href="#experience" class="hover:text-purple-600 focus:text-purple-600 transition">Experience</a></li>
+        <li><a href="#certifications" class="hover:text-purple-600 focus:text-purple-600 transition">Certifications</a></li>
+        <li><a href="#extracurricular" class="hover:text-purple-600 focus:text-purple-600 transition">Extra-Curricular</a></li>
+        <li><a href="#contact" class="hover:text-purple-600 focus:text-purple-600 transition">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <header class="hero" role="banner" aria-label="Introduction">
-    <h1 data-aos="fade-down">Hello, I’m <span class="highlight">Sanjana</span></h1>
-    <p data-aos="fade-up" data-aos-delay="200">
+  <header class="hero min-h-[80vh] flex flex-col justify-center items-center text-center p-6" role="banner" aria-label="Introduction">
+    <h1
+      data-aos="fade-down"
+      class="text-5xl md:text-6xl font-extrabold tracking-widest bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent animate-gradient-move select-none"
+    >
+      Hello, I’m <span class="">Sanjana</span>
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="200" class="mt-4 max-w-xl text-lg md:text-xl text-gray-600">
       Passionate about crafting responsive, user-focused websites and applications with a modern touch.
     </p>
-    <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" aria-label="View my work section">View My Work</button>
+    <button
+      onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})"
+      aria-label="View my work section"
+      class="mt-8 px-8 py-3 rounded-full bg-purple-600 text-white font-semibold shadow-lg hover:bg-purple-700 focus:bg-purple-700 focus:ring-4 focus:ring-purple-300 transition"
+      data-aos="zoom-in"
+      data-aos-delay="300"
+    >
+      View My Work
+    </button>
   </header>
 
   <main>
-    <section id="about" class="container" aria-label="About Me" data-aos="fade-up">
-      <h2 class="section-title">About Me</h2>
-      <p>
-        I am a passionate Frontend Web Developer with a knack for creating visually compelling and user-friendly web experiences. With a strong foundation in <strong>HTML, CSS, JavaScript, ReactJS</strong>, and <strong>Python</strong>, I love transforming ideas into interactive digital realities.
+    <section id="about" class="container mx-auto px-6 max-w-4xl" aria-label="About Me" data-aos="fade-up">
+      <h2 class="section-title text-3xl font-bold text-purple-700 uppercase tracking-widest text-center mb-10 select-none">About Me</h2>
+      <p class="text-gray-700 text-lg leading-relaxed mb-4">
+        I am a passionate Frontend Web Developer with a knack for creating visually compelling and user-friendly web experiences. With a strong foundation in <strong class="text-purple-700">HTML, CSS, JavaScript, ReactJS</strong>, and <strong class="text-purple-700">Python</strong>, I love transforming ideas into interactive digital realities.
       </p>
-      <p>
+      <p class="text-gray-600 text-lg leading-relaxed">
         I strive to contribute to forward-thinking teams where innovation meets usability. My goal is to build intuitive interfaces that empower users and enhance their journey through design and functionality.
       </p>
     </section>
 
-    <section id="skills" class="container" aria-label="Skills and Tech Stack" data-aos="fade-up">
-      <h2 class="section-title">Skills &amp; Tech Stack</h2>
-
-      <div id="skills" aria-label="Skill icons" role="list">
-        <div class="skill-item" role="listitem" tabindex="0" aria-label="HTML skill">
-          <i class="fab fa-html5" aria-hidden="true" title="HTML5"></i>
-          HTML
+    <section id="skills" class="container mx-auto px-6 max-w-4xl mt-20" aria-label="Skills and Tech Stack" data-aos="fade-up">
+      <h2 class="section-title text-3xl font-bold text-purple-700 uppercase tracking-widest text-center mb-10 select-none">Skills &amp; Tech Stack</h2>
+      <div
+        role="list"
+        aria-label="Skill icons"
+        class="flex flex-wrap justify-center gap-12 text-purple-500"
+      >
+        <div role="listitem" tabindex="0" class="skill-item flex flex-col items-center cursor-default focus:outline-none hover:text-purple-700 transition-transform transform hover:scale-110">
+          <i class="fab fa-html5 text-6xl mb-2" aria-hidden="true" title="HTML5"></i>
+          <span class="text-lg font-semibold">HTML</span>
         </div>
 
-        <div class="skill-item" role="listitem" tabindex="0" aria-label="CSS skill">
-          <i class="fab fa-css3-alt" aria-hidden="true" title="CSS3"></i>
-          CSS
+        <div role="listitem" tabindex="0" class="skill-item flex flex-col items-center cursor-default focus:outline-none hover:text-purple-700 transition-transform transform hover:scale-110">
+          <i class="fab fa-css3-alt text-6xl mb-2" aria-hidden="true" title="CSS3"></i>
+          <span class="text-lg font-semibold">CSS</span>
         </div>
 
-        <div class="skill-item" role="listitem" tabindex="0" aria-label="JavaScript skill">
-          <i class="fab fa-js-square" aria-hidden="true" title="JavaScript"></i>
-          JavaScript
+        <div role="listitem" tabindex="0" class="skill-item flex flex-col items-center cursor-default focus:outline-none hover:text-purple-700 transition-transform transform hover:scale-110">
+          <i class="fab fa-js-square text-6xl mb-2" aria-hidden="true" title="JavaScript"></i>
+          <span class="text-lg font-semibold">JavaScript</span>
         </div>
 
-        <div class="skill-item" role="listitem" tabindex="0" aria-label="ReactJS skill">
-          <i class="fab fa-react" aria-hidden="true" title="ReactJS"></i>
-          ReactJS
+        <div role="listitem" tabindex="0" class="skill-item flex flex-col items-center cursor-default focus:outline-none hover:text-purple-700 transition-transform transform hover:scale-110">
+          <i class="fab fa-react text-6xl mb-2" aria-hidden="true" title="ReactJS"></i>
+          <span class="text-lg font-semibold">ReactJS</span>
         </div>
 
-        <div class="skill-item" role="listitem" tabindex="0" aria-label="Python skill">
-          <i class="fab fa-python" aria-hidden="true" title="Python"></i>
-          Python
+        <div role="listitem" tabindex="0" class="skill-item flex flex-col items-center cursor-default focus:outline-none hover:text-purple-700 transition-transform transform hover:scale-110">
+          <i class="fab fa-python text-6xl mb-2" aria-hidden="true" title="Python"></i>
+          <span class="text-lg font-semibold">Python</span>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="container" aria-label="Projects" data-aos="fade-up">
-      <h2 class="section-title">Projects</h2>
+    <section id="projects" class="container mx-auto px-6 max-w-4xl mt-20" aria-label="Projects" data-aos="fade-up">
+      <h2 class="section-title text-3xl font-bold text-purple-700 uppercase tracking-widest text-center mb-10 select-none">
+        Projects
+      </h2>
 
-      <div class="project-grid">
-
-        <article class="project-card" tabindex="0" aria-labelledby="proj1-title">
-          <h3 id="proj1-title">Travel With Us</h3>
-          <p>
-            Developed a dynamic trip-planning web application using HTML, CSS, JavaScript, ReactJS, and MongoDB. The platform allows users to input preferences and budgets to receive tailored travel itineraries and recommendations.
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+        <article tabindex="0" aria-labelledby="proj1-title" class="bg-white rounded-xl shadow-md p-6 transition-transform transform hover:-translate-y-2 focus:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-purple-300">
+          <h3 id="proj1-title" class="text-purple-700 font-semibold mb-3">Travel With Us</h3>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            Developed a dynamic trip-planning web application using HTML, CSS, JavaScript, ReactJS, and MongoDB.
+            The platform allows users to input preferences and budgets to receive tailored travel itineraries and recommendations.
             Integrated Google Maps API for geolocation-based services and ensured a responsive UI for seamless cross-device usage.
           </p>
-          <a href="#" aria-label="More about Travel With Us project">Learn More</a>
+          <a href="#" class="text-purple-600 font-semibold hover:text-purple-800 focus:text-purple-800 focus:outline-none transition" aria-label="More about Travel With Us project">Learn More</a>
         </article>
 
-        <article class="project-card" tabindex="0" aria-labelledby="proj2-title">
-          <h3 id="proj2-title">High-Fidelity Emotional Voice Conversion</h3>
-          <p>
-            Implemented a deep learning model using Sequence-to-Sequence and CycleGAN approaches on the ESD dataset to convert neutral voices into emotionally expressive speech while preserving speaker identity and content. Focused on speech synthesis quality and real-time inference efficiency.
+        <article tabindex="0" aria-labelledby="proj2-title" class="bg-white rounded-xl shadow-md p-6 transition-transform transform hover:-translate-y-2 focus:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-purple-300">
+          <h3 id="proj2-title" class="text-purple-700 font-semibold mb-3">High-Fidelity Emotional Voice Conversion</h3>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            Implemented a deep learning model using Sequence-to-Sequence and CycleGAN approaches on the ESD dataset to convert neutral voices into emotionally expressive speech while preserving speaker identity and content.
+            Focused on speech synthesis quality and real-time inference efficiency.
           </p>
-          <a href="#" aria-label="More about Emotional Voice Conversion project">Learn More</a>
+          <a href="#" class="text-purple-600 font-semibold hover:text-purple-800 focus:text-purple-800 focus:outline-none transition" aria-label="More about Emotional Voice Conversion project">Learn More</a>
         </article>
-
       </div>
     </section>
 
-    <section id="experience" class="container" aria-label="Experience and Education" data-aos="fade-up">
-      <h2 class="section-title">Experience</h2>
-
-      <div class="timeline">
-        <div class="timeline-event" tabindex="0">
-          <h4>Thinkpond Software – Design Internship</h4>
-          <span class="date">Nov 2024 – Jan 2025</span>
-          <ul>
+    <section id="experience" class="container mx-auto px-6 max-w-4xl mt-20" aria-label="Experience and Education" data-aos="fade-up">
+      <h2 class="section-title text-3xl font-bold text-purple-700 uppercase tracking-widest text-center mb-10 select-none">Experience</h2>
+      <div class="relative border-l-4 border-purple-300 ml-6 space-y-8">
+        <div tabindex="0" class="pl-8 relative" aria-label="Thinkpond Software Design Internship Nov 2024 to Jan 2025">
+          <div class="absolute left-0 top-2 w-4 h-4 rounded-full bg-purple-600 ring-4 ring-purple-50"></div>
+          <h4 class="text-purple-700 font-semibold text-xl mb-1">Thinkpond Software – Design Internship</h4>
+          <time class="block mb-3 text-sm text-purple-400 italic">Nov 2024 – Jan 2025</time>
+          <ul class="text-gray-600 list-disc list-inside space-y-1">
             <li>Completed a 12-week internship with a focus on UX design and real-time application of design thinking principles.</li>
             <li>Performed web scraping and automated data collection from structured and unstructured sources.</li>
             <li>Cleaned and organized large datasets to prepare them for analytics and SEO optimization.</li>
@@ -505,34 +178,39 @@
         </div>
       </div>
 
-      <h2 class="section-title" style="margin-top:4rem;">Education</h2>
-      <div class="timeline" aria-label="Education timeline">
-        <div class="timeline-event" tabindex="0">
-          <h4>Vasireddy Venkatadri Institute Of Technology, Guntur</h4>
-          <span class="date">B.Tech - Computer Science Engineering, CGPA: 8.2</span>
+      <h2 class="section-title text-3xl font-bold text-purple-700 uppercase tracking-widest text-center my-16 select-none">Education</h2>
+      <div class="relative border-l-4 border-purple-300 ml-6 space-y-8">
+        <div tabindex="0" class="pl-8 relative" aria-label="Vasireddy Venkatadri Institute Of Technology B.Tech">
+          <div class="absolute left-0 top-2 w-4 h-4 rounded-full bg-purple-600 ring-4 ring-purple-50"></div>
+          <h4 class="text-purple-700 font-semibold text-xl mb-1">Vasireddy Venkatadri Institute Of Technology, Guntur</h4>
+          <time class="block mb-3 text-sm text-purple-400 italic">B.Tech - Computer Science Engineering, CGPA: 8.2</time>
         </div>
-        <div class="timeline-event" tabindex="0">
-          <h4>Sri Chaitanya Junior College, Vishakapatnam</h4>
-          <span class="date">Intermediate - MPC, 90.3%</span>
+        <div tabindex="0" class="pl-8 relative" aria-label="Sri Chaitanya Junior College Intermediate MPC">
+          <div class="absolute left-0 top-2 w-4 h-4 rounded-full bg-purple-600 ring-4 ring-purple-50"></div>
+          <h4 class="text-purple-700 font-semibold text-xl mb-1">Sri Chaitanya Junior College, Vishakapatnam</h4>
+          <time class="block mb-3 text-sm text-purple-400 italic">Intermediate - MPC, 90.3%</time>
         </div>
-        <div class="timeline-event" tabindex="0">
-          <h4>Sri Chaitanya Techno School, Narsipatnam</h4>
-          <span class="date">10th, 10 GPA</span>
+        <div tabindex="0" class="pl-8 relative" aria-label="Sri Chaitanya Techno School 10th">
+          <div class="absolute left-0 top-2 w-4 h-4 rounded-full bg-purple-600 ring-4 ring-purple-50"></div>
+          <h4 class="text-purple-700 font-semibold text-xl mb-1">Sri Chaitanya Techno School, Narsipatnam</h4>
+          <time class="block mb-3 text-sm text-purple-400 italic">10th, 10 GPA</time>
         </div>
       </div>
     </section>
 
-    <section id="certifications" class="container" aria-label="Certifications and Achievements" data-aos="fade-up">
-      <h2 class="section-title">Certifications</h2>
-      <a href="#" target="_blank" rel="noopener" aria-label="View Salesforce Developer Virtual Internship Certificate">Salesforce Developer Virtual Internship</a>
-      <a href="#" target="_blank" rel="noopener" aria-label="View Cybersecurity Internship Certificate from Vodafone(VOIS)">Cybersecurity Internship - Vodafone(VOIS)</a>
-      <a href="#" target="_blank" rel="noopener" aria-label="View Python PCEP Certification">Python PCEP Certification</a>
-      <a href="#" target="_blank" rel="noopener" aria-label="View Data Analytics Certificate from Vodafone(VOIS)">Data Analytics - Vodafone(VOIS)</a>
+    <section id="certifications" class="container mx-auto px-6 max-w-4xl mt-20" aria-label="Certifications and Achievements" data-aos="fade-up">
+      <h2 class="section-title text-3xl font-bold text-purple-700 uppercase tracking-widest text-center mb-10 select-none">Certifications</h2>
+      <div class="flex flex-col gap-4 max-w-md mx-auto">
+        <a href="#" target="_blank" rel="noopener" aria-label="View Salesforce Developer Virtual Internship Certificate" class="px-6 py-3 rounded-full bg-purple-100 text-purple-700 font-semibold hover:bg-purple-200 transition">Salesforce Developer Virtual Internship</a>
+        <a href="#" target="_blank" rel="noopener" aria-label="View Cybersecurity Internship Certificate from Vodafone(VOIS)" class="px-6 py-3 rounded-full bg-purple-100 text-purple-700 font-semibold hover:bg-purple-200 transition">Cybersecurity Internship - Vodafone(VOIS)</a>
+        <a href="#" target="_blank" rel="noopener" aria-label="View Python PCEP Certification" class="px-6 py-3 rounded-full bg-purple-100 text-purple-700 font-semibold hover:bg-purple-200 transition">Python PCEP Certification</a>
+        <a href="#" target="_blank" rel="noopener" aria-label="View Data Analytics Certificate from Vodafone(VOIS)" class="px-6 py-3 rounded-full bg-purple-100 text-purple-700 font-semibold hover:bg-purple-200 transition">Data Analytics - Vodafone(VOIS)</a>
+      </div>
     </section>
 
-    <section id="extracurricular" class="container" aria-label="Extra-curricular activities" data-aos="fade-up">
-      <h2 class="section-title">Extra-Curricular Activities</h2>
-      <ul>
+    <section id="extracurricular" class="container mx-auto px-6 max-w-4xl mt-20" aria-label="Extra-curricular activities" data-aos="fade-up">
+      <h2 class="section-title text-3xl font-bold text-purple-700 uppercase tracking-widest text-center mb-10 select-none">Extra-Curricular Activities</h2>
+      <ul class="list-disc list-inside max-w-md mx-auto text-gray-600 space-y-3 text-lg">
         <li><strong>Pledge a Smile Foundation:</strong> Organized events, awareness campaigns, and donation drives for underprivileged communities.</li>
         <li><strong>National Service Scheme (NSS):</strong> Active involvement in plantation drives, blood donation camps, and education awareness in rural areas.</li>
         <li><strong>Team-Based Social Projects:</strong> Contributed to women's hygiene awareness, digital literacy, and school supply donations.</li>
@@ -540,22 +218,22 @@
       </ul>
     </section>
 
-    <section id="contact" class="container" aria-label="Contact Information" data-aos="fade-up">
-      <h2 class="section-title">Contact</h2>
-      <p style="text-align:center; font-size:1.1rem;">
+    <section id="contact" class="container mx-auto px-6 max-w-4xl mt-20 mb-16" aria-label="Contact Information" data-aos="fade-up">
+      <h2 class="section-title text-3xl font-bold text-purple-700 uppercase tracking-widest text-center mb-10 select-none">Contact</h2>
+      <p class="text-center text-lg text-gray-600 mb-4">
         Feel free to reach out to me via email or connect on social media!
       </p>
-      <p style="text-align:center;">
-        <a href="mailto:sanjana@example.com" aria-label="Send Email to Sanjana" style="color:#70577c; font-weight:700;">sanjana@example.com</a>
+      <p class="text-center">
+        <a href="mailto:sanjana@example.com" aria-label="Send Email to Sanjana" class="text-purple-700 font-semibold hover:underline">sanjana@example.com</a>
       </p>
-      <p style="text-align:center; font-size:1.5rem; margin-top:1rem; letter-spacing: 10px;">
-        <a href="https://github.com/sanjana" target="_blank" rel="noopener" aria-label="GitHub Profile" style="margin: 0 1rem; color:#70577c;">🐙</a>
-        <a href="https://linkedin.com/in/sanjana" target="_blank" rel="noopener" aria-label="LinkedIn Profile" style="margin: 0 1rem; color:#70577c;">🔗</a>
+      <p class="text-center text-4xl mt-8 space-x-8 tracking-widest">
+        <a href="https://github.com/sanjana" target="_blank" rel="noopener" aria-label="GitHub Profile" class="hover:text-purple-600 focus:text-purple-600 transition">🐙</a>
+        <a href="https://linkedin.com/in/sanjana" target="_blank" rel="noopener" aria-label="LinkedIn Profile" class="hover:text-purple-600 focus:text-purple-600 transition">🔗</a>
       </p>
     </section>
   </main>
 
-  <footer role="contentinfo">
+  <footer role="contentinfo" class="bg-purple-100 text-purple-500 text-center py-6 select-none border-t border-purple-200">
     <p>&copy; 2025 Sanjana. All rights reserved.</p>
   </footer>
 
