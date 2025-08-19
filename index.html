@@ -1,699 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sanjana | Frontend Developer</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sanjana | Frontend Developer</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- FontAwesome for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+<!-- FontAwesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Devicon for additional tech icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+<!-- Devicon for Tech Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 
-  <!-- AOS Animate on Scroll -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<!-- AOS Animate on Scroll -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <style>
-    html {
-      color-scheme: dark;
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #DDD0C8;
-      color: #323232;
-      line-height: 1.6;
-      min-height: 100vh;
-      scroll-behavior: smooth;
-      position: relative;
-      overflow-x: hidden;
-    }
-    a {
-      color: #bb86fc;
-      transition: color 0.3s;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    a:hover,
-    a:focus {
-      color: #ffd6ff;
-      outline: none;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 0 4rem 0;
-      position: relative;
-      z-index: 1;
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      background: #1a1623e6;
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      z-index: 100;
-      box-shadow: 0 2px 16px 0 #22153d88;
-    }
-    nav .logo {
-      font-weight: 700;
-      font-size: 2rem;
-      color: #bb86fc;
-      letter-spacing: 3px;
-      user-select: none;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
-    nav ul li a {
-      font-weight: 600;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #e0bbff;
-      padding: 0.2rem 0;
-      position: relative;
-    }
-    nav ul li a::after {
-      content: "";
-      display: block;
-      height: 2.5px;
-      width: 0%;
-      background: #bb86fc;
-      transition: width 0.3s;
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      border-radius: 2px;
-    }
-    nav ul li a:hover::after,
-    nav ul li a:focus::after {
-      width: 100%;
-    }
-    header.hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 82vh;
-      text-align: center;
-      color: #ffe5fa;
-      position: relative;
-    }
-    header.hero h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-      background: linear-gradient(90deg, #bb86fc, #ffd6ff, #9153e2, #bb86fc);
-      background-size: 200% 200%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientText 6s ease-in-out infinite;
-      user-select: none;
-      letter-spacing: 2.5px;
-      text-shadow: 0 3px 16px #26073d55;
-    }
-    @keyframes gradientText {
-      0%,100% {background-position:0% 50%;}
-      50%{background-position:100% 50%;}
-    }
-    header.hero p {
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 1.7rem;
-      color: #ccbaf0;
-      max-width: 520px;
-    }
-    header.hero .highlight {
-      color: #e0bbff;
-      font-weight: 700;
-    }
-    header.hero .cta {
-      padding: 0.78rem 2.7rem;
-      border-radius: 32px;
-      background: #bb86fc;
-      color: #1a1623;
-      border: none;
-      font-weight: 700;
-      font-size: 1.08rem;
-      cursor: pointer;
-      box-shadow: 0 0 12px #bb86fc44;
-      transition: background 0.25s, color 0.2s;
-      margin-top: 1.7rem;
-      margin-bottom: 1.1rem;
-    }
-    header.hero .cta:hover,
-    header.hero .cta:focus {
-      background: #9555e4;
-      color: #fff;
-      outline: none;
-    }
-    h2.section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 0.9rem;
-      color: #e0bbff;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      margin-top: 4rem;
-      user-select: none;
-      text-shadow: 0 2px 12px #26073d33;
-    }
+<style>
+/* ------------------- GLOBAL ------------------- */
+html { color-scheme: dark; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #0A1828;
+  color: #BFA181;
+  line-height: 1.6;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+a {
+  color: #178582;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+a:hover,a:focus { color: #BFA181; }
 
-    /* Skills Section */
-    #skills {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 3rem;
-      margin-top: 2rem;
-    }
-    .skill-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      min-width: 170px;
-    }
-    .skill-group h3 {
-      color: #bb86fc;
-      font-size: 1.15rem;
-      font-weight: 700;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 0.6rem;
-      user-select: none;
-    }
-    .skill-items {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.6rem 2.4rem;
-    }
-    .skill-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: #bb86fc;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: default;
-      user-select: none;
-      transition: color 0.3s, transform 0.3s;
-      width: 70px;
-    }
-    .skill-item i, .skill-item svg {
-      font-size: 3.6rem;
-      margin-bottom: 0.25rem;
-      text-shadow: 0 2px 10px #bb86fc44;
-    }
-    .skill-item:hover,
-    .skill-item:focus {
-      color: #ffd6ff;
-      transform: scale(1.18);
-      outline: none;
-    }
-    .skill-item:hover i,
-    .skill-item:focus i {
-      color: #ffd6ff;
-      transform: scale(1.3);
-    }
+/* ------------------- NAVBAR ------------------- */
+nav {
+  position: sticky; top: 0;
+  background: rgba(10,24,40,0.95);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem; z-index:100;
+  box-shadow: 0 2px 16px rgba(23,133,130,0.3);
+}
+nav .logo {
+  font-weight: 700; font-size: 2rem;
+  color: #178582; letter-spacing: 3px;
+}
+nav ul { list-style: none; display: flex; gap: 2.5rem; }
+nav ul li a {
+  font-weight: 600; font-size: 1rem;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: #BFA181; position: relative;
+}
+nav ul li a::after {
+  content:""; display:block; height:2px; width:0%; background:#178582;
+  transition:.3s; position:absolute; bottom:-5px; left:0;
+}
+nav ul li a:hover::after { width:100%; }
 
-    /* Project grid styles */
-    #projects .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.6rem;
-      margin-top: 2rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .project-card {
-      background: #201d26cc;
-      border-radius: 18px;
-      box-shadow: 0 8px 30px 0 #7f6bbf24;
-      padding: 1.8rem 1.6rem 1.4rem 1.6rem;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-      border: 1.5px solid #2e223c60;
-      min-height: 240px;
-    }
-    .project-card:hover,
-    .project-card:focus-within {
-      transform: translateY(-7px) scale(1.03);
-      box-shadow: 0 16px 32px 0 #bb86fcaa;
-      outline: none;
-    }
-    .project-card h3 {
-      color: #bb86fc;
-      margin-bottom: 0.6rem;
-      font-weight: 700;
-    }
-    .project-card p {
-      color: #d8c0ef;
-      flex-grow: 1;
-      line-height: 1.55;
-      margin-bottom: 0.7rem;
-    }
-    .project-card a {
-      font-weight: 600;
-      color: #ffd6ff;
-      transition: color 0.22s;
-    }
-    .project-card a:hover,
-    .project-card a:focus {
-      color: #bb86fc;
-      outline: none;
-    }
+/* ------------------- HERO ------------------- */
+header.hero {
+  min-height: 82vh; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center;
+  padding: 2rem;
+}
+header.hero h1 {
+  font-size:3.2rem; font-weight:700; margin-bottom:0.5rem;
+  background: linear-gradient(90deg, #178582, #BFA181, #178582);
+  background-size:200% 200%;
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  animation:gradientText 6s ease-in-out infinite;
+}
+@keyframes gradientText {
+  0%,100% {background-position:0 50%;}
+  50% {background-position:100% 50%;}
+}
+header.hero p { font-size:1.3rem; color:#ddd; max-width:520px; }
+header.hero .highlight { color:#178582; font-weight:700; }
+header.hero .cta {
+  margin-top:1.5rem; padding:0.8rem 2.5rem;
+  font-size:1.1rem; font-weight:700; border:none; border-radius:32px;
+  background:#178582; color:#0A1828; cursor:pointer;
+  box-shadow:0 0 12px rgba(23,133,130,.4);
+  transition:0.3s;
+}
+header.hero .cta:hover { background:#BFA181; color:#0A1828; }
 
-    /* Experience timeline */
-    #experience .timeline {
-      position: relative;
-      padding-left: 2.5rem;
-      margin-top: 2.5rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #experience .timeline::before {
-      content: '';
-      position: absolute;
-      left: 16px;
-      top: 0;
-      height: 100%;
-      width: 4px;
-      background: #bb86fcdd;
-      border-radius: 3px;
-    }
-    .timeline-event {
-      position: relative;
-      margin-bottom: 2.7rem;
-      padding-left: 2.5rem;
-    }
-    .timeline-event::before {
-      content: '';
-      position: absolute;
-      left: -3px;
-      top: 13px;
-      height: 15px;
-      width: 15px;
-      border-radius: 50%;
-      background: #bb86fc;
-      box-shadow: 0 0 7px #d8c0ef99;
-      border: 3px solid #22122f;
-    }
-    .timeline-event h4 {
-      font-weight: 700;
-      color: #ffd6ff;
-      margin-bottom: 0.3rem;
-      font-size: 1.25rem;
-    }
-    .timeline-event span.date, 
-    .timeline-event time {
-      font-size: 1rem;
-      color: #b88dfc;
-      font-style: italic;
-      display: block;
-      margin-bottom: 0.6rem;
-    }
-    .timeline-event ul {
-      list-style-type: disc;
-      margin-left: 1.5rem;
-      color: #d6baf5;
-      font-size: 1.1rem;
-      line-height: 1.62;
-    }
+/* ------------------- SECTIONS ------------------- */
+.container { width:90%; max-width:1100px; margin:0 auto; padding:3rem 0; }
+h2.section-title {
+  text-align:center; color:#178582; font-size:2.2rem;
+  text-transform:uppercase; letter-spacing:2px; margin-bottom:1.5rem;
+}
 
-    /* Certifications */
-    #certifications {
-      max-width: 900px;
-      margin: 0 auto 4rem auto;
-      padding-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.3rem;
-      font-size: 1.08rem;
-    }
-    #certifications a {
-      color: #bb86fc;
-      font-weight: 600;
-      display: inline-block;
-      padding: 0.55rem 1.6rem;
-      border-radius: 28px;
-      background: #261e38bb;
-      transition: background 0.25s, color 0.25s;
-      box-shadow: 0 1px 14px #bb86fc22;
-      max-width: 360px;
-      word-wrap: break-word;
-    }
-    #certifications a:hover,
-    #certifications a:focus {
-      background: #412f59cc;
-      color: #ffd6ff;
-      outline: none;
-    }
+/* Skills */
+#skills { display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; }
+.skill-group h3 { color:#BFA181; text-align:center; margin-bottom:0.8rem; }
+.skill-items { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; }
+.skill-item { color:#178582; text-align:center; transition:0.3s; }
+.skill-item i, .skill-item svg { font-size:3rem; margin-bottom:.3rem; }
+.skill-item:hover { color:#BFA181; transform:scale(1.1); }
 
-    /* Extra Curricular */
-    #extracurricular ul {
-      max-width: 900px;
-      margin: 0 auto;
-      padding-left: 1.25rem;
-      list-style-type: square;
-      color: #d1bdf9;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-top: 1rem;
-    }
+/* Projects */
+#projects .project-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:2rem;
+}
+.project-card {
+  background: rgba(17,34,51,0.9);
+  border:1px solid rgba(23,133,130,0.4);
+  border-radius:16px; padding:1.5rem;
+  transition:0.3s;
+}
+.project-card:hover { transform:translateY(-6px); box-shadow:0 10px 25px rgba(191,161,129,.3); }
+.project-card h3 { color:#178582; margin-bottom:.6rem; }
+.project-card p { color:#ccc; font-size:1rem; }
+.project-card a { color:#BFA181; font-weight:600; margin-top:0.5rem; display:inline-block; }
+.project-card a:hover { color:#178582; }
 
-    /* Footer */
-    footer {
-      background: #22122f;
-      color: #a794c4;
-      text-align: center;
-      padding: 1.3rem 0 1.8rem 0;
-      letter-spacing: 2px;
-      font-size: 1rem;
-      user-select: none;
-      border-top: 1px solid #402d54aa;
-    }
+/* Experience Timeline */
+.timeline { position:relative; margin-top:2rem; padding-left:2rem; }
+.timeline::before {
+  content:''; position:absolute; top:0; left:10px; width:4px; height:100%;
+  background:#178582;
+}
+.timeline-event { position:relative; margin-bottom:2rem; }
+.timeline-event::before {
+  content:''; position:absolute; top:12px; left:-5px;
+  width:14px; height:14px; border-radius:50%;
+  background:#BFA181; border:2px solid #0A1828;
+}
+.timeline-event h4 { color:#178582; margin-bottom:.3rem; }
+.timeline-event span { color:#BFA181; font-style:italic; font-size:0.95rem; }
+.timeline-event ul { margin-left:1.2rem; color:#ddd; }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      #skills {
-        gap: 2rem;
-      }
-      .skill-group {
-        min-width: 140px;
-      }
-      #projects .project-grid {
-        grid-template-columns: 1fr;
-      }
-      #experience .timeline {
-        padding-left: 1.8rem;
-      }
-      .timeline-event {
-        padding-left: 1.8rem;
-      }
-    }
-    @media (max-width: 480px) {
-      #skills {
-        flex-direction: column;
-        gap: 2.5rem;
-      }
-      .skill-group {
-        min-width: auto;
-        gap: 1rem;
-      }
-    }
-  </style>
+/* Certifications */
+#certifications a {
+  display:inline-block; margin:0.4rem 0; padding:0.6rem 1.2rem;
+  border-radius:20px; background:rgba(23,133,130,0.1);
+  color:#178582; transition:0.3s;
+}
+#certifications a:hover { background:rgba(191,161,129,0.2); color:#BFA181; }
+
+/* Extra Curricular */
+#extracurricular ul { list-style: square; margin-left:1.2rem; color:#ccc; }
+
+/* Contact */
+#contact p { text-align:center; }
+#contact a { color:#BFA181; font-weight:600; }
+
+/* Footer */
+footer {
+  background:#0A1828; padding:1.5rem; text-align:center;
+  border-top:1px solid rgba(191,161,129,0.3); color:#BFA181;
+}
+</style>
 </head>
 <body>
 
-  <nav role="navigation" aria-label="Primary Navigation">
-    <div class="logo" tabindex="0">SANJANA</div>
+<!-- Navbar -->
+<nav>
+  <div class="logo">SANJANA</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#extracurricular">Extra</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <h1 data-aos="fade-down">Hello, I’m <span class="highlight">Sanjana</span></h1>
+  <p data-aos="fade-up" data-aos-delay="200">Passionate about crafting responsive, user-focused websites and applications with a modern touch.</p>
+  <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View My Work</button>
+</header>
+
+<main>
+<!-- About -->
+<section id="about" class="container">
+  <h2 class="section-title">About Me</h2>
+  <p>I am a passionate Frontend Web Developer with strong skills in <b>HTML, CSS, JavaScript, ReactJS</b>, and <b>Python</b>, dedicated to transforming ideas into interactive experiences.</p>
+  <p>I strive to contribute where innovation meets usability, building intuitive interfaces that empower users.</p>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="container">
+  <h2 class="section-title">Skills & Tech Stack</h2>
+  <div class="skill-group">
+    <h3>Languages</h3>
+    <div class="skill-items">
+      <div class="skill-item"><i class="devicon-java-plain colored"></i> Java</div>
+      <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+      <div class="skill-item"><i class="fab fa-js-square"></i> JavaScript</div>
+      <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
+      <div class="skill-item"><i class="devicon-c-plain colored"></i> C</div>
+    </div>
+  </div>
+  <div class="skill-group">
+    <h3>Backend</h3>
+    <div class="skill-items">
+      <div class="skill-item"><i class="devicon-django-plain colored"></i> Django</div>
+      <div class="skill-item"><i class="fas fa-network-wired"></i> REST APIs</div>
+    </div>
+  </div>
+  <div class="skill-group">
+    <h3>Web Tech</h3>
+    <div class="skill-items">
+      <div class="skill-item"><i class="fab fa-react"></i> ReactJS</div>
+      <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
+      <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="container">
+  <h2 class="section-title">Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Travel With Us</h3>
+      <p>Dynamic trip planner built with ReactJS, MongoDB, and Google Maps API for tailored itineraries and seamless responsive design.</p>
+      <a href="#">Learn More</a>
+    </div>
+    <div class="project-card">
+      <h3>Emotional Voice Conversion</h3>
+      <p>Deep learning system using Seq2Seq & CycleGAN to convert neutral voices into expressive speech while keeping speaker identity intact.</p>
+      <a href="#">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="container">
+<h2 class="section-title">Experience</h2>
+<div class="timeline">
+  <div class="timeline-event">
+    <h4>Thinkpond Software – Design Internship</h4>
+    <span>Nov 2024 – Jan 2025</span>
     <ul>
-      <li><a href="#about" tabindex="0">About</a></li>
-      <li><a href="#skills" tabindex="0">Skills</a></li>
-      <li><a href="#projects" tabindex="0">Projects</a></li>
-      <li><a href="#experience" tabindex="0">Experience</a></li>
-      <li><a href="#certifications" tabindex="0">Certifications</a></li>
-      <li><a href="#extracurricular" tabindex="0">Extra-Curricular</a></li>
-      <li><a href="#contact" tabindex="0">Contact</a></li>
+      <li>12-week internship focusing on UX design & design thinking principles.</li>
+      <li>Web scraping, data collection, and dataset preparation for SEO & analytics.</li>
+      <li>Applied SEO tools to enhance visibility & performance.</li>
     </ul>
-  </nav>
+  </div>
+</div>
 
-  <header class="hero" role="banner" aria-label="Introduction">
-    <h1 data-aos="fade-down">Hello, I’m <span class="highlight">Sanjana</span></h1>
-    <p data-aos="fade-up" data-aos-delay="200">
-      Passionate about crafting responsive, user-focused websites and applications with a modern touch.
-    </p>
-    <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" aria-label="View my work section">View My Work</button>
-  </header>
+<h2 class="section-title">Education</h2>
+<div class="timeline">
+  <div class="timeline-event"><h4>VVIT, Guntur</h4><span>B.Tech CSE - 8.2 CGPA</span></div>
+  <div class="timeline-event"><h4>Sri Chaitanya Junior College</h4><span>Intermediate - 90.3%</span></div>
+  <div class="timeline-event"><h4>Sri Chaitanya School</h4><span>10th - 10 GPA</span></div>
+</div>
+</section>
 
-  <main>
-    <section id="about" class="container" aria-label="About Me" data-aos="fade-up">
-      <h2 class="section-title">About Me</h2>
-      <p>
-        I am a passionate Frontend Web Developer with a knack for creating visually compelling and user-friendly web experiences. With a strong foundation in <strong>HTML, CSS, JavaScript, ReactJS</strong>, and <strong>Python</strong>, I love transforming ideas into interactive digital realities.
-      </p>
-      <p>
-        I strive to contribute to forward-thinking teams where innovation meets usability. My goal is to build intuitive interfaces that empower users and enhance their journey through design and functionality.
-      </p>
-    </section>
+<!-- Certifications -->
+<section id="certifications" class="container">
+  <h2 class="section-title">Certifications</h2>
+  <a href="#">Salesforce Developer Virtual Internship</a><br/>
+  <a href="#">Cybersecurity Internship - Vodafone(VOIS)</a><br/>
+  <a href="#">Python PCEP Certification</a><br/>
+  <a href="#">Data Analytics - Vodafone(VOIS)</a>
+</section>
 
-    <section id="skills" class="container" aria-label="Skills and Tech Stack" data-aos="fade-up">
-      <h2 class="section-title">Skills &amp; Tech Stack</h2>
-      <div id="skills" role="list" aria-label="Skills grouped by category">
+<!-- Extra Curricular -->
+<section id="extracurricular" class="container">
+  <h2 class="section-title">Extra-Curricular</h2>
+  <ul>
+    <li>Pledge a Smile Foundation: Organized events, donation drives for underprivileged.</li>
+    <li>NSS: Plantation drives, rural awareness, blood donation camps.</li>
+    <li>Social Projects: Worked on women hygiene awareness & digital literacy.</li>
+    <li>Event Organization & Hosting: Tech fests, cultural events, webinars.</li>
+  </ul>
+</section>
 
-        <div class="skill-group" aria-label="Programming Languages">
-          <h3>Languages</h3>
-          <div class="skill-items">
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="Java">
-              <i class="devicon-java-plain colored" title="Java"></i>
-              Java
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="Python">
-              <i class="fab fa-python" title="Python"></i>
-              Python
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="JavaScript">
-              <i class="fab fa-js-square" title="JavaScript"></i>
-              JavaScript
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="SQL">
-              <i class="fas fa-database" title="SQL"></i>
-              SQL
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="C">
-              <i class="devicon-c-plain colored" title="C Language"></i>
-              C
-            </div>
-          </div>
-        </div>
+<!-- Contact -->
+<section id="contact" class="container">
+  <h2 class="section-title">Contact</h2>
+  <p>Reach out via email:</p>
+  <p><a href="mailto:sanjana@example.com">sanjana@example.com</a></p>
+  <p style="font-size:1.5rem; text-align:center;">
+    <a href="https://github.com/sanjana" target="_blank">🐙</a>
+    <a href="https://linkedin.com/in/sanjana" target="_blank">🔗</a>
+  </p>
+</section>
+</main>
 
-        <div class="skill-group" aria-label="Backend Technologies">
-          <h3>Backend</h3>
-          <div class="skill-items">
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="Django">
-              <i class="devicon-django-plain colored" title="Django"></i>
-              Django
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="REST APIs">
-              <i class="fas fa-network-wired" title="REST APIs"></i>
-              REST APIs
-            </div>
-          </div>
-        </div>
+<footer>© 2025 Sanjana. All rights reserved.</footer>
 
-        <div class="skill-group" aria-label="Web Technologies">
-          <h3>Web Technologies</h3>
-          <div class="skill-items">
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="ReactJS">
-              <i class="fab fa-react" title="ReactJS"></i>
-              ReactJS
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="HTML5">
-              <i class="fab fa-html5" title="HTML5"></i>
-              HTML5
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="CSS3">
-              <i class="fab fa-css3-alt" title="CSS3"></i>
-              CSS3
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-group" aria-label="Databases">
-          <h3>Databases</h3>
-          <div class="skill-items">
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="MySQL">
-              <i class="devicon-mysql-plain colored" title="MySQL"></i>
-              MySQL
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="MongoDB">
-              <i class="devicon-mongodb-plain colored" title="MongoDB"></i>
-              MongoDB
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-group" aria-label="Tools">
-          <h3>Tools</h3>
-          <div class="skill-items">
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="Git">
-              <i class="fab fa-git-alt" title="Git"></i>
-              Git
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="GitHub">
-              <i class="fab fa-github" title="GitHub"></i>
-              GitHub
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="VS Code">
-              <i class="devicon-vscode-plain colored" title="VS Code"></i>
-              VS Code
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="Postman">
-              <i class="fab fa-get-pocket" title="Postman"></i>
-              Postman
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="Power BI">
-              <svg fill="#bb86fc" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" title="Power BI"><path d="M8 3h2v18H8zM14 8h2v13h-2zM18 13h2v8h-2zM4 17h2v4H4z"/></svg>
-              Power BI
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="Excel">
-              <i class="fab fa-microsoft" title="Microsoft Excel"></i>
-              Excel
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-group" aria-label="Other Skills">
-          <h3>Other</h3>
-          <div class="skill-items" style="gap: 1rem 1.4rem;">
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="Software Development Life Cycle">
-              <i class="fas fa-cogs" title="Software Development Life Cycle"></i>
-              SDLC
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="Object-Oriented Programming">
-              <i class="fas fa-project-diagram" title="Object-Oriented Programming"></i>
-              OOP
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="Debugging">
-              <i class="fas fa-bug" title="Debugging"></i>
-              Debugging
-            </div>
-            <div class="skill-item" role="listitem" tabindex="0" aria-label="Google Maps API">
-              <i class="fas fa-map-marker-alt" title="Google Maps API"></i>
-              Google Maps API
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="projects" class="container" aria-label="Projects" data-aos="fade-up">
-      <h2 class="section-title">Projects</h2>
-      <div class="project-grid">
-        <article class="project-card" tabindex="0" aria-labelledby="proj1-title">
-          <h3 id="proj1-title">Travel With Us</h3>
-          <p>
-            Developed a dynamic trip-planning web application using HTML, CSS, JavaScript, ReactJS, and MongoDB. The platform allows users to input preferences and budgets to receive tailored travel itineraries and recommendations.
-            Integrated Google Maps API for geolocation-based services and ensured a responsive UI for seamless cross-device usage.
-          </p>
-          <a href="#" aria-label="More about Travel With Us project">Learn More</a>
-        </article>
-        <article class="project-card" tabindex="0" aria-labelledby="proj2-title">
-          <h3 id="proj2-title">High-Fidelity Emotional Voice Conversion</h3>
-          <p>
-            Implemented a deep learning model using Sequence-to-Sequence and CycleGAN approaches on the ESD dataset to convert neutral voices into emotionally expressive speech while preserving speaker identity and content. Focused on speech synthesis quality and real-time inference efficiency.
-          </p>
-          <a href="#" aria-label="More about Emotional Voice Conversion project">Learn More</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="experience" class="container" aria-label="Experience and Education" data-aos="fade-up">
-      <h2 class="section-title">Experience</h2>
-      <div class="timeline">
-        <div class="timeline-event" tabindex="0">
-          <h4>Thinkpond Software – Design Internship</h4>
-          <span class="date">Nov 2024 – Jan 2025</span>
-          <ul>
-            <li>Completed a 12-week internship with a focus on UX design and real-time application of design thinking principles.</li>
-            <li>Performed web scraping and automated data collection from structured and unstructured sources.</li>
-            <li>Cleaned and organized large datasets to prepare them for analytics and SEO optimization.</li>
-            <li>Utilized SEO tools and techniques to analyze and enhance web page performance and visibility.</li>
-          </ul>
-        </div>
-      </div>
-      <h2 class="section-title" style="margin-top:4rem;">Education</h2>
-      <div class="timeline" aria-label="Education timeline">
-        <div class="timeline-event" tabindex="0">
-          <h4>Vasireddy Venkatadri Institute Of Technology, Guntur</h4>
-          <span class="date">B.Tech - Computer Science Engineering, 8.2 CGPA</span>
-        </div>
-        <div class="timeline-event" tabindex="0">
-          <h4>Sri Chaitanya Junior College, Vishakapatnam</h4>
-          <span class="date">Intermediate - MPC, 90.3%</span>
-        </div>
-        <div class="timeline-event" tabindex="0">
-          <h4>Sri Chaitanya Techno School, Narsipatnam</h4>
-          <span class="date">10th, 10 GPA</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="certifications" class="container" aria-label="Certifications and Achievements" data-aos="fade-up">
-      <h2 class="section-title">Certifications</h2>
-      <a href="#" target="_blank" rel="noopener" aria-label="View Salesforce Developer Virtual Internship Certificate">Salesforce Developer Virtual Internship</a><br/>
-      <a href="#" target="_blank" rel="noopener" aria-label="View Cybersecurity Internship Certificate from Vodafone(VOIS)">Cybersecurity Internship - Vodafone(VOIS)</a><br/>
-      <a href="#" target="_blank" rel="noopener" aria-label="View Python PCEP Certification">Python PCEP Certification</a><br/>
-      <a href="#" target="_blank" rel="noopener" aria-label="View Data Analytics Certificate from Vodafone(VOIS)">Data Analytics - Vodafone(VOIS)</a>
-    </section>
-
-    <section id="extracurricular" class="container" aria-label="Extra-curricular activities" data-aos="fade-up">
-      <h2 class="section-title">Extra-Curricular Activities</h2>
-      <ul>
-        <li><strong>Pledge a Smile Foundation:</strong> Organized events, awareness campaigns, and donation drives for underprivileged communities.</li>
-        <li><strong>National Service Scheme (NSS):</strong> Active involvement in plantation drives, blood donation camps, and education awareness in rural areas.</li>
-        <li><strong>Team-Based Social Projects:</strong> Contributed to women's hygiene awareness, digital literacy, and school supply donations.</li>
-        <li><strong>Event Organization & Hosting:</strong> Coordinated and hosted tech fests, cultural events, and webinars, enhancing leadership and communication skills.</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="container" aria-label="Contact Information" data-aos="fade-up">
-      <h2 class="section-title">Contact</h2>
-      <p style="text-align:center; font-size:1.13rem;">
-        Feel free to reach out via email or connect on my social links below!
-      </p>
-      <p style="text-align:center;">
-        <a href="mailto:sanjana@example.com" aria-label="Send Email to Sanjana" style="color:#ffd6ff; font-weight:700;">sanjana@example.com</a>
-      </p>
-      <p style="text-align:center; font-size:1.7rem; margin-top:1.2rem; letter-spacing: 10px;">
-        <a href="https://github.com/sanjana" target="_blank" rel="noopener" aria-label="GitHub Profile" style="margin: 0 1rem; color:#bb86fc;">🐙</a>
-        <a href="https://linkedin.com/in/sanjana" target="_blank" rel="noopener" aria-label="LinkedIn Profile" style="margin: 0 1rem; color:#bb86fc;">🔗</a>
-      </p>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <p>&copy; 2025 Sanjana. All rights reserved.</p>
-  </footer>
-
-  <!-- AOS Animate on Scroll JS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 900,
-      once: true,
-      easing: 'ease-in-out',
-    });
-  </script>
+<!-- AOS Animation -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({duration:900, once:true, easing:'ease-in-out'});</script>
 </body>
 </html>
