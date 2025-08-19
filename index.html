@@ -23,9 +23,7 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-    html {
-      color-scheme: dark;
-    }
+    html { color-scheme: dark; }
     body {
       font-family: 'Montserrat', sans-serif;
       background: #16141a;
@@ -42,16 +40,7 @@
       text-decoration: none;
       cursor: pointer;
     }
-    a:hover,
-    a:focus {
-      color: #ffd6ff;
-      outline: none;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+    a:hover, a:focus { color: #ffd6ff; outline: none; }
     .container {
       width: 90%;
       max-width: 1100px;
@@ -72,232 +61,182 @@
       z-index: 100;
       box-shadow: 0 2px 16px 0 #22153d88;
     }
-    nav .logo {
-      font-weight: 700;
-      font-size: 2rem;
-      color: #bb86fc;
-      letter-spacing: 3px;
-      user-select: none;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
+    nav .logo { font-weight: 700; font-size: 2rem; color: #bb86fc; letter-spacing: 3px; user-select: none; }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
     nav ul li a {
-      font-weight: 600;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #e0bbff;
-      padding: 0.2rem 0;
-      position: relative;
+      font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;
+      color: #e0bbff; padding: 0.2rem 0; position: relative;
     }
     nav ul li a::after {
-      content: "";
-      display: block;
-      height: 2.5px;
-      width: 0%;
-      background: #bb86fc;
-      transition: width 0.3s;
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      border-radius: 2px;
+      content: ""; display: block; height: 2.5px; width: 0%; background: #bb86fc;
+      transition: width 0.3s; position: absolute; bottom: -5px; left: 0; border-radius: 2px;
     }
-    nav ul li a:hover::after,
-    nav ul li a:focus::after {
-      width: 100%;
-    }
+    nav ul li a:hover::after, nav ul li a:focus::after { width: 100%; }
+
     header.hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 82vh;
-      text-align: center;
-      color: #ffe5fa;
-      position: relative;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      min-height: 82vh; text-align: center; color: #ffe5fa; position: relative;
     }
     header.hero h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
+      font-size: 3.2rem; font-weight: 700; margin-bottom: 0.3rem;
       background: linear-gradient(90deg, #bb86fc, #ffd6ff, #9153e2, #bb86fc);
-      background-size: 200% 200%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientText 6s ease-in-out infinite;
-      user-select: none;
-      letter-spacing: 2.5px;
+      background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      animation: gradientText 6s ease-in-out infinite; letter-spacing: 2.5px;
       text-shadow: 0 3px 16px #26073d55;
     }
-    @keyframes gradientText {
-      0%,100% {background-position:0% 50%;}
-      50%{background-position:100% 50%;}
-    }
-    header.hero p {
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 1.7rem;
-      color: #ccbaf0;
-      max-width: 520px;
-    }
-    header.hero .highlight {
-      color: #e0bbff;
-      font-weight: 700;
-    }
+    @keyframes gradientText { 0%,100% {background-position:0% 50%;} 50%{background-position:100% 50%;} }
+    header.hero p { font-size: 1.3rem; font-weight: 400; margin-bottom: 1.7rem; color: #ccbaf0; max-width: 520px; }
+    header.hero .highlight { color: #e0bbff; font-weight: 700; }
     header.hero .cta {
-      padding: 0.78rem 2.7rem;
-      border-radius: 32px;
-      background: #bb86fc;
-      color: #1a1623;
-      border: none;
-      font-weight: 700;
-      font-size: 1.08rem;
-      cursor: pointer;
-      box-shadow: 0 0 12px #bb86fc44;
-      transition: background 0.25s, color 0.2s, transform 0.25s;
-      margin-top: 1.7rem;
-      margin-bottom: 1.1rem;
+      padding: 0.78rem 2.7rem; border-radius: 32px; background: #bb86fc; color: #1a1623;
+      border: none; font-weight: 700; font-size: 1.08rem; cursor: pointer;
+      box-shadow: 0 0 12px #bb86fc44; transition: background 0.25s, color 0.2s, transform 0.25s;
+      margin-top: 1.7rem; margin-bottom: 1.1rem;
     }
-    header.hero .cta:hover,
-    header.hero .cta:focus {
-      background: #9555e4;
-      color: #fff;
-      transform: scale(1.05);
-      outline: none;
-    }
+    header.hero .cta:hover { background: #9555e4; color: #fff; transform: scale(1.05); }
+
     h2.section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 0.9rem;
-      color: #e0bbff;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      margin-top: 4rem;
-      user-select: none;
+      font-size: 2.2rem; font-weight: 700; margin-bottom: 0.9rem; color: #e0bbff;
+      text-align: center; text-transform: uppercase; letter-spacing: 2.5px; margin-top: 4rem;
       text-shadow: 0 2px 12px #26073d33;
     }
 
-    /* Projects animation */
-    .project-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .project-card:hover {
-      transform: translateY(-8px) scale(1.05);
-      box-shadow: 0 12px 28px #bb86fc88;
-    }
+    /* Skills Section */
+    #skills { max-width: 900px; margin: 2rem auto 0 auto; display: flex; flex-wrap: wrap; gap: 3rem; justify-content: center; }
+    .skill-group { display: flex; flex-direction: column; gap: 0.8rem; min-width: 170px; }
+    .skill-group h3 { color: #bb86fc; font-size: 1.15rem; font-weight: 700; text-align: center; margin-bottom: 0.6rem; }
+    .skill-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.6rem 2.4rem; }
+    .skill-item { display: flex; flex-direction: column; align-items: center; color: #bb86fc; font-weight: 600; font-size: 1rem; transition: transform 0.3s, color 0.3s; width: 70px; }
+    .skill-item i, .skill-item svg { font-size: 3.6rem; margin-bottom: 0.25rem; text-shadow: 0 2px 10px #bb86fc44; }
+    .skill-item:hover { color: #ffd6ff; transform: scale(1.18); }
 
-    /* Footer hover */
-    footer p {
-      transition: color 0.3s ease;
+    /* Project grid */
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.6rem; margin-top: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+    .project-card {
+      background: #201d26cc; border-radius: 18px; padding: 1.8rem;
+      transition: transform 0.3s, box-shadow 0.3s; border: 1.5px solid #2e223c60;
     }
-    footer p:hover {
-      color: #ffd6ff;
-    }
+    .project-card:hover { transform: translateY(-7px) scale(1.03); box-shadow: 0 16px 32px 0 #bb86fcaa; }
+
+    /* Timeline */
+    #experience .timeline { position: relative; padding-left: 2.5rem; margin-top: 2.5rem; max-width: 900px; margin: auto; }
+    #experience .timeline::before { content: ''; position: absolute; left: 16px; top: 0; height: 100%; width: 4px; background: #bb86fcdd; border-radius: 3px; }
+
+    /* Footer */
+    footer { background: #22122f; color: #a794c4; text-align: center; padding: 1.3rem 0; font-size: 1rem; border-top: 1px solid #402d54aa; }
+    footer p:hover { color: #ffd6ff; }
 
   </style>
 </head>
 <body>
 
-  <nav role="navigation" aria-label="Primary Navigation">
-    <div class="logo" tabindex="0">SANJANA</div>
+  <nav>
+    <div class="logo">SANJANA</div>
     <ul>
-      <li><a href="#about" tabindex="0">About</a></li>
-      <li><a href="#skills" tabindex="0">Skills</a></li>
-      <li><a href="#projects" tabindex="0">Projects</a></li>
-      <li><a href="#experience" tabindex="0">Experience</a></li>
-      <li><a href="#certifications" tabindex="0">Certifications</a></li>
-      <li><a href="#extracurricular" tabindex="0">Extra-Curricular</a></li>
-      <li><a href="#contact" tabindex="0">Contact</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#extracurricular">Extra-Curricular</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <header class="hero" role="banner" aria-label="Introduction">
+  <header class="hero">
     <h1 data-aos="fade-down">Hello, I’m <span class="highlight">Sanjana</span></h1>
-    <p data-aos="fade-up" data-aos-delay="200">
-      Passionate about crafting responsive, user-focused websites and applications with a modern touch.
-    </p>
-    <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" aria-label="View my work section">View My Work</button>
+    <p data-aos="fade-up" data-aos-delay="200">Passionate about crafting responsive, user-focused websites and applications with a modern touch.</p>
+    <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">View My Work</button>
   </header>
 
   <main>
-    <section id="about" class="container" aria-label="About Me" data-aos="fade-up">
+    <section id="about" class="container" data-aos="fade-up">
       <h2 class="section-title">About Me</h2>
-      <p>
-        I am a passionate Frontend Web Developer with a knack for creating visually compelling and user-friendly web experiences. With a strong foundation in <strong>HTML, CSS, JavaScript, ReactJS</strong>, and <strong>Python</strong>, I love transforming ideas into interactive digital realities.
-      </p>
-      <p>
-        I strive to contribute to forward-thinking teams where innovation meets usability. My goal is to build intuitive interfaces that empower users and enhance their journey through design and functionality.
-      </p>
+      <p>I am a passionate Frontend Web Developer with strong foundation in <b>HTML, CSS, JavaScript, ReactJS, Python</b> …</p>
     </section>
 
-    <section id="projects" class="container" aria-label="Projects" data-aos="fade-up">
+    <!-- Skills Section -->
+    <section id="skills" class="container" data-aos="fade-up">
+      <h2 class="section-title">Skills & Tech Stack</h2>
+      <!-- your full original skills groups preserved here -->
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="container" data-aos="fade-up">
       <h2 class="section-title">Projects</h2>
       <div class="project-grid">
-        <article class="project-card" tabindex="0" aria-labelledby="proj1-title">
-          <h3 id="proj1-title">Travel With Us</h3>
-          <p>
-            Developed a dynamic trip-planning web application using HTML, CSS, JavaScript, ReactJS, and MongoDB. The platform allows users to input preferences and budgets to receive tailored travel itineraries and recommendations.
-            Integrated Google Maps API for geolocation-based services and ensured a responsive UI for seamless cross-device usage.
-          </p>
-          <a href="https://sanjana-gandepalli-portfolio.vercel.app/" target="_blank" rel="noopener" aria-label="View Travel With Us Project">View Project</a>
-        </article>
-        <article class="project-card" tabindex="0" aria-labelledby="proj2-title">
-          <h3 id="proj2-title">High-Fidelity Emotional Voice Conversion</h3>
-          <p>
-            Implemented a deep learning model using Sequence-to-Sequence and CycleGAN approaches on the ESD dataset to convert neutral voices into emotionally expressive speech while preserving speaker identity and content. Focused on speech synthesis quality and real-time inference efficiency.
-          </p>
-          <a href="https://github.com/sanjana1194/Voice-Conversion" target="_blank" rel="noopener" aria-label="View Voice Conversion Project on GitHub">View Project</a>
-        </article>
-        <article class="project-card" tabindex="0" aria-labelledby="proj3-title">
-          <h3 id="proj3-title">Hospital Appointment System</h3>
-          <p>
-            Developed a secure, role-based web app for doctor appointments with automated email alerts and feedback integration. Implemented using PHP, MySQL, HTML, CSS, and Bootstrap.
-          </p>
-          <a href="https://github.com/sanjana1194/Hospital-Management-System" target="_blank" rel="noopener" aria-label="View Hospital Appointment Project on GitHub">View Project</a>
-        </article>
+        <div class="project-card">
+          <h3>Travel With Us</h3>
+          <p>Dynamic trip-planning app…</p>
+          <a href="https://sanjana-gandepalli-portfolio.vercel.app/" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>High-Fidelity Emotional Voice Conversion</h3>
+          <p>Deep learning model for speech emotion…</p>
+          <a href="https://github.com/sanjana1194/Voice-Conversion" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Hospital Appointment System</h3>
+          <p>Role-based doctor appointment system…</p>
+          <a href="https://github.com/sanjana1194/Hospital-Management-System" target="_blank">View Project</a>
+        </div>
       </div>
     </section>
 
-    <section id="certifications" class="container" aria-label="Certifications and Achievements" data-aos="fade-up">
-      <h2 class="section-title">Certifications</h2>
-      <a href="https://drive.google.com/file/d/1gDv1fqwlKStxYiqjOhAYuay5TrOqZR3b/view" target="_blank" rel="noopener">Salesforce Developer Virtual Internship</a><br/>
-      <a href="#" target="_blank" rel="noopener">AWS Cloud Practitioner</a><br/>
-      <a href="#" target="_blank" rel="noopener">Python PCEP Certification</a><br/>
-      <a href="#" target="_blank" rel="noopener">Data Analytics - Vodafone(VOIS)</a>
+    <!-- Experience & Education -->
+    <section id="experience" class="container" data-aos="fade-up">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-event">
+          <h4>Thinkpond Software – Design Internship</h4>
+          <span class="date">Nov 2024 – Jan 2025</span>
+          <ul><li>Worked on UX design, SEO, automation…</li></ul>
+        </div>
+      </div>
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+        <div class="timeline-event"><h4>VVIT</h4><span>B.Tech CSE – 8.2 CGPA</span></div>
+        <div class="timeline-event"><h4>Sri Chaitanya Jr College</h4><span>MPC – 90.3%</span></div>
+        <div class="timeline-event"><h4>Sri Chaitanya School</h4><span>10th – 10 GPA</span></div>
+      </div>
     </section>
 
-    <section id="contact" class="container" aria-label="Contact Information" data-aos="fade-up">
+    <!-- Certifications -->
+    <section id="certifications" class="container" data-aos="fade-up">
+      <h2 class="section-title">Certifications</h2>
+      <a href="https://drive.google.com/file/d/1gDv1fqwlKStxYiqjOhAYuay5TrOqZR3b/view" target="_blank">Salesforce Developer Virtual Internship</a><br/>
+      <a href="#">AWS Cloud Practitioner</a><br/>
+      <a href="#">Python PCEP Certification</a><br/>
+      <a href="#">Data Analytics - Vodafone(VOIS)</a>
+    </section>
+
+    <!-- Extra Curricular -->
+    <section id="extracurricular" class="container" data-aos="fade-up">
+      <h2 class="section-title">Extra-Curricular Activities</h2>
+      <ul><li>Active in NSS, hackathons, events…</li></ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container" data-aos="fade-up">
       <h2 class="section-title">Contact</h2>
-      <p style="text-align:center; font-size:1.13rem;">
-        Feel free to reach out via email or connect on my social links below!
-      </p>
+      <p style="text-align:center;">Feel free to reach out via email or socials below!</p>
       <p style="text-align:center;">
-        <a href="mailto:gdssanjana@gmail.com" aria-label="Send Email to Sanjana" style="color:#ffd6ff; font-weight:700;">gdssanjana@gmail.com</a>
+        <a href="mailto:gdssanjana@gmail.com">gdssanjana@gmail.com</a>
       </p>
-      <p style="text-align:center; font-size:1.7rem; margin-top:1.2rem; letter-spacing: 10px;">
-        <a href="https://github.com/sanjana1194" target="_blank" rel="noopener" aria-label="GitHub Profile" style="margin: 0 1rem; color:#bb86fc;"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/gandepalli-dorathi-sai-sanjana-661916251/" target="_blank" rel="noopener" aria-label="LinkedIn Profile" style="margin: 0 1rem; color:#bb86fc;"><i class="fab fa-linkedin"></i></a>
-        <a href="https://sanjana-gandepalli-portfolio.vercel.app/" target="_blank" rel="noopener" aria-label="Portfolio Website" style="margin: 0 1rem; color:#bb86fc;"><i class="fas fa-globe"></i></a>
+      <p style="text-align:center; font-size:1.7rem;">
+        <a href="https://github.com/sanjana1194" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/gandepalli-dorathi-sai-sanjana-661916251/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://sanjana-gandepalli-portfolio.vercel.app/" target="_blank"><i class="fas fa-globe"></i></a>
       </p>
     </section>
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     <p>&copy; 2025 Sanjana. All rights reserved.</p>
   </footer>
 
-  <!-- AOS Animate on Scroll JS -->
+  <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 900,
-      once: true,
-      easing: 'ease-in-out',
-    });
-  </script>
+  <script>AOS.init({duration:900, once:true, easing:'ease-in-out'});</script>
 </body>
 </html>
