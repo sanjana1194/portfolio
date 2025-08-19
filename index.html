@@ -1,301 +1,396 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sanjana | Frontend Developer</title>
+<html lang="en" class="transition-colors duration-500">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanjana Gandepalli | Web Developer</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- FontAwesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/8c15a9fa6f.js" crossorigin="anonymous"></script>
 
-<!-- Devicon for Tech Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-<!-- AOS Animate on Scroll -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-<style>
-/* ------------------- GLOBAL ------------------- */
-html { color-scheme: dark; }
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: #0A1828;
-  color: #BFA181;
-  line-height: 1.6;
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-a {
-  color: #178582;
-  transition: color 0.3s;
-  text-decoration: none;
-}
-a:hover,a:focus { color: #BFA181; }
+    <!-- tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.0/tsparticles.bundle.min.js"></script>
 
-/* ------------------- NAVBAR ------------------- */
-nav {
-  position: sticky; top: 0;
-  background: rgba(10,24,40,0.95);
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 1rem 2rem; z-index:100;
-  box-shadow: 0 2px 16px rgba(23,133,130,0.3);
-}
-nav .logo {
-  font-weight: 700; font-size: 2rem;
-  color: #178582; letter-spacing: 3px;
-}
-nav ul { list-style: none; display: flex; gap: 2.5rem; }
-nav ul li a {
-  font-weight: 600; font-size: 1rem;
-  text-transform: uppercase; letter-spacing: 1px;
-  color: #BFA181; position: relative;
-}
-nav ul li a::after {
-  content:""; display:block; height:2px; width:0%; background:#178582;
-  transition:.3s; position:absolute; bottom:-5px; left:0;
-}
-nav ul li a:hover::after { width:100%; }
+    <!-- Meta Tags -->
+    <meta name="description" content="Portfolio of Dorathi Sai Sanjana Gandepalli - Frontend Web Developer and Designer" />
+    <meta name="keywords" content="Frontend Developer, Web Developer, ReactJS, Sanjana Gandepalli, HTML CSS JavaScript Python" />
+    <meta name="author" content="Dorathi Sai Sanjana Gandepalli" />
+    <meta property="og:title" content="Sanjana Gandepalli | Web Developer" />
+    <meta property="og:description" content="Portfolio of Dorathi Sai Sanjana Gandepalli" />
+    <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" />
+    <meta property="og:url" content="https://sanjana-gandepalli-portfolio.vercel.app" />
 
-/* ------------------- HERO ------------------- */
-header.hero {
-  min-height: 82vh; display:flex; flex-direction:column;
-  justify-content:center; align-items:center; text-align:center;
-  padding: 2rem;
-}
-header.hero h1 {
-  font-size:3.2rem; font-weight:700; margin-bottom:0.5rem;
-  background: linear-gradient(90deg, #178582, #BFA181, #178582);
-  background-size:200% 200%;
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-  animation:gradientText 6s ease-in-out infinite;
-}
-@keyframes gradientText {
-  0%,100% {background-position:0 50%;}
-  50% {background-position:100% 50%;}
-}
-header.hero p { font-size:1.3rem; color:#ddd; max-width:520px; }
-header.hero .highlight { color:#178582; font-weight:700; }
-header.hero .cta {
-  margin-top:1.5rem; padding:0.8rem 2.5rem;
-  font-size:1.1rem; font-weight:700; border:none; border-radius:32px;
-  background:#178582; color:#0A1828; cursor:pointer;
-  box-shadow:0 0 12px rgba(23,133,130,.4);
-  transition:0.3s;
-}
-header.hero .cta:hover { background:#BFA181; color:#0A1828; }
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" />
 
-/* ------------------- SECTIONS ------------------- */
-.container { width:90%; max-width:1100px; margin:0 auto; padding:3rem 0; }
-h2.section-title {
-  text-align:center; color:#178582; font-size:2.2rem;
-  text-transform:uppercase; letter-spacing:2px; margin-bottom:1.5rem;
-}
+    <style>
+      @keyframes gradient-x {
+        0%, 100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+      .animated-gradient {
+        background: linear-gradient(270deg, #06b6d4, #3b82f6, #9333ea, #06b6d4);
+        background-size: 600% 600%;
+        animation: gradient-x 15s ease infinite;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .section-bg {
+        background: linear-gradient(to right, #e0f7fa, #e1f5fe);
+      }
+      .dark .section-bg {
+        background: linear-gradient(to right, #1e293b, #0f172a);
+        color: #f8fafc;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans text-center transition-colors duration-500">
+    <div id="tsparticles" class="fixed inset-0 z-0"></div>
+    <main class="relative z-10">
+      <!-- Navbar -->
+      <header class="sticky top-0 bg-gray-900 dark:bg-gray-800 text-white flex justify-between items-center px-8 py-4 z-50">
+        <nav class="space-x-6 font-medium mx-auto">
+          <a href="#about" class="hover:text-green-400">About</a>
+          <a href="#skills" class="hover:text-green-400">Skills</a>
+          <a href="#projects" class="hover:text-green-400">Projects</a>
+          <a href="#education" class="hover:text-green-400">Education</a>
+          <a href="#certifications" class="hover:text-green-400">Certifications</a>
+          <a href="#experience" class="hover:text-green-400">Experience</a>
+          <a href="#activities" class="hover:text-green-400">Activities</a>
+          <a href="#contact" class="hover:text-green-400">Contact</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <button id="theme-toggle" class="bg-green-600 hover:bg-green-700 px-3 py-2 rounded text-sm">Theme</button>
+          <a href="https://drive.google.com/file/d/1AeXx2BTTyRI0YPi490NDRAjqu0ptNXM3/view?usp=sharing" target="_blank" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">View CV</a>
+        </div>
+      </header>
 
-/* Skills */
-#skills { display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; }
-.skill-group h3 { color:#BFA181; text-align:center; margin-bottom:0.8rem; }
-.skill-items { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; }
-.skill-item { color:#178582; text-align:center; transition:0.3s; }
-.skill-item i, .skill-item svg { font-size:3rem; margin-bottom:.3rem; }
-.skill-item:hover { color:#BFA181; transform:scale(1.1); }
+      <!-- Hero Section -->
+      <section class="relative h-screen flex items-center justify-center text-center text-white animated-gradient">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 space-y-4">
+          <h1 class="text-5xl font-bold">Hello, I’m <span class="text-green-300">Sanjana</span></h1>
+          <p class="text-xl"><span id="typed-text"></span></p>
+          <p class="italic text-lg text-gray-300 max-w-xl">
+            Passionate about crafting responsive, user-focused websites and applications with a modern touch.
+          </p>
+          <a href="#projects" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded">
+            View My Work
+          </a>
+        </div>
+      </section>
 
-/* Projects */
-#projects .project-grid {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
-  gap:2rem;
-}
-.project-card {
-  background: rgba(17,34,51,0.9);
-  border:1px solid rgba(23,133,130,0.4);
-  border-radius:16px; padding:1.5rem;
-  transition:0.3s;
-}
-.project-card:hover { transform:translateY(-6px); box-shadow:0 10px 25px rgba(191,161,129,.3); }
-.project-card h3 { color:#178582; margin-bottom:.6rem; }
-.project-card p { color:#ccc; font-size:1rem; }
-.project-card a { color:#BFA181; font-weight:600; margin-top:0.5rem; display:inline-block; }
-.project-card a:hover { color:#178582; }
+      <!-- Social Buttons -->
+      <div class="fixed top-1/2 right-0 transform -translate-y-1/2 z-50 flex flex-col gap-4 pr-2">
+        <a href="https://www.linkedin.com/in/gandepalli-dorathi-sai-sanjana-661916251" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-l-full shadow-md hover:scale-110 transition duration-300 text-sm flex items-center">
+          <i class="fab fa-linkedin-in text-xl mr-2"></i>LinkedIn
+        </a>
+        <a href="https://github.com/sanjana1194" target="_blank" class="bg-gray-800 hover:bg-black text-white font-semibold px-4 py-2 rounded-l-full shadow-md hover:scale-110 transition duration-300 text-sm flex items-center">
+          <i class="fab fa-github text-xl mr-2"></i>GitHub
+        </a>
+      </div>
 
-/* Experience Timeline */
-.timeline { position:relative; margin-top:2rem; padding-left:2rem; }
-.timeline::before {
-  content:''; position:absolute; top:0; left:10px; width:4px; height:100%;
-  background:#178582;
-}
-.timeline-event { position:relative; margin-bottom:2rem; }
-.timeline-event::before {
-  content:''; position:absolute; top:12px; left:-5px;
-  width:14px; height:14px; border-radius:50%;
-  background:#BFA181; border:2px solid #0A1828;
-}
-.timeline-event h4 { color:#178582; margin-bottom:.3rem; }
-.timeline-event span { color:#BFA181; font-style:italic; font-size:0.95rem; }
-.timeline-event ul { margin-left:1.2rem; color:#ddd; }
-
-/* Certifications */
-#certifications a {
-  display:inline-block; margin:0.4rem 0; padding:0.6rem 1.2rem;
-  border-radius:20px; background:rgba(23,133,130,0.1);
-  color:#178582; transition:0.3s;
-}
-#certifications a:hover { background:rgba(191,161,129,0.2); color:#BFA181; }
-
-/* Extra Curricular */
-#extracurricular ul { list-style: square; margin-left:1.2rem; color:#ccc; }
-
-/* Contact */
-#contact p { text-align:center; }
-#contact a { color:#BFA181; font-weight:600; }
-
-/* Footer */
-footer {
-  background:#0A1828; padding:1.5rem; text-align:center;
-  border-top:1px solid rgba(191,161,129,0.3); color:#BFA181;
-}
-</style>
-</head>
-<body>
-
-<!-- Navbar -->
-<nav>
-  <div class="logo">SANJANA</div>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#extracurricular">Extra</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Hero -->
-<header class="hero">
-  <h1 data-aos="fade-down">Hello, I’m <span class="highlight">Sanjana</span></h1>
-  <p data-aos="fade-up" data-aos-delay="200">Passionate about crafting responsive, user-focused websites and applications with a modern touch.</p>
-  <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View My Work</button>
-</header>
-
-<main>
-<!-- About -->
-<section id="about" class="container">
-  <h2 class="section-title">About Me</h2>
-  <p>I am a passionate Frontend Web Developer with strong skills in <b>HTML, CSS, JavaScript, ReactJS</b>, and <b>Python</b>, dedicated to transforming ideas into interactive experiences.</p>
-  <p>I strive to contribute where innovation meets usability, building intuitive interfaces that empower users.</p>
+<!-- About Section -->
+<!-- About Section -->
+<section id="about" class="scroll-mt-20 py-24 px-6 section-bg relative overflow-hidden">
+  <div class="absolute inset-0 z-0 opacity-10">
+    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+      <circle cx="50" cy="50" r="40" fill="#22c55e">
+        <animate attributeName="r" values="40;45;40" dur="6s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-extrabold mb-6 text-gray-900 dark:text-white animate__animated animate__fadeInDown">About Me</h2>
+    <p class="text-lg text-gray-800 dark:text-white mb-4 leading-relaxed animate__animated animate__fadeInUp animate__delay-1s">
+      I am a passionate <span class="text-green-600 font-semibold dark:text-green-400">Frontend Web Developer</span> with a knack for creating visually compelling and user-friendly web experiences. With a strong foundation in <strong>HTML, CSS, JavaScript, ReactJS</strong>, and <strong>Python</strong>, I love transforming ideas into interactive digital realities.
+    </p>
+    <p class="text-lg text-gray-800 dark:text-white mt-4 animate__animated animate__fadeInUp animate__delay-2s">
+      I strive to contribute to forward-thinking teams where innovation meets usability. My goal is to build intuitive interfaces that empower users and enhance their journey through design and functionality.
+    </p>
+  </div>
 </section>
 
-<!-- Skills -->
-<section id="skills" class="container">
-  <h2 class="section-title">Skills & Tech Stack</h2>
-  <div class="skill-group">
-    <h3>Languages</h3>
-    <div class="skill-items">
-      <div class="skill-item"><i class="devicon-java-plain colored"></i> Java</div>
-      <div class="skill-item"><i class="fab fa-python"></i> Python</div>
-      <div class="skill-item"><i class="fab fa-js-square"></i> JavaScript</div>
-      <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
-      <div class="skill-item"><i class="devicon-c-plain colored"></i> C</div>
+
+<!-- Skills Section -->
+<section id="skills" class="py-10 px-6 section-bg">
+  <h2 class="text-3xl font-semibold mb-10">Skills and Tech Stack</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="h-12 mb-2" />
+      <span>HTML</span>
     </div>
-  </div>
-  <div class="skill-group">
-    <h3>Backend</h3>
-    <div class="skill-items">
-      <div class="skill-item"><i class="devicon-django-plain colored"></i> Django</div>
-      <div class="skill-item"><i class="fas fa-network-wired"></i> REST APIs</div>
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="h-12 mb-2" />
+      <span>CSS</span>
     </div>
-  </div>
-  <div class="skill-group">
-    <h3>Web Tech</h3>
-    <div class="skill-items">
-      <div class="skill-item"><i class="fab fa-react"></i> ReactJS</div>
-      <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
-      <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="h-12 mb-2" />
+      <span>JavaScript</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="h-12 mb-2" />
+      <span>React</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg" alt="Tailwind" class="h-12 mb-2" />
+      <span>Tailwind</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="h-12 mb-2" />
+      <span>Python</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="h-12 mb-2" />
+      <span>Java</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="h-12 mb-2" />
+      <span>C</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="h-12 mb-2" />
+      <span>MongoDB</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="h-12 mb-2" />
+      <span>MySQL</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="h-12 mb-2" />
+      <span>Git</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="h-12 mb-2" />
+      <span>GitHub</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="h-12 mb-2" />
+      <span>Figma</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="h-12 mb-2" />
+      <span>VS Code</span>
     </div>
   </div>
 </section>
 
-<!-- Projects -->
-<section id="projects" class="container">
-  <h2 class="section-title">Projects</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <h3>Travel With Us</h3>
-      <p>Dynamic trip planner built with ReactJS, MongoDB, and Google Maps API for tailored itineraries and seamless responsive design.</p>
-      <a href="#">Learn More</a>
+<!-- Projects Section -->
+<section id="projects" class="scroll-mt-20 py-24 px-6 section-bg text-center">
+  <h2 class="text-3xl font-bold mb-10">Projects</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+    <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-md text-left">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="rounded mb-4 w-full h-48 object-cover" />
+      <h3 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Travel With Us</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Developed a dynamic trip-planning web application using HTML, CSS, JavaScript, ReactJS, and MongoDB. The platform allows users to input preferences and budgets to receive tailored travel itineraries and recommendations. Integrated Google Maps API for geolocation-based services and ensured a responsive UI for seamless cross-device usage.</p>
+      <div class="flex justify-center">
+        <a href="https://drive.google.com/file/d/1gDv1fqwlKStxYiqjOhAYuay5TrOqZR3b/view" class="inline-block bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">View Deployment</a>
+      </div>
     </div>
-    <div class="project-card">
-      <h3>Emotional Voice Conversion</h3>
-      <p>Deep learning system using Seq2Seq & CycleGAN to convert neutral voices into expressive speech while keeping speaker identity intact.</p>
-      <a href="#">Learn More</a>
+    <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-md text-left">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROK4CB3nx9dA-F0c4SSBlPtvpCtzQZxGSrxA&s" class="rounded mb-4 w-full h-48 object-cover" />
+      <h3 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">High-Fidelity Emotional Voice Conversion</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Implemented a deep learning model using Sequence-to-Sequence and CycleGAN approaches on the ESD dataset to convert neutral voices into emotionally expressive speech while preserving speaker identity and content. Focused on speech synthesis quality and real-time inference efficiency.</p>
+      <div class="flex justify-center">
+        <a href="https://github.com/sanjana1194/Voice-Conversion" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">View on GitHub</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Experience -->
-<section id="experience" class="container">
-<h2 class="section-title">Experience</h2>
-<div class="timeline">
-  <div class="timeline-event">
-    <h4>Thinkpond Software – Design Internship</h4>
-    <span>Nov 2024 – Jan 2025</span>
-    <ul>
-      <li>12-week internship focusing on UX design & design thinking principles.</li>
-      <li>Web scraping, data collection, and dataset preparation for SEO & analytics.</li>
-      <li>Applied SEO tools to enhance visibility & performance.</li>
-    </ul>
+
+<!-- Education Section -->
+<section id="education" class="py-20 px-6 section-bg text-center">
+  <h2 class="text-3xl font-bold mb-10">Education</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md">
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Vasireddy Venkatadri Institute Of Technology, Guntur</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">B.Tech - Computer Science Engineering</p>
+      <p class="font-semibold mt-2 text-gray-800 dark:text-gray-200">8.2 CGPA</p>
+    </div>
+    <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md">
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Sri Chaitanya Junior College, Vishakapatnam</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Intermediate - MPC</p>
+      <p class="font-semibold mt-2 text-gray-800 dark:text-gray-200">90.3%</p>
+    </div>
+    <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md">
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Sri Chaitanya Techno School, Narsipatnam</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">10th</p>
+      <p class="font-semibold mt-2 text-gray-800 dark:text-gray-200">10 GPA</p>
+    </div>
   </div>
+</section>
+
+<!-- Certifications Section -->
+ <section id="certifications" class="py-16 px-6 section-bg">
+      <h2 class="text-3xl font-bold mb-10">Certifications</h2>
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="flex justify-between items-center border border-gray-300 rounded-lg px-4 py-3 bg-white dark:bg-gray-800">
+          <p class="text-lg font-semibold text-gray-900 dark:text-white">Salesforce Developer Virtual Internship</p>
+          <a href="https://drive.google.com/file/d/1r8Sjzy6rieD6hsCwhbniCNVhOPp83owm/view?usp=sharing" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white px-4 py-2 rounded text-sm">View Certificate</a>
+        </div>
+        <div class="flex justify-between items-center border border-gray-300 rounded-lg px-4 py-3 bg-white dark:bg-gray-800">
+          <p class="text-lg font-semibold text-gray-900 dark:text-white">Cybersecurity Internship - Vodafone(VOIS)</p>
+          <a href="https://drive.google.com/file/d/1GDbxEAXvUfZK9X0p_23L9oB8tynbHYP6/view?usp=sharing" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white px-4 py-2 rounded text-sm">View Certificate</a>
+        </div>
+        <div class="flex justify-between items-center border border-gray-300 rounded-lg px-4 py-3 bg-white dark:bg-gray-800">
+          <p class="text-lg font-semibold text-gray-900 dark:text-white">Python PCEP Certification</p>
+          <a href="https://drive.google.com/file/d/1m0fd-2kDmALZXzQzcCe7e006MedpOapZ/view?usp=sharing" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white px-4 py-2 rounded text-sm">View Certificate</a>
+        </div>
+        <div class="flex justify-between items-center border border-gray-300 rounded-lg px-4 py-3 bg-white dark:bg-gray-800">
+          <p class="text-lg font-semibold text-gray-900 dark:text-white">Data Analytics - Vodafone(VOIS)</p>
+          <a href="https://drive.google.com/file/d/1k1VqNBtw1L5QhIE7b19pLtx1L35hniuk/view?usp=sharing" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white px-4 py-2 rounded text-sm">View Certificate</a>
+        </div>
+      </div>
+    </section>
+
+<!-- Experience Section -->
+<section id="experience" class="py-16 px-6 section-bg">
+  <h2 class="text-3xl font-bold mb-10">Experience</h2>
+  <div class="max-w-3xl mx-auto text-left space-y-6 ">
+    <div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg p-6 shadow-md">
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Thinkpond Software – Design Internship <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(Nov 2024 – Jan 2025)</span></h3>
+      <div class="flex justify-center mb-4">
+  <a href="https://drive.google.com/file/d/1JNQC-7sAfUnTZE8hQJPZJ4UuUiss9TcS/view?usp=sharing" 
+     target="_blank"
+     class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+     View Certificate
+  </a>
 </div>
-
-<h2 class="section-title">Education</h2>
-<div class="timeline">
-  <div class="timeline-event"><h4>VVIT, Guntur</h4><span>B.Tech CSE - 8.2 CGPA</span></div>
-  <div class="timeline-event"><h4>Sri Chaitanya Junior College</h4><span>Intermediate - 90.3%</span></div>
-  <div class="timeline-event"><h4>Sri Chaitanya School</h4><span>10th - 10 GPA</span></div>
-</div>
+      <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+        <li>Completed a 12-week internship with a focus on UX design and real-time application of design thinking principles.</li>
+        <li>Performed web scraping and automated data collection from structured and unstructured sources.</li>
+        <li>Cleaned and organized large datasets to prepare them for analytics and SEO optimization.</li>
+        <li>Utilized SEO tools and techniques to analyze and enhance web page performance and visibility.</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<!-- Certifications -->
-<section id="certifications" class="container">
-  <h2 class="section-title">Certifications</h2>
-  <a href="#">Salesforce Developer Virtual Internship</a><br/>
-  <a href="#">Cybersecurity Internship - Vodafone(VOIS)</a><br/>
-  <a href="#">Python PCEP Certification</a><br/>
-  <a href="#">Data Analytics - Vodafone(VOIS)</a>
+<!-- Activities Section -->
+<section id="activities" class="scroll-mt-20 py-24 px-6 section-bg">
+  <h2 class="text-4xl font-bold mb-10 text-center">Extra-Curricular Activities</h2>
+  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition hover:shadow-xl hover:scale-105">
+      <h3 class="text-xl font-semibold text-green-600 dark:text-green-400 mb-2">Pledge a Smile Foundation</h3>
+      <p class="text-gray-700 dark:text-gray-300">As a dedicated member, I contributed to organizing events, spreading awareness, and participating in donation drives aimed at helping underprivileged communities.</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition hover:shadow-xl hover:scale-105">
+      <h3 class="text-xl font-semibold text-green-600 dark:text-green-400 mb-2">National Service Scheme (NSS)</h3>
+      <p class="text-gray-700 dark:text-gray-300">Actively involved in social welfare initiatives like plantation drives, blood donation camps, and education awareness campaigns in rural areas.</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition hover:shadow-xl hover:scale-105">
+      <h3 class="text-xl font-semibold text-green-600 dark:text-green-400 mb-2">Team-Based Social Projects</h3>
+      <p class="text-gray-700 dark:text-gray-300">Participated in collaborative efforts addressing community issues including women's hygiene awareness, digital literacy programs, and school supply donations.</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition hover:shadow-xl hover:scale-105">
+      <h3 class="text-xl font-semibold text-green-600 dark:text-green-400 mb-2">Event Organization & Hosting</h3>
+      <p class="text-gray-700 dark:text-gray-300">Coordinated and hosted tech fests, cultural events, and webinars which enhanced my leadership and communication skills.</p>
+    </div>
+  </div>
 </section>
 
-<!-- Extra Curricular -->
-<section id="extracurricular" class="container">
-  <h2 class="section-title">Extra-Curricular</h2>
-  <ul>
-    <li>Pledge a Smile Foundation: Organized events, donation drives for underprivileged.</li>
-    <li>NSS: Plantation drives, rural awareness, blood donation camps.</li>
-    <li>Social Projects: Worked on women hygiene awareness & digital literacy.</li>
-    <li>Event Organization & Hosting: Tech fests, cultural events, webinars.</li>
-  </ul>
+
+<!-- Contact Section -->
+<section id="contact" class="scroll-mt-20 py-24 px-6 section-bg flex flex-col lg:flex-row items-center justify-center gap-10">
+  <div class="w-full max-w-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0zf2UvmllbgZquXjVWZCl10VbCwvIXhX4CZJfzaJUnOWWoiXu" alt="Contact Illustration" class="w-full h-auto rounded-lg shadow-md" />
+  </div>
+  <div class="w-full max-w-xl">
+    <h2 class="text-4xl font-bold text-purple-700 dark:text-purple-400 mb-4">Send me a message!</h2>
+    <form class="space-y-4">
+      <input type="text" placeholder="Name" class="w-full px-4 py-3 rounded border" />
+      <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded border" />
+      <textarea rows="4" placeholder="Message" class="w-full px-4 py-3 rounded border"></textarea>
+      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded">Submit</button>
+    </form>
+  </div>
 </section>
+    </main>
 
-<!-- Contact -->
-<section id="contact" class="container">
-  <h2 class="section-title">Contact</h2>
-  <p>Reach out via email:</p>
-  <p><a href="mailto:sanjana@example.com">sanjana@example.com</a></p>
-  <p style="font-size:1.5rem; text-align:center;">
-    <a href="https://github.com/sanjana" target="_blank">🐙</a>
-    <a href="https://linkedin.com/in/sanjana" target="_blank">🔗</a>
-  </p>
-</section>
-</main>
+    <!-- Footer -->
+     <footer class="text-center py-6 bg-white dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">
+      © 2025 Sanjana Gandepalli — All rights reserved.
+    </footer>
 
-<footer>© 2025 Sanjana. All rights reserved.</footer>
+    <!-- Scripts -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        new Typed('#typed-text', {
+          strings: ['Frontend Developer', 'Designer', 'ReactJS Enthusiast'],
+          typeSpeed: 50,
+          backSpeed: 30,
+          backDelay: 1500,
+          loop: true
+        });
 
-<!-- AOS Animation -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init({duration:900, once:true, easing:'ease-in-out'});</script>
-</body>
+        document.querySelectorAll('section').forEach(section => {
+          gsap.from(section, {
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 85%'
+            },
+            opacity: 0,
+            y: 60,
+            duration: 0.8,
+            ease: 'power2.out'
+          });
+        });
+
+        tsParticles.load("tsparticles", {
+          background: { color: { value: "transparent" } },
+          fpsLimit: 60,
+          particles: {
+            number: { value: 60, density: { enable: true, area: 800 } },
+            color: { value: "#3b82f6" },
+            links: {
+              enable: true,
+              distance: 150,
+              color: "#3b82f6",
+              opacity: 0.4,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 2,
+              direction: "none",
+              outModes: { default: "bounce" }
+            },
+            opacity: { value: 0.5 },
+            shape: { type: "circle" },
+            size: { value: { min: 1, max: 4 } }
+          },
+          interactivity: {
+            events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+            modes: { repulse: { distance: 100, duration: 0.4 } }
+          },
+          detectRetina: true
+        });
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') root.classList.add('dark');
+        themeToggle.addEventListener('click', () => {
+          root.classList.toggle('dark');
+          localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+        });
+      });
+    </script>
+  </body>
 </html>
