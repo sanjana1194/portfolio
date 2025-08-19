@@ -23,7 +23,9 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-    html { color-scheme: dark; }
+    html {
+      color-scheme: dark;
+    }
     body {
       font-family: 'Montserrat', sans-serif;
       background: #16141a;
@@ -40,7 +42,16 @@
       text-decoration: none;
       cursor: pointer;
     }
-    a:hover, a:focus { color: #ffd6ff; outline: none; }
+    a:hover,
+    a:focus {
+      color: #ffd6ff;
+      outline: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
     .container {
       width: 90%;
       max-width: 1100px;
@@ -61,182 +72,628 @@
       z-index: 100;
       box-shadow: 0 2px 16px 0 #22153d88;
     }
-    nav .logo { font-weight: 700; font-size: 2rem; color: #bb86fc; letter-spacing: 3px; user-select: none; }
-    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+    nav .logo {
+      font-weight: 700;
+      font-size: 2rem;
+      color: #bb86fc;
+      letter-spacing: 3px;
+      user-select: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
     nav ul li a {
-      font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;
-      color: #e0bbff; padding: 0.2rem 0; position: relative;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #e0bbff;
+      padding: 0.2rem 0;
+      position: relative;
     }
     nav ul li a::after {
-      content: ""; display: block; height: 2.5px; width: 0%; background: #bb86fc;
-      transition: width 0.3s; position: absolute; bottom: -5px; left: 0; border-radius: 2px;
+      content: "";
+      display: block;
+      height: 2.5px;
+      width: 0%;
+      background: #bb86fc;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      border-radius: 2px;
     }
-    nav ul li a:hover::after, nav ul li a:focus::after { width: 100%; }
-
+    nav ul li a:hover::after,
+    nav ul li a:focus::after {
+      width: 100%;
+    }
     header.hero {
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      min-height: 82vh; text-align: center; color: #ffe5fa; position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 82vh;
+      text-align: center;
+      color: #ffe5fa;
+      position: relative;
     }
     header.hero h1 {
-      font-size: 3.2rem; font-weight: 700; margin-bottom: 0.3rem;
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
       background: linear-gradient(90deg, #bb86fc, #ffd6ff, #9153e2, #bb86fc);
-      background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      animation: gradientText 6s ease-in-out infinite; letter-spacing: 2.5px;
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientText 6s ease-in-out infinite;
+      user-select: none;
+      letter-spacing: 2.5px;
       text-shadow: 0 3px 16px #26073d55;
     }
-    @keyframes gradientText { 0%,100% {background-position:0% 50%;} 50%{background-position:100% 50%;} }
-    header.hero p { font-size: 1.3rem; font-weight: 400; margin-bottom: 1.7rem; color: #ccbaf0; max-width: 520px; }
-    header.hero .highlight { color: #e0bbff; font-weight: 700; }
-    header.hero .cta {
-      padding: 0.78rem 2.7rem; border-radius: 32px; background: #bb86fc; color: #1a1623;
-      border: none; font-weight: 700; font-size: 1.08rem; cursor: pointer;
-      box-shadow: 0 0 12px #bb86fc44; transition: background 0.25s, color 0.2s, transform 0.25s;
-      margin-top: 1.7rem; margin-bottom: 1.1rem;
+    @keyframes gradientText {
+      0%,100% {background-position:0% 50%;}
+      50%{background-position:100% 50%;}
     }
-    header.hero .cta:hover { background: #9555e4; color: #fff; transform: scale(1.05); }
-
+    header.hero p {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 1.7rem;
+      color: #ccbaf0;
+      max-width: 520px;
+    }
+    header.hero .highlight {
+      color: #e0bbff;
+      font-weight: 700;
+    }
+    header.hero .cta {
+      padding: 0.78rem 2.7rem;
+      border-radius: 32px;
+      background: #bb86fc;
+      color: #1a1623;
+      border: none;
+      font-weight: 700;
+      font-size: 1.08rem;
+      cursor: pointer;
+      box-shadow: 0 0 12px #bb86fc44;
+      transition: background 0.25s, color 0.2s;
+      margin-top: 1.7rem;
+      margin-bottom: 1.1rem;
+    }
+    header.hero .cta:hover,
+    header.hero .cta:focus {
+      background: #9555e4;
+      color: #fff;
+      outline: none;
+    }
     h2.section-title {
-      font-size: 2.2rem; font-weight: 700; margin-bottom: 0.9rem; color: #e0bbff;
-      text-align: center; text-transform: uppercase; letter-spacing: 2.5px; margin-top: 4rem;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.9rem;
+      color: #e0bbff;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-top: 4rem;
+      user-select: none;
       text-shadow: 0 2px 12px #26073d33;
     }
 
     /* Skills Section */
-    #skills { max-width: 900px; margin: 2rem auto 0 auto; display: flex; flex-wrap: wrap; gap: 3rem; justify-content: center; }
-    .skill-group { display: flex; flex-direction: column; gap: 0.8rem; min-width: 170px; }
-    .skill-group h3 { color: #bb86fc; font-size: 1.15rem; font-weight: 700; text-align: center; margin-bottom: 0.6rem; }
-    .skill-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.6rem 2.4rem; }
-    .skill-item { display: flex; flex-direction: column; align-items: center; color: #bb86fc; font-weight: 600; font-size: 1rem; transition: transform 0.3s, color 0.3s; width: 70px; }
-    .skill-item i, .skill-item svg { font-size: 3.6rem; margin-bottom: 0.25rem; text-shadow: 0 2px 10px #bb86fc44; }
-    .skill-item:hover { color: #ffd6ff; transform: scale(1.18); }
-
-    /* Project grid */
-    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.6rem; margin-top: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; }
-    .project-card {
-      background: #201d26cc; border-radius: 18px; padding: 1.8rem;
-      transition: transform 0.3s, box-shadow 0.3s; border: 1.5px solid #2e223c60;
+    #skills {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin-top: 2rem;
     }
-    .project-card:hover { transform: translateY(-7px) scale(1.03); box-shadow: 0 16px 32px 0 #bb86fcaa; }
+    .skill-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      min-width: 170px;
+    }
+    .skill-group h3 {
+      color: #bb86fc;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.6rem;
+      user-select: none;
+    }
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.6rem 2.4rem;
+    }
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #bb86fc;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: default;
+      user-select: none;
+      transition: color 0.3s, transform 0.3s;
+      width: 70px;
+    }
+    .skill-item i, .skill-item svg {
+      font-size: 3.6rem;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 10px #bb86fc44;
+    }
+    .skill-item:hover,
+    .skill-item:focus {
+      color: #ffd6ff;
+      transform: scale(1.18);
+      outline: none;
+    }
+    .skill-item:hover i,
+    .skill-item:focus i {
+      color: #ffd6ff;
+      transform: scale(1.3);
+    }
 
-    /* Timeline */
-    #experience .timeline { position: relative; padding-left: 2.5rem; margin-top: 2.5rem; max-width: 900px; margin: auto; }
-    #experience .timeline::before { content: ''; position: absolute; left: 16px; top: 0; height: 100%; width: 4px; background: #bb86fcdd; border-radius: 3px; }
+    /* Project grid styles */
+    #projects .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.6rem;
+      margin-top: 2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .project-card {
+      background: #201d26cc;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px 0 #7f6bbf24;
+      padding: 1.8rem 1.6rem 1.4rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      border: 1.5px solid #2e223c60;
+      min-height: 240px;
+    }
+    .project-card:hover,
+    .project-card:focus-within {
+      transform: translateY(-7px) scale(1.03);
+      box-shadow: 0 16px 32px 0 #bb86fcaa;
+      outline: none;
+    }
+    .project-card h3 {
+      color: #bb86fc;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+    .project-card p {
+      color: #d8c0ef;
+      flex-grow: 1;
+      line-height: 1.55;
+      margin-bottom: 0.7rem;
+    }
+    .project-card a {
+      font-weight: 600;
+      color: #ffd6ff;
+      transition: color 0.22s;
+    }
+    .project-card a:hover,
+    .project-card a:focus {
+      color: #bb86fc;
+      outline: none;
+    }
+
+    /* Experience timeline */
+    #experience .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+      margin-top: 2.5rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #experience .timeline::before {
+      content: '';
+      position: absolute;
+      left: 16px;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: #bb86fcdd;
+      border-radius: 3px;
+    }
+    .timeline-event {
+      position: relative;
+      margin-bottom: 2.7rem;
+      padding-left: 2.5rem;
+    }
+    .timeline-event::before {
+      content: '';
+      position: absolute;
+      left: -3px;
+      top: 13px;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background: #bb86fc;
+      box-shadow: 0 0 7px #d8c0ef99;
+      border: 3px solid #22122f;
+    }
+    .timeline-event h4 {
+      font-weight: 700;
+      color: #ffd6ff;
+      margin-bottom: 0.3rem;
+      font-size: 1.25rem;
+    }
+    .timeline-event span.date, 
+    .timeline-event time {
+      font-size: 1rem;
+      color: #b88dfc;
+      font-style: italic;
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+    .timeline-event ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+      color: #d6baf5;
+      font-size: 1.1rem;
+      line-height: 1.62;
+    }
+
+    /* Certifications */
+    #certifications {
+      max-width: 900px;
+      margin: 0 auto 4rem auto;
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      font-size: 1.08rem;
+    }
+    #certifications a {
+      color: #bb86fc;
+      font-weight: 600;
+      display: inline-block;
+      padding: 0.55rem 1.6rem;
+      border-radius: 28px;
+      background: #261e38bb;
+      transition: background 0.25s, color 0.25s;
+      box-shadow: 0 1px 14px #bb86fc22;
+      max-width: 360px;
+      word-wrap: break-word;
+    }
+    #certifications a:hover,
+    #certifications a:focus {
+      background: #412f59cc;
+      color: #ffd6ff;
+      outline: none;
+    }
+
+    /* Extra Curricular */
+    #extracurricular ul {
+      max-width: 900px;
+      margin: 0 auto;
+      padding-left: 1.25rem;
+      list-style-type: square;
+      color: #d1bdf9;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-top: 1rem;
+    }
 
     /* Footer */
-    footer { background: #22122f; color: #a794c4; text-align: center; padding: 1.3rem 0; font-size: 1rem; border-top: 1px solid #402d54aa; }
-    footer p:hover { color: #ffd6ff; }
+    footer {
+      background: #22122f;
+      color: #a794c4;
+      text-align: center;
+      padding: 1.3rem 0 1.8rem 0;
+      letter-spacing: 2px;
+      font-size: 1rem;
+      user-select: none;
+      border-top: 1px solid #402d54aa;
+    }
 
+    /* Responsive */
+    @media (max-width: 900px) {
+      #skills {
+        gap: 2rem;
+      }
+      .skill-group {
+        min-width: 140px;
+      }
+      #projects .project-grid {
+        grid-template-columns: 1fr;
+      }
+      #experience .timeline {
+        padding-left: 1.8rem;
+      }
+      .timeline-event {
+        padding-left: 1.8rem;
+      }
+    }
+    @media (max-width: 480px) {
+      #skills {
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+      .skill-group {
+        min-width: auto;
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="logo">SANJANA</div>
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="logo" tabindex="0">SANJANA</div>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#extracurricular">Extra-Curricular</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" tabindex="0">About</a></li>
+      <li><a href="#skills" tabindex="0">Skills</a></li>
+      <li><a href="#projects" tabindex="0">Projects</a></li>
+      <li><a href="#experience" tabindex="0">Experience</a></li>
+      <li><a href="#certifications" tabindex="0">Certifications</a></li>
+      <li><a href="#extracurricular" tabindex="0">Extra-Curricular</a></li>
+      <li><a href="#contact" tabindex="0">Contact</a></li>
     </ul>
   </nav>
 
-  <header class="hero">
+  <header class="hero" role="banner" aria-label="Introduction">
     <h1 data-aos="fade-down">Hello, I’m <span class="highlight">Sanjana</span></h1>
-    <p data-aos="fade-up" data-aos-delay="200">Passionate about crafting responsive, user-focused websites and applications with a modern touch.</p>
-    <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">View My Work</button>
+    <p data-aos="fade-up" data-aos-delay="200">
+      Passionate about crafting responsive, user-focused websites and applications with a modern touch.
+    </p>
+    <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" aria-label="View my work section">View My Work</button>
   </header>
 
   <main>
-    <section id="about" class="container" data-aos="fade-up">
+    <section id="about" class="container" aria-label="About Me" data-aos="fade-up">
       <h2 class="section-title">About Me</h2>
-      <p>I am a passionate Frontend Web Developer with strong foundation in <b>HTML, CSS, JavaScript, ReactJS, Python</b> …</p>
+      <p>
+        I am a passionate Frontend Web Developer with a knack for creating visually compelling and user-friendly web experiences. With a strong foundation in <strong>HTML, CSS, JavaScript, ReactJS</strong>, and <strong>Python</strong>, I love transforming ideas into interactive digital realities.
+      </p>
+      <p>
+        I strive to contribute to forward-thinking teams where innovation meets usability. My goal is to build intuitive interfaces that empower users and enhance their journey through design and functionality.
+      </p>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="container" data-aos="fade-up">
-      <h2 class="section-title">Skills & Tech Stack</h2>
-      <!-- your full original skills groups preserved here -->
+    <section id="skills" class="container" aria-label="Skills and Tech Stack" data-aos="fade-up">
+      <h2 class="section-title">Skills &amp; Tech Stack</h2>
+      <div id="skills" role="list" aria-label="Skills grouped by category">
+
+        <div class="skill-group" aria-label="Programming Languages">
+          <h3>Languages</h3>
+          <div class="skill-items">
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="Java">
+              <i class="devicon-java-plain colored" title="Java"></i>
+              Java
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="Python">
+              <i class="fab fa-python" title="Python"></i>
+              Python
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="JavaScript">
+              <i class="fab fa-js-square" title="JavaScript"></i>
+              JavaScript
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="SQL">
+              <i class="fas fa-database" title="SQL"></i>
+              SQL
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="C">
+              <i class="devicon-c-plain colored" title="C Language"></i>
+              C
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group" aria-label="Backend Technologies">
+          <h3>Backend</h3>
+          <div class="skill-items">
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="Django">
+              <i class="devicon-django-plain colored" title="Django"></i>
+              Django
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="REST APIs">
+              <i class="fas fa-network-wired" title="REST APIs"></i>
+              REST APIs
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group" aria-label="Web Technologies">
+          <h3>Web Technologies</h3>
+          <div class="skill-items">
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="ReactJS">
+              <i class="fab fa-react" title="ReactJS"></i>
+              ReactJS
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="HTML5">
+              <i class="fab fa-html5" title="HTML5"></i>
+              HTML5
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="CSS3">
+              <i class="fab fa-css3-alt" title="CSS3"></i>
+              CSS3
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group" aria-label="Databases">
+          <h3>Databases</h3>
+          <div class="skill-items">
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="MySQL">
+              <i class="devicon-mysql-plain colored" title="MySQL"></i>
+              MySQL
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="MongoDB">
+              <i class="devicon-mongodb-plain colored" title="MongoDB"></i>
+              MongoDB
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group" aria-label="Tools">
+          <h3>Tools</h3>
+          <div class="skill-items">
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="Git">
+              <i class="fab fa-git-alt" title="Git"></i>
+              Git
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="GitHub">
+              <i class="fab fa-github" title="GitHub"></i>
+              GitHub
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="VS Code">
+              <i class="devicon-vscode-plain colored" title="VS Code"></i>
+              VS Code
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="Postman">
+              <i class="fab fa-get-pocket" title="Postman"></i>
+              Postman
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="Power BI">
+              <svg fill="#bb86fc" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" title="Power BI"><path d="M8 3h2v18H8zM14 8h2v13h-2zM18 13h2v8h-2zM4 17h2v4H4z"/></svg>
+              Power BI
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="Excel">
+              <i class="fab fa-microsoft" title="Microsoft Excel"></i>
+              Excel
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group" aria-label="Other Skills">
+          <h3>Other</h3>
+          <div class="skill-items" style="gap: 1rem 1.4rem;">
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="Software Development Life Cycle">
+              <i class="fas fa-cogs" title="Software Development Life Cycle"></i>
+              SDLC
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="Object-Oriented Programming">
+              <i class="fas fa-project-diagram" title="Object-Oriented Programming"></i>
+              OOP
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="Debugging">
+              <i class="fas fa-bug" title="Debugging"></i>
+              Debugging
+            </div>
+            <div class="skill-item" role="listitem" tabindex="0" aria-label="Google Maps API">
+              <i class="fas fa-map-marker-alt" title="Google Maps API"></i>
+              Google Maps API
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="container" data-aos="fade-up">
+    <section id="projects" class="container" aria-label="Projects" data-aos="fade-up">
       <h2 class="section-title">Projects</h2>
       <div class="project-grid">
-        <div class="project-card">
-          <h3>Travel With Us</h3>
-          <p>Dynamic trip-planning app…</p>
-          <a href="https://sanjana-gandepalli-portfolio.vercel.app/" target="_blank">View Project</a>
-        </div>
-        <div class="project-card">
-          <h3>High-Fidelity Emotional Voice Conversion</h3>
-          <p>Deep learning model for speech emotion…</p>
-          <a href="https://github.com/sanjana1194/Voice-Conversion" target="_blank">View Project</a>
-        </div>
-        <div class="project-card">
-          <h3>Hospital Appointment System</h3>
-          <p>Role-based doctor appointment system…</p>
-          <a href="https://github.com/sanjana1194/Hospital-Management-System" target="_blank">View Project</a>
-        </div>
+        <article class="project-card" tabindex="0" aria-labelledby="proj1-title">
+          <h3 id="proj1-title">Travel With Us</h3>
+          <p>
+            Developed a dynamic trip-planning web application using HTML, CSS, JavaScript, ReactJS, and MongoDB. The platform allows users to input preferences and budgets to receive tailored travel itineraries and recommendations.
+            Integrated Google Maps API for geolocation-based services and ensured a responsive UI for seamless cross-device usage.
+          </p>
+          <a href="#" aria-label="More about Travel With Us project">Learn More</a>
+        </article>
+        <article class="project-card" tabindex="0" aria-labelledby="proj2-title">
+          <h3 id="proj2-title">High-Fidelity Emotional Voice Conversion</h3>
+          <p>
+            Implemented a deep learning model using Sequence-to-Sequence and CycleGAN approaches on the ESD dataset to convert neutral voices into emotionally expressive speech while preserving speaker identity and content. Focused on speech synthesis quality and real-time inference efficiency.
+          </p>
+          <a href="#" aria-label="More about Emotional Voice Conversion project">Learn More</a>
+        </article>
       </div>
     </section>
 
-    <!-- Experience & Education -->
-    <section id="experience" class="container" data-aos="fade-up">
+    <section id="experience" class="container" aria-label="Experience and Education" data-aos="fade-up">
       <h2 class="section-title">Experience</h2>
       <div class="timeline">
-        <div class="timeline-event">
+        <div class="timeline-event" tabindex="0">
           <h4>Thinkpond Software – Design Internship</h4>
           <span class="date">Nov 2024 – Jan 2025</span>
-          <ul><li>Worked on UX design, SEO, automation…</li></ul>
+          <ul>
+            <li>Completed a 12-week internship with a focus on UX design and real-time application of design thinking principles.</li>
+            <li>Performed web scraping and automated data collection from structured and unstructured sources.</li>
+            <li>Cleaned and organized large datasets to prepare them for analytics and SEO optimization.</li>
+            <li>Utilized SEO tools and techniques to analyze and enhance web page performance and visibility.</li>
+          </ul>
         </div>
       </div>
-      <h2 class="section-title">Education</h2>
-      <div class="timeline">
-        <div class="timeline-event"><h4>VVIT</h4><span>B.Tech CSE – 8.2 CGPA</span></div>
-        <div class="timeline-event"><h4>Sri Chaitanya Jr College</h4><span>MPC – 90.3%</span></div>
-        <div class="timeline-event"><h4>Sri Chaitanya School</h4><span>10th – 10 GPA</span></div>
+      <h2 class="section-title" style="margin-top:4rem;">Education</h2>
+      <div class="timeline" aria-label="Education timeline">
+        <div class="timeline-event" tabindex="0">
+          <h4>Vasireddy Venkatadri Institute Of Technology, Guntur</h4>
+          <span class="date">B.Tech - Computer Science Engineering, 8.2 CGPA</span>
+        </div>
+        <div class="timeline-event" tabindex="0">
+          <h4>Sri Chaitanya Junior College, Vishakapatnam</h4>
+          <span class="date">Intermediate - MPC, 90.3%</span>
+        </div>
+        <div class="timeline-event" tabindex="0">
+          <h4>Sri Chaitanya Techno School, Narsipatnam</h4>
+          <span class="date">10th, 10 GPA</span>
+        </div>
       </div>
     </section>
 
-    <!-- Certifications -->
-    <section id="certifications" class="container" data-aos="fade-up">
+    <section id="certifications" class="container" aria-label="Certifications and Achievements" data-aos="fade-up">
       <h2 class="section-title">Certifications</h2>
-      <a href="https://drive.google.com/file/d/1gDv1fqwlKStxYiqjOhAYuay5TrOqZR3b/view" target="_blank">Salesforce Developer Virtual Internship</a><br/>
-      <a href="#">AWS Cloud Practitioner</a><br/>
-      <a href="#">Python PCEP Certification</a><br/>
-      <a href="#">Data Analytics - Vodafone(VOIS)</a>
+      <a href="#" target="_blank" rel="noopener" aria-label="View Salesforce Developer Virtual Internship Certificate">Salesforce Developer Virtual Internship</a><br/>
+      <a href="#" target="_blank" rel="noopener" aria-label="View Cybersecurity Internship Certificate from Vodafone(VOIS)">Cybersecurity Internship - Vodafone(VOIS)</a><br/>
+      <a href="#" target="_blank" rel="noopener" aria-label="View Python PCEP Certification">Python PCEP Certification</a><br/>
+      <a href="#" target="_blank" rel="noopener" aria-label="View Data Analytics Certificate from Vodafone(VOIS)">Data Analytics - Vodafone(VOIS)</a>
     </section>
 
-    <!-- Extra Curricular -->
-    <section id="extracurricular" class="container" data-aos="fade-up">
+    <section id="extracurricular" class="container" aria-label="Extra-curricular activities" data-aos="fade-up">
       <h2 class="section-title">Extra-Curricular Activities</h2>
-      <ul><li>Active in NSS, hackathons, events…</li></ul>
+      <ul>
+        <li><strong>Pledge a Smile Foundation:</strong> Organized events, awareness campaigns, and donation drives for underprivileged communities.</li>
+        <li><strong>National Service Scheme (NSS):</strong> Active involvement in plantation drives, blood donation camps, and education awareness in rural areas.</li>
+        <li><strong>Team-Based Social Projects:</strong> Contributed to women's hygiene awareness, digital literacy, and school supply donations.</li>
+        <li><strong>Event Organization & Hosting:</strong> Coordinated and hosted tech fests, cultural events, and webinars, enhancing leadership and communication skills.</li>
+      </ul>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="container" data-aos="fade-up">
+    <section id="contact" class="container" aria-label="Contact Information" data-aos="fade-up">
       <h2 class="section-title">Contact</h2>
-      <p style="text-align:center;">Feel free to reach out via email or socials below!</p>
-      <p style="text-align:center;">
-        <a href="mailto:gdssanjana@gmail.com">gdssanjana@gmail.com</a>
+      <p style="text-align:center; font-size:1.13rem;">
+        Feel free to reach out via email or connect on my social links below!
       </p>
-      <p style="text-align:center; font-size:1.7rem;">
-        <a href="https://github.com/sanjana1194" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/gandepalli-dorathi-sai-sanjana-661916251/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://sanjana-gandepalli-portfolio.vercel.app/" target="_blank"><i class="fas fa-globe"></i></a>
+      <p style="text-align:center;">
+        <a href="mailto:sanjana@example.com" aria-label="Send Email to Sanjana" style="color:#ffd6ff; font-weight:700;">sanjana@example.com</a>
+      </p>
+      <p style="text-align:center; font-size:1.7rem; margin-top:1.2rem; letter-spacing: 10px;">
+        <a href="https://github.com/sanjana" target="_blank" rel="noopener" aria-label="GitHub Profile" style="margin: 0 1rem; color:#bb86fc;">🐙</a>
+        <a href="https://linkedin.com/in/sanjana" target="_blank" rel="noopener" aria-label="LinkedIn Profile" style="margin: 0 1rem; color:#bb86fc;">🔗</a>
       </p>
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 Sanjana. All rights reserved.</p>
   </footer>
 
-  <!-- AOS -->
+  <!-- AOS Animate on Scroll JS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({duration:900, once:true, easing:'ease-in-out'});</script>
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true,
+      easing: 'ease-in-out',
+    });
+  </script>
 </body>
 </html>
